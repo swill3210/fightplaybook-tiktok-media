@@ -56,7 +56,12 @@ if not granted <= set(SCOPES):
 yt = build("youtube", "v3", credentials=creds, cache_discovery=False)
 ya = build("youtubeAnalytics", "v2", credentials=creds, cache_discovery=False)
 
-ch = yt.channels().list(part="snippet,statistics,contentDetails", mine=True).execute()["items"][0]
+from googleapiclient.errors import HttpError
+try:
+    ch = yt.channels().list(part="snippet,statistics,contentDetails", mine=True).execute()["items"][0]
+except HttpError as e:
+    print(f"(YouTube Data API unavailable, channel name and titles skipped: {e.reason})")
+    ch = {"id": "MINE", "snippet": {"title": "(enable YouTube Data API v3 for the name)"}, "statistics": {}}
 cid = ch["id"]
 end = dt.date.today()
 start_window = end - dt.timedelta(days=a.days)
@@ -81,7 +86,7 @@ traffic = report(start_window, "views,estimatedMinutesWatched", dims="insightTra
 
 ids = [r["video"] for r in top]
 titles = {}
-if ids:
+if ids and cid != "MINE":
     for v in yt.videos().list(part="snippet,contentDetails", id=",".join(ids)).execute()["items"]:
         titles[v["id"]] = (v["snippet"]["title"], v["snippet"]["publishedAt"][:10], v["contentDetails"]["duration"])
 
