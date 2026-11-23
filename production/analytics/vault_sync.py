@@ -15,6 +15,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--token", required=True)
 ap.add_argument("--vault", required=True)
 ap.add_argument("--days", type=int, default=28)
+ap.add_argument("--subdir", default="Claude Production", help="Claude only writes inside this folder of the vault")
 a = ap.parse_args()
 
 creds = Credentials.from_authorized_user_file(a.token)
@@ -45,7 +46,7 @@ def titles_for(ids):
         return out, False
 
 def write_new(rel, text):
-    path = os.path.join(a.vault, rel)
+    path = os.path.join(a.vault, a.subdir, rel)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     base, ext = os.path.splitext(path)
     n = 2
