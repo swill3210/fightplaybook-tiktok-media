@@ -21,6 +21,14 @@ Outfit split (Sean, Nov 23): long form hero wears the black shirt with red side 
 
 Read `production/audit/GROK_AUDIT.md` once to know which mistakes the old pipeline made.
 
+## 0.5 Knowledge base (Obsidian vault "The Fight Playbook Brain", added Nov 23, 2026 at Sean's request)
+
+* The vault is Sean's existing Obsidian vault in a private GitHub repo, cloned at `$FP_VAULT` (default `/home/user/the-fight-playbook-brain`). Setup and safety: `production/kb/README.md`.
+* Before planning any video: `python3 production/kb/kb.py pull`, then `python3 production/kb/kb.py brief <topic keywords>`, and read every note it lists (Sean's notes included, read only).
+* After any meaningful task (a render reviewed, a QC failure fixed, an analytics pull, a script or research finished): save verified findings with `kb.py capture <kind> "<title>" <file>`. Mark estimates as estimates. Update `Claude Production/Production Dashboard.md` snapshot by capturing a new dated note, never by rewriting Sean's notes.
+* Claude writes only inside `Claude Production`. Never edit, move or delete anything else in the vault. Never put credentials in a note.
+* Analytics: `python3 production/analytics/vault_sync.py --token <private token> --vault "$FP_VAULT"`, then commit with `kb.py log "analytics sync"`.
+
 ## 1. Brand lock (from Sean's skills, Nov 22 to 23, 2026)
 
 * Hero: black or charcoal bald muscular boxer, completely smooth blank face, only two slanted white eyes. No mouth, nose, eyebrows or other features, ever. Black sleeveless shirt with red side stripes, no lettering. Navy shorts with red trim. Barefoot. Black MMA gloves with red wrist straps (bare hands only in a grip tutorial).
