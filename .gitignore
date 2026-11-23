@@ -1,0 +1,5 @@
+# OAuth secrets and tokens must never be committed
+client_secret*.json
+*token*.json
+production/analytics/private/
+__pycache__/
