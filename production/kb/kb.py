@@ -135,6 +135,15 @@ elif cmd == "log":
     need_vault()
     log = append("_Claude/Changelog.md", f"* {today()} {sys.argv[2]}")
     commit_push(f"log: {sys.argv[2][:60]}", [log])
+elif cmd == "sync":
+    # kb.py sync "<message>" [subfolder]: commit notes already written inside Claude Production (default the
+    # Visual Library kept by the visual-creative-director agent). Same secret scan and outside path guard.
+    need_vault()
+    sub = sys.argv[3] if len(sys.argv) > 3 else "Visual Library"
+    target = os.path.join(OWN, sub)
+    if ".." in sub or not os.path.isdir(os.path.join(VAULT, target)):
+        sys.exit(f"no such folder inside {OWN}: {sub}")
+    commit_push(f"sync: {sys.argv[2][:60]}", [target])
 elif cmd == "remind":
     # Stop hook. Ask once per new set of production changes, then stay quiet (no loops).
     r = subprocess.run(["git", "-C", PROJECT, "status", "--porcelain", "--", "production", ".claude"], capture_output=True, text=True)
