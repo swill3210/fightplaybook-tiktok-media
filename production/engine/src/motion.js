@@ -20,7 +20,7 @@ export const RANGE_HOOK = parseFloat((typeof window !== 'undefined' && window.FP
 export const MOVES = {
   // Rear straight (cross) with the whole body: foot, hips, shoulders, then arm.
   cross_body: {
-    dur: 0.72, impact: 0.44, power: 1.0, hand: 'R', shape: 'straight', target: 'chin', reaction: 'head', reach: 0.975,
+    dur: 0.72, impact: 0.44, power: 1.0, hand: 'R', shape: 'straight', target: 'chin', reaction: 'head', reach: 0.99, // 0.975 gave a 154 degree elbow at impact (library QC 2026-11-24)
     ch: (u) => ({
       foot: seg(u, 0.0, 0.30) - seg(u, 0.62, 0.95),
       hips: seg(u, 0.04, 0.36) - seg(u, 0.60, 0.95),
@@ -30,19 +30,19 @@ export const MOVES = {
   },
   // The mistake: arm and a little shoulder only.
   cross_arm: {
-    dur: 0.58, impact: 0.46, power: 0.22, hand: 'R', shape: 'straight', target: 'chin', reaction: 'head', reach: 0.975,
+    dur: 0.58, impact: 0.46, power: 0.22, hand: 'R', shape: 'straight', target: 'chin', reaction: 'head', reach: 0.94, // staged closer: at 0.975 the arm outran its length mid punch (library QC)
     ch: (u) => ({
       foot: 0,
       hips: 0.08 * (seg(u, 0.05, 0.4) - seg(u, 0.6, 0.9)),
       shoulders: 0.55 * (seg(u, 0.05, 0.46) - seg(u, 0.56, 0.86)),
       arm: seg(u, 0.06, 0.46, ease.out) - seg(u, 0.56, 0.80),
-      reachLean: seg(u, 0.05, 0.46) - seg(u, 0.56, 0.86),
+      reachLean: seg(u, 0.05, 0.46, ease.out) - seg(u, 0.56, 0.86), // lean keeps pace with the arm (no overextension mid punch)
     }),
   },
   // Lead jab to the high guard: arm straight on a horizontal line, small shoulder turn,
   // rear glove stays on the chin, retracts on the same line.
   jab_high: {
-    dur: 0.5, impact: 0.42, power: 0.35, hand: 'L', shape: 'straight', target: 'guard', reaction: 'guardUp', reach: 0.97,
+    dur: 0.5, impact: 0.42, power: 0.35, hand: 'L', shape: 'straight', target: 'guard', reaction: 'guardUp', reach: 0.99, // straight jab: about 164 degrees at impact
     ch: (u) => ({
       arm: seg(u, 0.04, 0.42, ease.out) - seg(u, 0.52, 0.82),
       shoulders: seg(u, 0.04, 0.42) - seg(u, 0.52, 0.86),
@@ -95,6 +95,7 @@ export function stance(kind, guard = 'normal') {
   // covering the head high squares the torso up a little, which turns the liver toward the attacker
   const sq = kind === 'opponent' && guard === 'high' ? 0.3 : 0;
   return {
+    elbowOut: kind === 'opponent' ? 0.2 : 0.55, // KNOWN DEFECT (specialist 2026-11-24): flares hero elbows; 0.1 alone gave elbow drop 0.24 (target 0.45) and elbows in torso. Needs guard redesign (glove height + pole), backlog #1
     feet: {
       L: { x: 0.27, z: -0.13, yaw: 0.30, lift: 0, h: 0 },
       R: { x: -0.30, z: 0.15, yaw: 0.78, lift: 0, h: 0 },
@@ -148,8 +149,8 @@ export function applyHook(P, c) {
   P.feet.L.yaw = 0.30 + 0.75 * c.foot;
   P.feet.L.lift = 0.30 * c.foot;
   P.head.drop = 0.02 * c.dip;
-  // rear glove glued to the chin as the torso turns
-  P.hands.R.guard.f += 0.02 * c.shoulders;
+  // rear glove glued to the chin as the torso turns, held a few cm in front so it never enters the head during the dip (animation QC 2026-11-24)
+  P.hands.R.guard.f += 0.02 * c.shoulders + 0.05 * Math.max(c.dip, c.chamber);
   P.hands.R.guard.side += 0.02 * c.shoulders;
 }
 
@@ -165,7 +166,7 @@ export function applyShovel(P, c) {
   // head moves off the centre line to the lead side (coaching: never lean the head over the rising glove)
   const SR = (typeof window !== 'undefined' && window.FP_SHOV && window.FP_SHOV.roll) ?? 0.28;
   P.chest.roll = SR * c.dip; P.pelvis.z = -0.04 * c.dip;
-  P.hands.L.guard.f += 0.02 * c.shoulders; // lead glove stays on the chin
+  P.hands.L.guard.f += 0.02 * c.shoulders - 0.07 * c.dip; P.hands.L.guard.side -= 0.04 * c.dip; // lead glove tucks back to the cheek in the pocket (animation QC: it entered the opponent's head)
 }
 
 // lead foot step forward then rear foot follows (dx metres), with the pelvis travelling between

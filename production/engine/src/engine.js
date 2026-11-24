@@ -177,6 +177,16 @@ export class Engine {
     return this.qc(t, s, idx, st, proj);
   }
 
+  // COCO 17 keypoints (x, y in pixels) for both fighters, the reference the anatomy validator compares against
+  coco(J, proj) {
+    const up = V(0, 1, 0), fwd = J.forwardW.clone(), right = fwd.clone().cross(up).normalize();
+    const nose = J.headW.clone().add(fwd.clone().multiplyScalar(0.10)).add(V(0, -0.01, 0));
+    const eye = (sd) => nose.clone().add(V(0, 0.035, 0)).add(right.clone().multiplyScalar(sd * 0.035));
+    const ear = (sd) => J.headW.clone().add(right.clone().multiplyScalar(sd * 0.09));
+    return [nose, eye(-1), eye(1), ear(-1), ear(1), J.shoulderW.L, J.shoulderW.R, J.elbowW.L, J.elbowW.R, J.wristW.L, J.wristW.R,
+      J.hipW.L, J.hipW.R, J.kneeW.L, J.kneeW.R, J.ankleW.L, J.ankleW.R].map(proj).map((p) => [+p.x.toFixed(1), +p.y.toFixed(1)]);
+  }
+
   // OpenPose COCO 18 skeleton (black background, standard limb colours) for ControlNet / pose conditioning
   drawPose(g, fighters, proj) {
     g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
@@ -359,6 +369,6 @@ export class Engine {
       const v = k === 'heroHead' ? J.headW : k === 'oppHead' ? OJ.headW : k === 'rearFoot' ? J.ballW.R : k === 'gloveR' ? J.gloveW.R : null;
       if (v && !onScreen(v)) issues.push(`${k} out of frame`);
     }
-    return { t: +t.toFixed(3), shot: s.id, angle: s.angle, issues, arm: +st.c.arm.toFixed(3), reach: +(hm.reach.armR || 0).toFixed(3), elbowL: +(hm.elbowDegL || 0).toFixed(0), elbowR: +(hm.elbowDegR || 0).toFixed(0), forearmUpR: +(hm.forearmUpDegR || 0).toFixed(0) };
+    return { t: +t.toFixed(3), shot: s.id, angle: s.angle, issues, arm: +st.c.arm.toFixed(3), reach: +(hm.reach.armR || 0).toFixed(3), elbowL: +(hm.elbowDegL || 0).toFixed(0), elbowR: +(hm.elbowDegR || 0).toFixed(0), forearmUpR: +(hm.forearmUpDegR || 0).toFixed(0), kp: { hero: this.coco(J, proj), opp: (s.hide || []).includes('opp') ? null : this.coco(OJ, proj) } };
   }
 }

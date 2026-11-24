@@ -58,6 +58,11 @@ ANG = {"V2": "close up contact ribs", "V3": "rear three quarter", "V9": "rear th
        "V33": "wide rear three quarter", "V34": "close up contact low", "V53": "tight contact high", "V70": "close up shovel contact",
        "V79": "close up shovel elbow", "V84": "medium three quarter", "V86": "rear three quarter", "V88": "full body side shovel", "V94": "medium rear three quarter"}
 BZ = {"V23": 1.45, "V53": 1.6, "V94": 1.25, "V33": 0.0, "V86": 1.15}
+FRAME = {"V26": [0.82, 120], "V90": [1.0, 280], "V11": [0.9, 100], "V44": [0.82, 125], "V57": [0.84, 130], "V64": [0.8, 130], "V65": [0.84, 120]}  # v3: two line headlines must clear the heads (VCD review)
+TEXT = {"V13": ["TEST IT NOW"], "V57": ["ONE BEAT"], "V65": ["INSIDE RANGE"]}  # v3: headlines add information instead of echoing the narration
+for sh in shots:
+    if sh["id"] in FRAME: sh["frame"] = FRAME[sh["id"]]
+    if sh["id"] in TEXT: sh["text"] = TEXT[sh["id"]]
 for sh in shots:
     if sh["id"] in FIX:
         sh["glove"] = FIX[sh["id"]]; sh["layers"].pop("a", None); sh["phase_frames"] = 0

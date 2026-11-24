@@ -43,6 +43,7 @@ if (stills) {
   for (const t of stills.split(',').map(Number)) {
     const [m, png] = await grab(t);
     fs.writeFileSync(path.join(outdir, `still_${t.toFixed(2)}.png`), png);
+    fs.writeFileSync(path.join(outdir, `still_${t.toFixed(2)}.json`), JSON.stringify(m));
     console.log(t, m.shot, 'elbowR', m.elbowR, 'elbowL', m.elbowL, 'forearmUpR', m.forearmUpR, 'reach', m.reach, m.issues.join('; '));
   }
 } else {

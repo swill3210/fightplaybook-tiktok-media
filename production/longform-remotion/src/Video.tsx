@@ -2,7 +2,7 @@
 // Every frame is a pure function of the frame number (deterministic render).
 import React from 'react';
 import { AbsoluteFill, Audio, Img, Sequence, staticFile, useCurrentFrame, interpolate, Easing } from 'remotion';
-import { initGraphics, Overlays, Progress, Annotate } from './Graphics';
+import { initGraphics, Overlays, Progress, Annotate, freezeAmt, FreezeBrackets } from './Graphics';
 import TL from '../public/timeline.json';
 import CUT from '../public/cutinfo.json';
 
@@ -80,20 +80,24 @@ const ShotView: React.FC<{ s: Shot; i: number }> = ({ s, i }) => {
   const p = s.id === 'V35' ? 1 : outExpo((j + 1) / 4);
   const mask = g ? `radial-gradient(circle at ${g[0]}px ${g[1]}px, black ${120 + 600 * p}px, transparent ${121 + 600 * p}px)` : undefined;
   const bg = info ? `rgb(${info.bg.map((x: number) => Math.round(x)).join(',')})` : SAGE;
-  const si = shots.indexOf(s); const prev = si > 0 ? shots[si - 1] : null; const whip = prev && FLIP.has(s.id) !== FLIP.has(prev.id) && i < 7 ? 1 - outExpo(i / 7) : 0;
+  const si = shots.indexOf(s); const prev = si > 0 ? shots[si - 1] : null; const montage = s.section === 'PAYOFF AT SPEED' || s.section === 'COMBO AND RETEST'; // montages hard cut on contact instead
+  const whip = !montage && prev && FLIP.has(s.id) !== FLIP.has(prev.id) && i < 7 ? 1 - outExpo(i / 7) : 0;
   const wdir = FLIP.has(s.id) ? -1 : 1;
   return (
-    <AbsoluteFill style={{ background: bg, overflow: 'hidden' }}>
+    <AbsoluteFill style={{ background: bg, overflow: 'hidden', filter: freezeAmt(s.id, i) ? `saturate(${1 - 0.6 * freezeAmt(s.id, i)})` : undefined }}>
+      <div style={{ position: 'absolute', inset: 0, transform: (s as any).frame ? `translateY(${(s as any).frame[1]}px) scale(${(s as any).frame[0]})` : undefined }}>
       <div style={{ position: 'absolute', width: W, height: H, transformOrigin: '0 0', filter: whip ? `blur(${18 * whip}px)` : undefined,
         transform: `translateX(${wdir * whip * 420}px) translate(${W / 2}px, ${H / 2}px) scale(${c.z}) rotate(${c.rot}deg) translate(${-cx}px, ${-cy}px)` }}>
         {phase ? <Img src={staticFile(L.a)} style={{ position: 'absolute', width: W, height: H }} /> : par ? (
           <>
             <Img src={staticFile(L.base.replace('_base', '_plate'))} style={{ position: 'absolute', width: W, height: H }} />
+            {DOOR_START[s.id] ? <DoorNumeral n={DOOR_START[s.id]} i={i} dur={s.dur} /> : null}
             <Img src={staticFile(L.base.replace('_base', '_cut'))} style={{ position: 'absolute', width: W, height: H, transformOrigin: `${W / 2}px ${info.feet}px`, transform: `scale(${pz})` }} />
           </>
         ) : <Img src={staticFile(L.base)} style={{ position: 'absolute', width: W, height: H }} />}
         {!phase && L.lines && j >= 0 ? <Img src={staticFile(L.lines)} style={{ position: 'absolute', width: W, height: H, WebkitMaskImage: mask, maskImage: mask }} /> : null}
         <Annotate id={s.id} i={i} dur={s.dur} />
+      </div>
       </div>
     </AbsoluteFill>
   );
@@ -108,7 +112,7 @@ const Headline: React.FC<{ s: Shot; i: number }> = ({ s, i }) => {
       {s.text.map((line, li) => {
         const first = line.split(' ')[0].toLowerCase().replace(/[^a-z]/g, '');
         const spoken = wordTime(new RegExp('^' + first), t0 - 0.6);
-        const startF = s.id === 'V2' ? -2 : Math.max(0, Math.round(((spoken !== undefined && spoken < s.to / FPS ? spoken : t0) - t0) * FPS) - 2) + li * 4;
+        const startF = s.id === 'V2' ? -14 : Math.max(0, Math.round(((spoken !== undefined && spoken < s.to / FPS ? spoken : t0) - t0) * FPS) - 2) + li * 4;
         return (
           <div key={li} style={{ lineHeight: 1.02 }}>
             {line.split(' ').map((wd, wi) => {
@@ -132,6 +136,15 @@ const DoorUI: React.FC<{ f: number }> = ({ f }) => {
     <div style={{ position: 'absolute', right: 64, top: 48, display: 'flex', gap: 18 }}>
       {[1, 2, 3].map((p) => { const on = d === 4 || p === d; const pop = on && k < 10 ? 1 + 0.35 * Math.sin(Math.PI * cl(k / 10)) : 1;
         return <div key={p} style={{ width: 34 * pop, height: 34 * pop, borderRadius: 99, background: on ? RED : WHITE, border: `5px solid ${DARK}`, transform: `translateY(${-20 * (1 - ent)}px)` }} />; })}
+    </div>
+  );
+};
+// v3: giant door numeral sits BEHIND the fighters (between the plate and the cut layer), small DOOR label above it
+const DoorNumeral: React.FC<{ n: number; i: number; dur: number }> = ({ n, i, dur }) => {
+  const u = outExpo(i / 6); const out = cl((i - (dur - 7)) / 6);
+  return (
+    <div style={{ position: 'absolute', left: 0, top: 150, width: W, textAlign: 'center', clipPath: `inset(${out * 100}% 0 0 0)` }}>
+      <div style={{ fontFamily: 'Bebas', fontSize: 900, lineHeight: 0.82, color: RED, WebkitTextStroke: `18px ${DARK}`, paintOrder: 'stroke fill', transform: `translateY(${(1 - u) * 260}px)`, opacity: cl(u * 1.4) }}>{n}</div>
     </div>
   );
 };
@@ -209,11 +222,16 @@ const Board: React.FC<{ s: Shot; i: number }> = ({ s, i }) => {
         <span style={{ fontFamily: 'Bebas', fontSize: 64, background: RED, color: WHITE, padding: '8px 28px', borderRadius: 18, border: `5px solid ${WHITE}` }}>SCREENSHOT THIS</span>
       </div>
       <div style={{ position: 'absolute', top: 400, left: (W - 3 * 520 - 2 * 60) / 2, display: 'flex', gap: 60 }}>
-        {doors.map(([a, b, c2, f0], k) => { const u = outExpo((f - f0) / 14); const next = k < 2 ? doors[k + 1][3] : Math.round(tHigh * FPS); const live = f >= f0 && f < next;
-          return <div key={k} style={{ width: 520, height: 610, background: WHITE, border: `8px solid ${live ? RED : NAVY}`, borderRadius: 30, boxShadow: '10px 12px 0 #000', opacity: cl(u * 1.3), transform: `translateY(${-80 * (1 - u)}px) scale(${live ? 1.04 : 1})`, textAlign: 'center', paddingTop: 40 }}>
-            <div style={{ fontFamily: 'Bebas', fontSize: 96, color: RED }}>{a}</div>
-            <div style={{ height: 5, background: NAVY, margin: '20px 60px 40px' }} />
-            <div style={{ fontFamily: 'Bebas', fontSize: b.length > 13 ? 76 : 88, color: NAVY, lineHeight: 1.7 }}>{b}<br />{c2}</div>
+        {doors.map(([a, b, c2, f0], k) => { const u = outExpo((f - f0) / 14); const crop = [['V84', 810, 460], ['V57', 938, 480], ['V88', 900, 380]][k] as [string, number, number]; const next = k < 2 ? doors[k + 1][3] : Math.round(tHigh * FPS); const live = f >= f0 && f < next;
+          return <div key={k} style={{ position: 'relative', width: 520, height: 610 }}>
+            <div style={{ position: 'absolute', inset: 0, border: `6px dashed ${NAVY}`, borderRadius: 30, opacity: 0.35 * (1 - cl(u * 2)) }} />
+            <div style={{ position: 'absolute', inset: 0, background: WHITE, border: `8px solid ${live ? RED : NAVY}`, borderRadius: 30, boxShadow: '10px 12px 0 #000', opacity: cl(u * 1.3), transform: `translateY(${-80 * (1 - u)}px) scale(${live ? 1.04 : 1})`, textAlign: 'center', paddingTop: 22 }}>
+              <div style={{ fontFamily: 'Bebas', fontSize: 84, color: RED, lineHeight: 1 }}>{a}</div>
+              <div style={{ width: 440, height: 220, margin: '14px auto 16px', borderRadius: 16, overflow: 'hidden', position: 'relative', border: `5px solid ${NAVY}`, background: SAGE }}>
+                <Img src={staticFile(`layers/${crop[0]}_base.png`)} style={{ position: 'absolute', width: 1920 * 0.55, height: 1080 * 0.55, left: 220 - crop[1] * 0.55, top: 110 - crop[2] * 0.55 }} />
+              </div>
+              <div style={{ fontFamily: 'Bebas', fontSize: b.length > 13 ? 64 : 72, color: NAVY, lineHeight: 1.25 }}>{b}<br />{c2}</div>
+            </div>
           </div>; })}
       </div>
     </AbsoluteFill>
@@ -223,13 +241,19 @@ const Board: React.FC<{ s: Shot; i: number }> = ({ s, i }) => {
 // ---------- call to action chips and subscribe card ----------
 const CTA: React.FC<{ f: number }> = ({ f }) => {
   const sec = sections.find((x) => x.name === 'CALL TO ACTION'); const t = f / FPS; if (t < sec.start || t >= sec.start + sec.len + 3.2) return null;
-  const ts = [wordTime(/^1,?/, sec.start), wordTime(/^2,?/, sec.start), wordTime(/^3,?/, sec.start)];
-  return (
-    <div style={{ position: 'absolute', top: 60, width: W, display: 'flex', justifyContent: 'center', gap: 30 }}>
-      {ts.map((at, k) => { if (at === undefined) return null; const kk = f - Math.round(at * FPS); if (kk < 0) return null;
-        return <div key={k} style={{ width: 130, height: 130, borderRadius: 99, background: RED, border: `7px solid ${WHITE}`, fontFamily: 'Bebas', fontSize: 104, color: WHITE, textAlign: 'center', lineHeight: '130px', transform: `scale(${outBack(kk / 8)})`, boxShadow: `0 8px 0 ${DARK}` }}>{k + 1}</div>; })}
+  const ts = [wordTime(/^1,?/, sec.start), wordTime(/^2,?/, sec.start), wordTime(/^3,?/, sec.start)]; const tD = wordTime(/^door/, sec.start) ?? sec.start;
+  const ghost = cl((t - tD) * FPS / 6);
+  const v107 = shots.find((x) => x.id === 'V107'); const mv = v107 ? outExpo((f - v107.from) / 10) : 0; // on the subscribe shot the row moves right, above SUBSCRIBE, clear of the hero's face
+  const rowPos = (base: React.CSSProperties): React.CSSProperties => f >= (v107?.from ?? 1e9) ? { position: 'absolute', top: 130, right: 120 + (1 - mv) * 300, display: 'flex', gap: 30, transform: `scale(${1 - 0.2 * mv})`, transformOrigin: 'right top' } : base;
+  return (<>
+    {ghost > 0 ? <div style={rowPos({ position: 'absolute', top: 130, left: 70, display: 'flex', gap: 30 })}>{[0, 1, 2].map((k) => <div key={k} style={{ width: 130, height: 180, borderRadius: '65px 65px 12px 12px', border: `7px dashed ${WHITE}`, opacity: ghost * 0.9, transform: `scale(${outBack(ghost)})` }} />)}</div> : null}
+    
+    <div style={rowPos({ position: 'absolute', top: 130, left: 70, display: 'flex', gap: 30 })}>
+      {ts.map((at, k) => { if (at === undefined) return <div key={k} style={{ width: 130 }} />; const kk = f - Math.round(at * FPS); if (kk < 0) return <div key={k} style={{ width: 130 }} />;
+        const press = kk < 8 ? 1 - 0.1 * Math.sin(Math.PI * kk / 8) : 1;
+        return <div key={k} style={{ width: 130, height: 180, borderRadius: '65px 65px 12px 12px', background: RED, border: `7px solid ${DARK}`, fontFamily: 'Bebas', fontSize: 110, color: WHITE, WebkitTextStroke: `4px ${DARK}`, paintOrder: 'stroke fill', textAlign: 'center', lineHeight: '190px', transform: `scale(${outBack(kk / 8) * press})`, boxShadow: `0 10px 0 ${DARK}` }}>{k + 1}</div>; })}
     </div>
-  );
+  </>);
 };
 const Subscribe: React.FC<{ s: Shot; i: number }> = ({ s, i }) => {
   if (s.id !== 'V107') return null; const u = outExpo((i - 6) / 12); const press = i >= 36 && i <= 44 ? 1 - 0.06 * Math.sin(Math.PI * (i - 36) / 8) : 1;
@@ -262,7 +286,7 @@ export const LiverVideo: React.FC = () => {
       <style>{`@font-face { font-family: 'Bebas'; src: url('${staticFile('BebasNeue-Regular.ttf')}'); }`}</style>
       {SECTION_START.has(s.id) && i < 9 && k > 0 ? <Push k={k} f={f} /> : s.id === 'V102' ? <Board s={s} i={i} /> : <ShotView s={s} i={i} />}
       <Headline s={s} i={i} />
-      <DoorUI f={f} /><DoorCountIn s={s} i={i} /><Gauge f={f} /><Dose f={f} /><SelfTest f={f} /><FullSpeed f={f} /><CTA f={f} /><Subscribe s={s} i={i} />
+      <DoorUI f={f} /><FreezeBrackets id={s.id} i={i} /><Gauge f={f} /><Dose f={f} /><SelfTest f={f} /><FullSpeed f={f} /><CTA f={f} /><Subscribe s={s} i={i} />
       <Overlays f={f} /><Progress f={f} />
       <Audio src={staticFile('lofi_bed.mp3')} volume={music} loop />
       {sections.filter((x) => x.vo).map((x, n) => <Sequence key={n} from={Math.round(x.vo_at * FPS)}><Audio src={staticFile(x.vo)} volume={1} /></Sequence>)}
