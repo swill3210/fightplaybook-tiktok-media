@@ -107,7 +107,38 @@ def fal(endpoint, price, use_pose=False, extra=None):
         return img, {"seed": j.get("seed"), "list_price": price}
     return run
 
+def eleven(model, extra=None):
+    """ElevenLabs Image API (POST /v1/flows/image, then poll GET until completed).
+    Key is injected by the environment's network proxy as xi-api-key."""
+    def run(sc, refs, pose):
+        key = os.environ.get("ELEVENLABS_API_KEY", "proxy-injected")
+        hdr = {"xi-api-key": key, "Content-Type": "application/json"}
+        imgs = [{"type": "inline_base64", "content_base64": b64(p), "mime_type": mime(p)} for p in refs + ([pose] if pose else [])]
+        prompt = sc["prompt"] + (" The LAST attached image is a plain grey 3D mannequin render used ONLY as a pose and camera guide: copy the body positions, limb angles, stance and camera angle of both fighters from it, but draw everything in the 2D comic style and character designs of the first reference images. Never copy the mannequin's 3D look." if pose else "")
+        body = {"model_id": model, "prompt": prompt, "images": imgs, "aspect_ratio": "16:9", **(extra or {})}
+        st, raw = http("https://api.elevenlabs.io/v1/flows/image", json.dumps(body).encode(), hdr)
+        gen = json.loads(raw); gid = gen["id"]; t0 = time.time()
+        while True:
+            time.sleep(3)
+            st, raw = http(f"https://api.elevenlabs.io/v1/flows/image/{gid}", None, {"xi-api-key": key}, method="GET")
+            j = json.loads(raw)
+            if j["status"] == "completed":
+                img = urllib.request.urlopen(j["content_url"], timeout=120).read()
+                meta = {k: v for k, v in j.items() if k not in ("content_url",)}
+                return img, {"generation_id": gid, "response": meta}
+            if j["status"] == "failed":
+                raise RuntimeError(f"{j.get('failure_reason')}: {j.get('error_message')}")
+            if time.time() - t0 > 600:
+                raise RuntimeError("timeout waiting for generation " + gid)
+    return run
+
 MODELS = {
+    # ElevenLabs Image API (Sean's chosen provider). FLUX, LoRA and ControlNet are not offered there.
+    "el-nano-banana-2":   eleven("gemini-3.1-flash-image", {"resolution": "2K"}),
+    "el-nano-banana-pro": eleven("gemini-3-pro-image", {"resolution": "2K"}),
+    "el-gpt-image-2":     eleven("gpt-image-2", {"quality": "high"}),
+    "el-gpt-image-2.5":   eleven("gpt-image-2.5-flare", {"quality": "high"}),
+    "el-seedream-5-pro":  eleven("bytedance-seedream-5-pro", {"resolution": "2K"}),
     # Grok's current default (via ElevenLabs) is the Gemini 3.1 Flash Image family; included as the baseline.
     "nano-banana-2":     gemini("gemini-3.1-flash-image-preview", 0.067),
     "nano-banana-pro":   gemini("gemini-3-pro-image-preview", 0.134),
@@ -130,11 +161,11 @@ def main():
     if a.cmd == "run":
         log = out / "runs.jsonl"
         for name in [x for x in a.models.split(",") if x]:
-            fn = MODELS[name]; (out / name).mkdir(exist_ok=True)
+            fn = MODELS[name]; name = name + ("+pose" if os.environ.get("FP_USE_POSE") == "1" else ""); (out / name).mkdir(exist_ok=True)
             for s in S:
                 dst = out / name / f"{s['id']}.png"
                 if dst.exists(): continue
-                pose = POSE_DIR / f"{s['id']}.png"; pose = pose if pose.exists() else None
+                pose = POSE_DIR / f"{s['id']}.png"; pose = pose if (pose.exists() and os.environ.get("FP_USE_POSE") == "1") else None
                 t0 = time.time()
                 try:
                     img, info = fn(s, REFS, pose); dst.write_bytes(img); ok, err = True, None
