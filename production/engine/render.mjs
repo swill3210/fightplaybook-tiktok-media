@@ -28,6 +28,7 @@ await page.goto(`http://localhost:${port}/index.html?board=${board}`);
 await page.waitForFunction('window.FP_READY === true', null, { timeout: 120000 });
 const meta = await page.evaluate(() => window.FP.board);
 console.log('stage', JSON.stringify(await page.evaluate(() => window.FP.stage)));
+if (process.env.FP_SHOV) await page.evaluate((v) => { window.FP_SHOV = JSON.parse(v); }, process.env.FP_SHOV);
 if (rest.includes('--pose')) await page.evaluate(() => { window.FP_POSE = true; });
 if (arg('--cam')) await page.evaluate((c) => { window.FP_CAM = c.split(',').map(Number); }, arg('--cam'));
 
@@ -42,7 +43,7 @@ if (stills) {
   for (const t of stills.split(',').map(Number)) {
     const [m, png] = await grab(t);
     fs.writeFileSync(path.join(outdir, `still_${t.toFixed(2)}.png`), png);
-    console.log(t, m.shot, m.issues.join('; '));
+    console.log(t, m.shot, 'elbowR', m.elbowR, 'elbowL', m.elbowL, 'forearmUpR', m.forearmUpR, 'reach', m.reach, m.issues.join('; '));
   }
 } else {
   const fps = meta.fps, N = Math.round(meta.duration * fps);

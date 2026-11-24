@@ -301,6 +301,7 @@ export class Fighter {
       m.reach['arm' + s] = ik.reach; if (ik.clamped) m.clamp.push('arm' + s);
       const ua = sh[s].clone().sub(ik.mid).normalize(), fa = ik.end.clone().sub(ik.mid).normalize();
       m['elbowDeg' + s] = THREE.MathUtils.radToDeg(Math.acos(Math.max(-1, Math.min(1, ua.dot(fa)))));
+      m['forearmUpDeg' + s] = THREE.MathUtils.radToDeg(Math.asin(Math.max(-1, Math.min(1, fa.y))));
       this.fit(this.parts['upper' + s], sh[s], ik.mid);
       this.fit(this.parts['fore' + s], ik.mid, ik.end);
       this.parts['elbow' + s].position.copy(ik.mid);

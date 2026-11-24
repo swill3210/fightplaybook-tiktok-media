@@ -113,8 +113,15 @@ def eleven(model, extra=None):
     def run(sc, refs, pose):
         key = os.environ.get("ELEVENLABS_API_KEY", "proxy-injected")
         hdr = {"xi-api-key": key, "Content-Type": "application/json"}
-        imgs = [{"type": "inline_base64", "content_base64": b64(p), "mime_type": mime(p)} for p in refs + ([pose] if pose else [])]
-        prompt = sc["prompt"] + (" The LAST attached image is a plain grey 3D mannequin render used ONLY as a pose and camera guide: copy the body positions, limb angles, stance and camera angle of both fighters from it, but draw everything in the 2D comic style and character designs of the first reference images. Never copy the mannequin's 3D look." if pose else "")
+        restyle = pose and os.environ.get("FP_RESTYLE") == "1"
+        order = ([pose] + refs) if restyle else (refs + ([pose] if pose else []))
+        imgs = [{"type": "inline_base64", "content_base64": b64(p), "mime_type": mime(p)} for p in order]
+        if restyle:
+            prompt = ("REDRAW THE FIRST IMAGE. Keep its camera angle, framing, both bodies' positions and every limb angle EXACTLY (same bent elbows, same knees, same feet, same head positions); "
+                      "only change the rendering: draw it as the clean 2D comic illustration of the characters in the other reference images, with their exact faces, clothing and colours. "
+                      "The person in the black shirt and navy shorts is the main character; the person in the red shirt is the opponent. ") + sc["prompt"]
+        else:
+          prompt = sc["prompt"] + (" The LAST attached image is a plain grey 3D mannequin render used ONLY as a pose and camera guide: copy the body positions, limb angles, stance and camera angle of both fighters from it, but draw everything in the 2D comic style and character designs of the first reference images. Never copy the mannequin's 3D look." if pose else "")
         body = {"model_id": model, "prompt": prompt, "images": imgs, "aspect_ratio": "16:9", **(extra or {})}
         st, raw = http("https://api.elevenlabs.io/v1/flows/image", json.dumps(body).encode(), hdr)
         gen = json.loads(raw); gid = gen["id"]; t0 = time.time()
@@ -161,7 +168,7 @@ def main():
     if a.cmd == "run":
         log = out / "runs.jsonl"
         for name in [x for x in a.models.split(",") if x]:
-            fn = MODELS[name]; name = name + ("+pose" if os.environ.get("FP_USE_POSE") == "1" else ""); (out / name).mkdir(exist_ok=True)
+            fn = MODELS[name]; name = name + ("+restyle" if os.environ.get("FP_RESTYLE") == "1" else "+pose" if os.environ.get("FP_USE_POSE") == "1" else ""); (out / name).mkdir(exist_ok=True)
             for s in S:
                 dst = out / name / f"{s['id']}.png"
                 if dst.exists(): continue

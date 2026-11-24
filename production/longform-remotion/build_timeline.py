@@ -50,6 +50,20 @@ for p in plan:
                   "text": [x.strip() for x in p["text_spec"].split(" / ")] if p["text_spec"] else [], "dose": p["dose"], "layers": layers,
                   "glove": pts.get(sid), "phase_frames": {"V2": 12, "V3": 22}.get(sid, 0)})
 
+# 2026-11-24 combat accuracy fix: 22 stills replaced (rig pose redraws, arm edits, mirrors, barefoot edits).
+# New glove points and speed lines (relines.py), old chamber layers dropped, truthful angle labels, base framing for variety.
+FIX = json.load(open(Path(__file__).parent / "glove_fix.json"))
+ANG = {"V2": "close up contact ribs", "V3": "rear three quarter", "V9": "rear three quarter wide", "V15": "high rear three quarter",
+       "V20": "side jab to the guard", "V21": "low rear three quarter", "V23": "tight rear three quarter", "V24": "medium side shovel",
+       "V33": "wide rear three quarter", "V34": "close up contact low", "V53": "tight contact high", "V70": "close up shovel contact",
+       "V79": "close up shovel elbow", "V84": "medium three quarter", "V86": "rear three quarter", "V88": "full body side shovel", "V94": "medium rear three quarter"}
+BZ = {"V23": 1.45, "V53": 1.6, "V94": 1.25, "V33": 0.0, "V86": 1.15}
+for sh in shots:
+    if sh["id"] in FIX:
+        sh["glove"] = FIX[sh["id"]]; sh["layers"].pop("a", None); sh["phase_frames"] = 0
+        sh["angle"] = ANG[sh["id"]]
+        if BZ.get(sh["id"]): sh["bz"] = BZ[sh["id"]]
+
 # cold open: frame one is action already landing (R14, retention data: drops at 0:01 to 0:03). Swap V1 and V2.
 i1, i2 = next(i for i, s in enumerate(shots) if s["id"] == "V1"), next(i for i, s in enumerate(shots) if s["id"] == "V2")
 s1, s2 = shots[i1], shots[i2]

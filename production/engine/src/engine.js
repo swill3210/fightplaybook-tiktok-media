@@ -2,8 +2,8 @@
 // window.FP.render(t) draws frame at video time t and returns QC metrics for that frame.
 import * as THREE from 'three';
 import { Fighter } from './rig.js';
-import { MOVES, stance, applyCross, applyJab, applyHook, impulse, foldCurve, applyReaction, headYawTo } from './motion.js';
-const APPLY = { cross_body: applyCross, cross_arm: applyCross, jab_high: applyJab, hook_body: applyHook, tap_ribs: applyHook };
+import { MOVES, stance, applyCross, applyJab, applyHook, applyShovel, impulse, foldCurve, applyReaction, headYawTo } from './motion.js';
+const APPLY = { cross_body: applyCross, cross_arm: applyCross, jab_high: applyJab, hook_body: applyHook, tap_ribs: applyHook, shovel_up: applyShovel };
 
 const V = (x = 0, y = 0, z = 0) => new THREE.Vector3(x, y, z);
 let W = 1080, H = 1920;
@@ -66,7 +66,7 @@ export class Engine {
   // ---------- solve both fighters at action time tau ----------
   solveAt(tau, s) {
     const move = s.move ? MOVES[s.move] : null;
-    const oppX = s.oppX ?? this.stage[s.move || 'cross_body'];
+    const oppX = s.oppX ?? ((s.move === 'shovel_up' && typeof window !== 'undefined' && window.FP_SHOV && window.FP_SHOV.oppX) || this.stage[s.move || 'cross_body']);
     const bob = (ph) => (s.still ? 0 : 0.007 * Math.sin(2 * Math.PI * 1.35 * tau + ph));
     const guardStyle = s.oppGuard || (move && move.target === 'liver' ? 'high' : 'normal');
     const oRoot = { pos: V(oppX, 0, 0.02), yaw: Math.PI };
@@ -80,7 +80,9 @@ export class Engine {
     }
     // aim points come from the opponent before any reaction
     let OJ = this.opp.solve(oppPose());
-    const aim = { chin: OJ.chinW.clone(), guard: OJ.gloveW.R.clone(), liver: OJ.liverW.clone() };
+    const fwdO = OJ.forwardW.clone();
+    const aim = { chin: OJ.chinW.clone(), guard: OJ.gloveW.R.clone(), liver: OJ.liverW.clone(),
+      body: OJ.pelvisW.clone().add(V(0, 0.27 * (this.opp.o.scale || 1), 0)).add(fwdO.multiplyScalar(0.13)).add(V(0, 0, -0.05)) };
     let r = 0, contact = 0;
     if (move && !s.noReact && move.reaction !== 'none') {
       const dt = tau - impactTau;
@@ -119,6 +121,17 @@ export class Engine {
         P.hands[h].w = 1;
         P.elbowPole = { L: V(0, 0.8, -2.4).multiplyScalar(h === 'L' ? k : 0), R: V(0.1, 0, 0.6) };
         J = this.hero.solve(P);
+      } else if (move.shape === 'uppercut' && (c.chamber > 0.001 || c.arm > 0.001)) {
+        // glove chambered at the own hip, then drives UP and in, forearm near vertical, elbow tucked on the hip
+        const guardW = J.wristW[h].clone();
+        const chamberW = J.hipW.R.clone().add(V(0.16, 0.10, -0.06));
+        const SV = (typeof window !== 'undefined' && window.FP_SHOV) || {};
+        const hitW = aim.body.clone().add(V(SV.dx ?? -0.08, SV.dy ?? 0.10, SV.dz ?? 0));
+        const p = c.arm > 0.001 ? chamberW.clone().lerp(hitW, Math.min(1, c.arm)) : guardW.clone().lerp(chamberW, c.chamber);
+        const k = Math.max(c.chamber, c.arm);
+        P.hands[h].target = p; P.hands[h].w = 1;
+        P.elbowPole = { L: V(0, 0, 0), R: V(SV.px ?? 1.0, SV.py ?? -2.5, SV.pz ?? 0.4).multiplyScalar(k) };
+        J = this.hero.solve(P);
       }
     }
     return { J, OJ, c, r, contact, impactTau, heroMetrics: this.hero.metrics, oppMetrics: this.opp.metrics };
@@ -145,6 +158,7 @@ export class Engine {
     this.cam.updateMatrixWorld();
 
     // highlights (kinetic chain) and floor fx
+    this.hero.head.visible = !(s.hide || []).includes('heroHead'); this.opp.head.visible = !(s.hide || []).includes('oppHead'); this.opp.root.visible = !(s.hide || []).includes('opp');
     this.applyHighlights(s.highlight ? s.highlight(tl / dur, st, tau) : {});
     this.fx.clear();
     if (s.fx3d) s.fx3d(this.fx, st, tl / dur, tau);
@@ -345,6 +359,6 @@ export class Engine {
       const v = k === 'heroHead' ? J.headW : k === 'oppHead' ? OJ.headW : k === 'rearFoot' ? J.ballW.R : k === 'gloveR' ? J.gloveW.R : null;
       if (v && !onScreen(v)) issues.push(`${k} out of frame`);
     }
-    return { t: +t.toFixed(3), shot: s.id, angle: s.angle, issues, arm: +st.c.arm.toFixed(3), reach: +(hm.reach.armR || 0).toFixed(3), elbowL: +(hm.elbowDegL || 0).toFixed(0), elbowR: +(hm.elbowDegR || 0).toFixed(0) };
+    return { t: +t.toFixed(3), shot: s.id, angle: s.angle, issues, arm: +st.c.arm.toFixed(3), reach: +(hm.reach.armR || 0).toFixed(3), elbowL: +(hm.elbowDegL || 0).toFixed(0), elbowR: +(hm.elbowDegR || 0).toFixed(0), forearmUpR: +(hm.forearmUpDegR || 0).toFixed(0) };
   }
 }

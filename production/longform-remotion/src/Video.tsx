@@ -2,6 +2,7 @@
 // Every frame is a pure function of the frame number (deterministic render).
 import React from 'react';
 import { AbsoluteFill, Audio, Img, Sequence, staticFile, useCurrentFrame, interpolate, Easing } from 'remotion';
+import { initGraphics, Overlays, Progress, Annotate } from './Graphics';
 import TL from '../public/timeline.json';
 import CUT from '../public/cutinfo.json';
 
@@ -40,7 +41,8 @@ function camera(s: Shot, i: number) {
     if (i < k0) { const u = i / Math.max(k0 - 1, 1); return { z: 1 + 0.015 * ioSine(u), cx, cy, rot, sh }; }
     const j = i - k0, m = n - k0;
     z = j < 7 ? 1.02 + 0.05 * outBack(j / 7, 1.2) : 1.07 + 0.02 * ioSine((j - 7) / Math.max(m - 8, 1));
-    const w = 0.35 * outExpo(j / 7); cx += (g[0] - cx) * w; cy += (g[1] - cy) * w;
+    const bz = (s as any).bz || 1; z *= bz;
+    const w = Math.min(1, 0.35 + 0.6 * (bz - 1)) * outExpo(j / 7); cx += (g[0] - cx) * w; cy += (g[1] - cy) * w;
     const amp = [7, -6, 4, -2, 1]; if (j < 5) sh = [amp[j], -amp[j] * 0.6];
     if (PAYOFF.has(s.id)) z += 0.12 * (1 - outExpo(i / 6));
     return { z, cx, cy, rot, sh };
@@ -60,6 +62,9 @@ function camera(s: Shot, i: number) {
   if (PAYOFF.has(s.id)) z += 0.12 * (1 - outExpo(i / 6));
   return { z, cx, cy, rot, sh };
 }
+initGraphics({ W, H, FPS, WHITE, DARK, RED, AMBER, wordTime, sections, shots, cl, outExpo, outBack, ioCubic });
+// stills redrawn on the liver side (hero on the right): whip pan when the screen side changes
+const FLIP = new Set(['V3', 'V9', 'V15', 'V20', 'V21', 'V23', 'V24', 'V33', 'V34', 'V53', 'V70', 'V84', 'V86', 'V88', 'V94']);
 const PARALLAX = (a: string) => /wide|side|three quarter|overhead|behind|over the shoulder|worms eye/.test(a);
 
 // ---------- one shot (stills and motion) ----------
@@ -75,10 +80,12 @@ const ShotView: React.FC<{ s: Shot; i: number }> = ({ s, i }) => {
   const p = s.id === 'V35' ? 1 : outExpo((j + 1) / 4);
   const mask = g ? `radial-gradient(circle at ${g[0]}px ${g[1]}px, black ${120 + 600 * p}px, transparent ${121 + 600 * p}px)` : undefined;
   const bg = info ? `rgb(${info.bg.map((x: number) => Math.round(x)).join(',')})` : SAGE;
+  const si = shots.indexOf(s); const prev = si > 0 ? shots[si - 1] : null; const whip = prev && FLIP.has(s.id) !== FLIP.has(prev.id) && i < 7 ? 1 - outExpo(i / 7) : 0;
+  const wdir = FLIP.has(s.id) ? -1 : 1;
   return (
     <AbsoluteFill style={{ background: bg, overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', width: W, height: H, transformOrigin: '0 0',
-        transform: `translate(${W / 2}px, ${H / 2}px) scale(${c.z}) rotate(${c.rot}deg) translate(${-cx}px, ${-cy}px)` }}>
+      <div style={{ position: 'absolute', width: W, height: H, transformOrigin: '0 0', filter: whip ? `blur(${18 * whip}px)` : undefined,
+        transform: `translateX(${wdir * whip * 420}px) translate(${W / 2}px, ${H / 2}px) scale(${c.z}) rotate(${c.rot}deg) translate(${-cx}px, ${-cy}px)` }}>
         {phase ? <Img src={staticFile(L.a)} style={{ position: 'absolute', width: W, height: H }} /> : par ? (
           <>
             <Img src={staticFile(L.base.replace('_base', '_plate'))} style={{ position: 'absolute', width: W, height: H }} />
@@ -86,6 +93,7 @@ const ShotView: React.FC<{ s: Shot; i: number }> = ({ s, i }) => {
           </>
         ) : <Img src={staticFile(L.base)} style={{ position: 'absolute', width: W, height: H }} />}
         {!phase && L.lines && j >= 0 ? <Img src={staticFile(L.lines)} style={{ position: 'absolute', width: W, height: H, WebkitMaskImage: mask, maskImage: mask }} /> : null}
+        <Annotate id={s.id} i={i} dur={s.dur} />
       </div>
     </AbsoluteFill>
   );
@@ -160,7 +168,7 @@ const Dose: React.FC<{ f: number }> = ({ f }) => {
   const s = shots.find((x) => { if (!x.dose || f < x.from || f >= x.from + 3 * FPS) return false; const sec = sections.find((y) => y.name === x.section); return f < Math.round((sec.start + sec.len) * FPS) - 2; }); if (!s) return null;
   const k = f - s.from; const u = outExpo((k - 3) / 12); const out = cl((k - 80) / 10);
   const parts = s.dose.includes(', ') ? s.dose.split(', ') : s.dose.replace(/^(\d+ ROUNDS) (.+)$/, '$1|$2').split('|'); // max 3 words per line
-  const count = (txt: string, idx: number) => idx === 0 ? txt : txt.replace(/\d+/, (m) => String(Math.max(1, Math.round(Number(m) * ioCubic((k - 6) / 20)))));
+  const count = (txt: string, idx: number) => idx === 0 ? txt : txt.replace(/\d+/, (m) => String(Math.max(2, Math.round(Number(m) * ioCubic((k - 6) / 20)))));
   return (
     <div style={{ position: 'absolute', right: 60, bottom: 70, transform: `translateX(${(1 - u) * 520}px)`, opacity: 1 - out, background: RED, border: `6px solid ${WHITE}`, borderRadius: 20, padding: '10px 30px', boxShadow: `0 10px 0 ${DARK}` }}>
       {parts.map((p, i) => <div key={i} style={{ fontFamily: 'Bebas', fontSize: 68, color: WHITE, lineHeight: 1.05 }}>{count(p, i)}</div>)}
@@ -255,6 +263,7 @@ export const LiverVideo: React.FC = () => {
       {SECTION_START.has(s.id) && i < 9 && k > 0 ? <Push k={k} f={f} /> : s.id === 'V102' ? <Board s={s} i={i} /> : <ShotView s={s} i={i} />}
       <Headline s={s} i={i} />
       <DoorUI f={f} /><DoorCountIn s={s} i={i} /><Gauge f={f} /><Dose f={f} /><SelfTest f={f} /><FullSpeed f={f} /><CTA f={f} /><Subscribe s={s} i={i} />
+      <Overlays f={f} /><Progress f={f} />
       <Audio src={staticFile('lofi_bed.mp3')} volume={music} loop />
       {sections.filter((x) => x.vo).map((x, n) => <Sequence key={n} from={Math.round(x.vo_at * FPS)}><Audio src={staticFile(x.vo)} volume={1} /></Sequence>)}
       {(TL.sfx as any[]).map((e, n) => <Sequence key={'s' + n} from={e.frame} durationInFrames={20}><Audio src={staticFile(e.type === 'whoosh' ? 'whoosh.mp3' : 'thud.mp3')} volume={e.type === 'whoosh' ? 0.16 : 0.22} /></Sequence>)}

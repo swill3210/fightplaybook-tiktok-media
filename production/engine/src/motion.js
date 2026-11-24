@@ -61,6 +61,19 @@ export const MOVES = {
       foot: seg(u, 0.28, 0.55) - seg(u, 0.75, 1.0),
     }),
   },
+  // Rear shovel uppercut up close: level change, elbow tucked on the own hip, forearm near vertical,
+  // glove drives UP from below into the lower ribs under the raised elbow; hips and shoulders turn in.
+  shovel_up: {
+    dur: 0.75, impact: 0.52, power: 0.9, hand: 'R', shape: 'uppercut', target: 'body', reaction: 'fold', reach: 0.7, range: 0.36,
+    ch: (u) => ({
+      dip: seg(u, 0.0, 0.30) - seg(u, 0.78, 1.0),
+      chamber: seg(u, 0.05, 0.30) - seg(u, 0.34, 0.52),
+      hips: seg(u, 0.26, 0.52) - seg(u, 0.72, 1.0),
+      shoulders: seg(u, 0.28, 0.54) - seg(u, 0.72, 1.0),
+      arm: seg(u, 0.30, 0.52, ease.out) - seg(u, 0.64, 0.95),
+      foot: seg(u, 0.26, 0.52) - seg(u, 0.75, 1.0),
+    }),
+  },
   // Glove touches the ribs once (pointing at the door). No power.
   tap_ribs: {
     dur: 0.7, impact: 0.5, power: 0.08, hand: 'L', shape: 'hook', target: 'liver', reaction: 'none', reach: 0.73, range: RANGE_HOOK,
@@ -76,7 +89,7 @@ export const MOVES = {
 export function stance(kind, guard = 'normal') {
   const hands = kind === 'opponent'
     ? (guard === 'high'
-      ? { L: { guard: { f: 0.15, side: -0.075, up: 0.03 } }, R: { guard: { f: 0.14, side: 0.075, up: 0.03 } } }
+      ? { L: { guard: { f: 0.17, side: -0.085, up: -0.07 } }, R: { guard: { f: 0.16, side: 0.085, up: -0.07 } } }
       : { L: { guard: { f: 0.22, side: -0.03, up: -0.32 } }, R: { guard: { f: 0.12, side: 0.085, up: -0.04 } } })
     : { L: { guard: { f: 0.24, side: -0.065, up: -0.02 } }, R: { guard: { f: 0.13, side: 0.078, up: -0.055 } } };
   // covering the head high squares the torso up a little, which turns the liver toward the attacker
@@ -138,6 +151,21 @@ export function applyHook(P, c) {
   // rear glove glued to the chin as the torso turns
   P.hands.R.guard.f += 0.02 * c.shoulders;
   P.hands.R.guard.side += 0.02 * c.shoulders;
+}
+
+export function applyShovel(P, c) {
+  P.pelvis.y = 0.835 - 0.12 * c.dip;
+  P.pelvis.lean = 0.04 + 0.02 * c.dip;
+  P.chest.lean = 0.02 + 0.02 * c.dip; // torso stays upright so the head clears the rising glove
+  P.pelvis.yaw = -0.55 + 0.42 * c.hips;
+  P.chest.yaw = -0.62 + 0.55 * c.shoulders;
+  P.pelvis.x = -0.02 + 0.03 * c.hips;
+  P.feet.R.yaw = 0.78 - 0.35 * c.foot; P.feet.R.lift = 0.25 * c.foot;
+  P.head.drop = 0.03 * c.dip;
+  // head moves off the centre line to the lead side (coaching: never lean the head over the rising glove)
+  const SR = (typeof window !== 'undefined' && window.FP_SHOV && window.FP_SHOV.roll) ?? 0.28;
+  P.chest.roll = SR * c.dip; P.pelvis.z = -0.04 * c.dip;
+  P.hands.L.guard.f += 0.02 * c.shoulders; // lead glove stays on the chin
 }
 
 // lead foot step forward then rear foot follows (dx metres), with the pelvis travelling between
