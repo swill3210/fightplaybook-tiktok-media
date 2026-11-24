@@ -15,7 +15,7 @@ from bl_ext.user_default.mpfb.services.targetservice import TargetService
 MACRO = {"gender": 1.0, "age": 0.5, "muscle": 1.0, "weight": 0.5, "proportions": 1.0, "height": 0.8, "cupsize": 0.5,
          "firmness": 0.5, "race": {"african": 0.34, "asian": 0.33, "caucasian": 0.33}}
 REGION = {  # target name -> weight; Phase 1 (r26) against compare_ref.py: thicker arms, narrow waist and hips, deeper chest
-    "measure-shoulder-dist-incr": 0.45, "torso-muscle-pectoral-incr": 1.0, "torso-muscle-dorsi-incr": 1.0,
+    "measure-shoulder-dist-incr": 0.25, "torso-muscle-pectoral-incr": 1.0, "torso-muscle-dorsi-incr": 1.0,
     "torso-vshape-incr": 1.0, "torso-scale-depth-incr": 0.35, "measure-bust-circ-incr": 1.0, "measure-frontchest-dist-incr": 0.5,
     "measure-waist-circ-decr": 1.0, "measure-hips-circ-decr": 0.9, "measure-underbust-circ-decr": 0.3,
     "measure-neck-circ-incr": 1.0, "neck-scale-horiz-incr": 0.4, "measure-neck-height-decr": 0.4,
@@ -59,13 +59,13 @@ BOOST = {  # past MPFB's realistic 1.0 cap; r42 = inspector REVISE on r40 (forea
     **{f"{s}-{p}": 2.4 for s in "lr" for p in ("lowerarm-muscle-incr", "lowerarm-scale-horiz-incr", "lowerarm-scale-depth-incr")},
     **{f"{s}-{p}": 2.2 for s in "lr" for p in ("upperarm-muscle-incr",)},
     **{f"{s}-{p}": 1.9 for s in "lr" for p in ("upperarm-scale-horiz-incr", "upperarm-scale-depth-incr")},
-    **{f"{s}-upperarm-shoulder-muscle-incr": 2.3 for s in "lr"},
+    **{f"{s}-upperarm-shoulder-muscle-incr": 1.6 for s in "lr"},  # r45: rounder, less square deltoid caps
     **{f"{s}-hand-scale-incr": 1.0 for s in "lr"}, **{f"{s}-hand-fingers-diameter-incr": 1.0 for s in "lr"},
-    "torso-muscle-pectoral-incr": 1.0, "torso-muscle-dorsi-incr": 1.1, "measure-waist-circ-decr": 1.0,
-    "stomach-pregnant-incr": 0.6, "torso-scale-depth-incr": 0.5,
+    "torso-muscle-pectoral-incr": 0.55, "torso-muscle-dorsi-incr": 1.1, "buttocks-volume-decr": 1.0, "measure-waist-circ-decr": 1.0,
+    "stomach-pregnant-incr": 1.0, "torso-scale-depth-incr": 0.5,
     "measure-upperarm-length-decr": 2.2, "measure-lowerarm-length-decr": 2.0, "upperlegs-height-decr": 0.8,
     "measure-thigh-circ-incr": 1.6, "measure-calf-circ-incr": 1.2, "measure-hips-circ-decr": 2.3, **{f"{s}-upperleg-fat-decr": 1.0 for s in "lr"}, **{f"{s}-upperleg-muscle-incr": 0.5 for s in "lr"},  # r43: no bulge atop the thighs
-    "measure-knee-circ-incr": 1.0, "measure-wrist-circ-incr": 1.0,
+    "measure-knee-circ-incr": 1.9, "measure-wrist-circ-incr": 1.0,
     "nose-scale-depth-decr": 2.2, "nose-volume-decr": 2.0, "neck-scale-depth-decr": 0.4,
     "torso-vshape-incr": 1.4, "neck-scale-horiz-incr": 1.0, "measure-neck-circ-incr": 1.0,  # visible neck, traps lower
 }
@@ -161,15 +161,15 @@ def faceless(h, iters=120):
     iod = (le - re).length
     f = Vector((0, min(le.y, re.y) - 0.2 * iod, (le.z + mo.z) / 2 - 0.15 * iod))  # mouth must be at FULL weight (r21: partial weight left lips)
     ears = h.vertex_groups["ears"].index; body = h.vertex_groups["body"].index
-    remove_hidden_face_walls(h, co, f, 2.0 * iod, le.y + 0.6 * iod, mo.z - 1.3 * iod, body)
+    remove_hidden_face_walls(h, co, f, 2.4 * iod, le.y + 0.6 * iod, mo.z - 1.8 * iod, body)
     vg = h.vertex_groups.new(name="face_smooth")
-    r0, r1 = 1.3 * iod, 2.0 * iod
+    r0, r1 = 1.65 * iod, 2.4 * iod  # r45: chin inside the full weight zone (inspector: lip notch, crease ticks)
     for v in h.data.vertices:
         gs = {g.group for g in v.groups}
         if body not in gs or ears in gs:
             continue
         c = co[v.index]
-        if c.y > le.y + 0.6 * iod or c.z < mo.z - 1.3 * iod:
+        if c.y > le.y + 0.6 * iod or c.z < mo.z - 1.8 * iod:
             continue
         d = (Vector((c.x, c.y, c.z)) - f).length
         w = 1.0 if d < r0 else max(0.0, 1 - (d - r0) / (r1 - r0))
@@ -251,6 +251,8 @@ def a_pose(rig, body, deg=17, clav=7, elbow=20):  # reference side view: forearm
         if m.type == "ARMATURE":
             m.use_deform_preserve_volume = True
     bpy.context.view_layer.objects.active = rig; bpy.ops.object.mode_set(mode="POSE")
+    for sp in ("spine02", "spine04"):  # stand the spine upright (inspector: forward hunch); -X leans back
+        _rot(rig, sp, -4, "X", 1)
     for side, sgn in (("L", 1), ("R", -1)):
         _rot(rig, f"clavicle.{side}", 10, "Y", sgn)  # slope the trapezius line like the reference (r25 flat shelf)
         _rot(rig, f"shoulder01.{side}", clav, "Y", sgn)
