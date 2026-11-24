@@ -55,5 +55,10 @@ Verbatim sources outrank this summary: skill `fight-playbook-rules` (R1 to R49, 
 * Thumbnails: Thumbnail bot only unless Sean asks; Sean's taste: one full frame action shot, tight close up, max 2 huge words, no before/after split (C7).
 * Voice: Ryan Kurk `rU18Fk3uSDhmg5Xh41o4`, eleven_v4, stability 0.50, similarity 0.75; narration only after Sean approves the silent visuals.
 
-## 9. Repository decision (Sean 2026-11-24)
+## 9. 3D character track (Sean 2026-11-24)
+* Combat illustrations may be rendered directly in Blender; final images must never pass through a generative image model. Method and gates: `memory/workflows/blender-character.md`.
+* Character design must be approved by Sean before any rigging for animation, combat poses or animation.
+* No paid image generation or purchases without Sean's approval (ElevenLabs credits are at 0).
+
+## 10. Repository decision (Sean 2026-11-24)
 Project memory, skills, agents and the Visual Failure Library live in this PUBLIC repo `fightplaybook-tiktok-media` by Sean's choice (supersedes KB 06 "never put rules or analytics here"). Still never commit credentials, tokens, emails or private OAuth files.

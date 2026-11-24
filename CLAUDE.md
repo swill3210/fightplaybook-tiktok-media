@@ -11,7 +11,7 @@ This repo is the permanent home of project knowledge (no Obsidian needed). It is
 | What worked and failed | `memory/LESSONS_LEARNED.md` |
 | Workers, inspectors, bots | `memory/WORKERS.md` |
 | Tools, skills, repos, finished research | `memory/TOOLS_AND_SKILLS.md` |
-| Format workflows | `memory/workflows/` (long-form, shorts-tiktok, promos, visual-qc, analytics, combat-mechanics-spec) |
+| Format workflows | `memory/workflows/` (long-form, shorts-tiktok, promos, visual-qc, analytics, combat-mechanics-spec, blender-character) |
 | Visual rules and failures | `memory/visual-failures/CHECKLIST.md`, then `INDEX.md` and `classes/<CODE>.md` for one code; never load `registry.json` (use `production/vfl/vfl.py show CODE`) |
 
 ## Mandatory

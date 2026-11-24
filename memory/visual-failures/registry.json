@@ -1,6 +1,6 @@
 {
- "version": 14,
- "updated": "2026-11-24 07:58 UTC",
+ "version": 15,
+ "updated": "2026-11-24 08:38 UTC",
  "classes": {
   "VFC-A01": {
    "category": "A",
@@ -13721,6 +13721,138 @@
     "provenance": "/tmp/claude-0/liver/regen2/V94_1.png",
     "inferred": false,
     "dhash": "0000244096a80ed02c484cc95c445c645ce45ce42cc41a945a923292329a531a"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0487": {
+   "origin": "auto",
+   "class": "VFC-E06",
+   "also": [],
+   "title": "Blender hero from primitive and voxel muscle volumes reads as a segmented action figure; h",
+   "project": "Blender character model",
+   "shot": "hero_volumes_v1",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 08:38 UTC",
+   "detected_by": "combat-anatomy-specialist FAIL + visual-creative-director REVISE",
+   "approved_by": [],
+   "explanation": "Blender hero from primitive and voxel muscle volumes reads as a segmented action figure; head, limbs and shorts do not match the reference",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0487/original.jpg",
+    "provenance": "/home/user/fightplaybook-tiktok-media/production/blender/failed_attempts/2026-11-24_volumes_v1_vs_reference.jpg",
+    "inferred": false,
+    "dhash": "4ccdccccc4ccc4dcc4dcc4dcedcaad4aa4daccccc92c9b269b669b269b269b26"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24 08:38 UTC",
+     "by": "combat-anatomy-specialist FAIL + visual-creative-director REVISE",
+     "note": "Blender hero on a hacked MakeHuman mesh: skin through the shorts, holes and stray wires, egg head on a donut neck read a"
+    }
+   ]
+  },
+  "VFI-0488": {
+   "origin": "auto",
+   "class": "VFC-A07",
+   "also": [],
+   "title": "Blender hero from primitive and voxel muscle volumes reads as a segmented action figure; h",
+   "project": "Blender character model",
+   "shot": "hero_volumes_v1",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 08:38 UTC",
+   "detected_by": "combat-anatomy-specialist FAIL + visual-creative-director REVISE",
+   "approved_by": [],
+   "explanation": "Blender hero from primitive and voxel muscle volumes reads as a segmented action figure; head, limbs and shorts do not match the reference",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0488/original.jpg",
+    "provenance": "/home/user/fightplaybook-tiktok-media/production/blender/failed_attempts/2026-11-24_volumes_v1_vs_reference.jpg",
+    "inferred": false,
+    "dhash": "4ccdccccc4ccc4dcc4dcc4dcedcaad4aa4daccccc92c9b269b669b269b269b26"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0489": {
+   "origin": "auto",
+   "class": "VFC-A06",
+   "also": [],
+   "title": "Blender hero on a hacked MakeHuman mesh: skin through the shorts, holes and stray wires, e",
+   "project": "Blender character model",
+   "shot": "hero_mh_v2",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 08:38 UTC",
+   "detected_by": "combat-anatomy-specialist FAIL + visual-creative-director REVISE",
+   "approved_by": [],
+   "explanation": "Blender hero on a hacked MakeHuman mesh: skin through the shorts, holes and stray wires, egg head on a donut neck read as a mouth, balloon deltoids, red shirt design lost, blotchy shading without ink outline",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0489/original.jpg",
+    "provenance": "/home/user/fightplaybook-tiktok-media/production/blender/failed_attempts/2026-11-24_mh_v2_vs_reference.jpg",
+    "inferred": false,
+    "dhash": "4ccdccccc4ccc4dcc4dcc4dcedcaad4aa4dacccc8b2c9b269b669b269b66db76"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0490": {
+   "origin": "auto",
+   "class": "VFC-A02",
+   "also": [],
+   "title": "Blender hero on a hacked MakeHuman mesh: skin through the shorts, holes and stray wires, e",
+   "project": "Blender character model",
+   "shot": "hero_mh_v2",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 08:38 UTC",
+   "detected_by": "combat-anatomy-specialist FAIL + visual-creative-director REVISE",
+   "approved_by": [],
+   "explanation": "Blender hero on a hacked MakeHuman mesh: skin through the shorts, holes and stray wires, egg head on a donut neck read as a mouth, balloon deltoids, red shirt design lost, blotchy shading without ink outline",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0490/original.jpg",
+    "provenance": "/home/user/fightplaybook-tiktok-media/production/blender/failed_attempts/2026-11-24_mh_v2_vs_reference.jpg",
+    "inferred": false,
+    "dhash": "4ccdccccc4ccc4dcc4dcc4dcedcaad4aa4dacccc8b2c9b269b669b269b66db76"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0491": {
+   "origin": "auto",
+   "class": "VFC-I02",
+   "also": [],
+   "title": "Blender hero on a hacked MakeHuman mesh: skin through the shorts, holes and stray wires, e",
+   "project": "Blender character model",
+   "shot": "hero_mh_v2",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 08:38 UTC",
+   "detected_by": "combat-anatomy-specialist FAIL + visual-creative-director REVISE",
+   "approved_by": [],
+   "explanation": "Blender hero on a hacked MakeHuman mesh: skin through the shorts, holes and stray wires, egg head on a donut neck read as a mouth, balloon deltoids, red shirt design lost, blotchy shading without ink outline",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0491/original.jpg",
+    "provenance": "/home/user/fightplaybook-tiktok-media/production/blender/failed_attempts/2026-11-24_mh_v2_vs_reference.jpg",
+    "inferred": false,
+    "dhash": "4ccdccccc4ccc4dcc4dcc4dcedcaad4aa4dacccc8b2c9b269b669b269b66db76"
    },
    "corrected": null,
    "test_eligible": true
