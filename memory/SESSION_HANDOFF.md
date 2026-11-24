@@ -9,6 +9,9 @@ State
 * V18 and V31 redesigned without generation: production/liver_v4/redesign_v18_v31.md.
 * Cheaper method research: memory/TOOLS_AND_SKILLS.md "Research already done".
 
+Blender character track (newest)
+* Hero model attempts FAILED (specialist FAIL, creative director REVISE). Do not reuse hero_model.py / hero_mh.py approaches. Next: MPFB2 professional base (needs permission to install it as a Blender extension), then inspections, then Sean's approval before any rigging or combat.
+
 Next (needs Sean)
 1. Sean picks a method and approves spend (masked arm inpainting, 1K edits, free arm compositing, reuse with motion graphics).
 2. Rebuild working dirs if the container reset: Remotion project from CLAUDE-EXPORT (attach the handoff repo, worktree the branch; base layers mk_bases logic: resize to 1920x1080, repaint flat background to #C4D6C4; lines with Grok build.lines at timeline glove points).

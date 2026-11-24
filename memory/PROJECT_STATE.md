@@ -12,6 +12,7 @@ Updated 2026-11-24.
 | TikTok / Shorts | Paused by Sean 2026-11-23 | none |
 
 ## Pending tasks (in order)
+0. Blender hero character (Sean 2026-11-24: character design only; no rigging, combat or animation until Sean approves the model). Current model FAILED inspection; plan in production/blender/README_FAILED_APPROACHES.md (MPFB2 route). Blocked: installing MPFB2 as a Blender extension needs Sean's permission.
 1. Certify `combat-anatomy-specialist` with `vfl.py certify make` (blind set; Sean's 4 cases included). Improve the agent file until it approves zero known defects.
 2. Liver v3 reinspection: manifest of the ~105 unique stills (Grok `edit/stills` per `edit/work/sel.json` + `CLAUDE-EXPORT/FINAL-CUT/fixed-stills/`), `vfl.py status`, inspect, regenerate only FAILs (rig pose + redraw), rebuild `public/` layers, re-render, `vfl.py render`, `vfl.py gate`.
 3. Fix engine `qc.py` blind spots the specialist found (guard elbow height, chamber/recover phases, body to body collision) so it stops passing rejected rig poses.

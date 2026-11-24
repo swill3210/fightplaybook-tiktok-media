@@ -23,6 +23,8 @@ PATHS.md in each Grok skill maps old box paths; verbatim originals also live in 
 | YouTube analytics | `production/analytics/yt_analytics.py` | Read only OAuth; token does not survive a new container; follow `memory/workflows/analytics.md` |
 | Grok audit | `production/audit/GROK_AUDIT.md` + `evidence/` | 2026-11-23 audit of Grok's TikToks and pipeline |
 
+| Blender character (experimental, FAILED v1) | `production/blender/` (fp_chars.py, hero_model.py, hero_mh.py) | Blender 5.3 pip bpy; Cycles CPU + Freestyle; MakeHuman CC0 base + targets in assets/; see README_FAILED_APPROACHES.md before touching |
+
 ## Services and IDs (no secrets here)
 * ElevenLabs (images AND voice, Sean 2026-11-24). Key is a proxy injected network secret on the cloud environment; send any dummy value. Models: `gemini-3.1-flash-image` (Nano Banana 2, 2K 1,224 credits), `gemini-3-pro-image` (Pro, 2,436), `gpt-image-2` (1,182). No FLUX, LoRA or ControlNet on ElevenLabs. Voice Ryan Kurk `rU18Fk3uSDhmg5Xh41o4`, eleven_v4, stability 0.50, similarity 0.75.
 * Grok's ElevenLabs flow `jZVcQ6zNR237hebnnSlb`, reference node `Fqem0pcQbobpCK6o3Cdy`.
