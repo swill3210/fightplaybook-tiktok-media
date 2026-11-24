@@ -19,7 +19,7 @@ REGION = {  # target name -> weight (heroic comic build, reference sheet); tuned
     "torso-vshape-incr": 0.8, "torso-scale-depth-incr": 0.45, "measure-bust-circ-incr": 0.5,
     "measure-waist-circ-decr": 0.6, "measure-hips-circ-decr": 0.3, "torso-scale-horiz-incr": 0.2,
     "measure-neck-circ-incr": 1.0, "neck-scale-horiz-incr": 0.6, "measure-neck-height-decr": 0.6,
-    "head-scale-horiz-decr": 0.12, "head-scale-vert-decr": 0.12, "head-scale-depth-decr": 0.12,
+    "head-scale-horiz-decr": 0.3, "head-scale-vert-decr": 0.12, "head-scale-depth-decr": 0.12,
     "measure-upperarm-circ-incr": 1.0, "measure-thigh-circ-incr": 0.6, "measure-calf-circ-incr": 0.6,
     **{f"{s}-{part}": 1.0 for s in "lr" for part in (
         "upperarm-muscle-incr", "lowerarm-muscle-incr", "upperarm-shoulder-muscle-incr",
@@ -47,6 +47,8 @@ FACE = {  # flatten the features first with targets (keeps the MPFB skull, jaw a
     "nose-volume-decr": 1.0, "nose-scale-depth-decr": 1.0, "nose-scale-horiz-decr": 0.6, "nose-flaring-decr": 1.0,
     "mouth-upperlip-volume-decr": 1.0, "mouth-lowerlip-volume-decr": 1.0, "mouth-scale-depth-decr": 1.0,
     "mouth-scale-horiz-decr": 0.5, "eyebrows-trans-backward": 1.0, "l-eye-bag-decr": 1.0, "r-eye-bag-decr": 1.0,
+    # reference head: egg shaped mask, jaw tapering to a narrow chin (front view), one smooth slope brow to chin (profile)
+    "head-invertedtriangular": 0.7, "head-oval": 0.6, "chin-width-decr": 1.0, "chin-height-incr": 0.5, "chin-prominent-incr": 0.4,
 }
 
 
@@ -54,6 +56,39 @@ def _centroid(ob, coords, group):
     gi = ob.vertex_groups[group].index
     pts = [coords[v.index] for v in ob.data.vertices if any(g.group == gi for g in v.groups)]
     return sum(pts, Vector()) / len(pts)
+
+
+def remove_hidden_face_walls(h, co, f, r, ymax, zmin, body):
+    """inside the face zone keep only faces SEEN from the front (5 frontal rays); delete the rest (inner lip roll,
+    mouth bag, nostrils, socket walls; faces only so vertex indices, shape keys and weights stay valid) and cap the holes.
+    The depth test (close_cavities) kept the shallow inner lip roll, which z-fought with the outer lip after
+    projection and drew a mouth (r19 to r22). The hero has NO MOUTH."""
+    import bmesh
+    from mathutils.bvhtree import BVHTree
+    bm = bmesh.new(); bm.from_mesh(h.data); bm.faces.ensure_lookup_table(); dl = bm.verts.layers.deform.active
+    faces = [fc for fc in bm.faces if all(body in v[dl] for v in fc.verts)]
+    polys = [[v.index for v in fc.verts] for fc in faces]
+    tree = BVHTree.FromPolygons(co, polys)
+    dirs = [Vector(d).normalized() for d in ((0, 1, 0), (0.5, 1, 0), (-0.5, 1, 0), (0, 1, 0.45), (0, 1, -0.45))]
+    kill = []
+    for k, fc in enumerate(faces):
+        c = sum((co[v.index] for v in fc.verts), Vector()) / len(fc.verts)
+        if (c - f).length > r or c.y > ymax or c.z < zmin:
+            continue
+        seen = False
+        for d in dirs:
+            hit = tree.ray_cast(c - d * 1.0, d)
+            if hit[2] is not None and (hit[2] == k or (hit[0] - c).length < 1e-4):
+                seen = True; break
+        if not seen:
+            kill.append(fc)
+    bmesh.ops.delete(bm, geom=kill, context="FACES_ONLY")
+    edges = [e for e in bm.edges if e.is_boundary and all(body in v[dl] for v in e.verts)]
+    caps = bmesh.ops.holes_fill(bm, edges=edges, sides=0)["faces"]
+    bmesh.ops.triangulate(bm, faces=caps, quad_method="BEAUTY", ngon_method="BEAUTY")
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    bm.to_mesh(h.data); bm.free(); h.data.update()
+    print("hidden face walls removed", len(kill), "caps", len(caps))
 
 
 def close_cavities(h, co, feats, depth, body):
@@ -96,19 +131,17 @@ def faceless(h, iters=120):
                     co[i] += (a.co - b.co) * k.value
     le, re, mo = (_centroid(h, co, g) for g in ("joint-l-eye", "joint-r-eye", "joint-mouth"))
     iod = (le - re).length
-    f = Vector((0, min(le.y, re.y) - 0.2 * iod, (le.z + mo.z) / 2 + 0.1 * iod))
+    f = Vector((0, min(le.y, re.y) - 0.2 * iod, (le.z + mo.z) / 2 - 0.15 * iod))  # mouth must be at FULL weight (r21: partial weight left lips)
     ears = h.vertex_groups["ears"].index; body = h.vertex_groups["body"].index
-    nose = mo + ((le + re) / 2 - mo) * 0.38
-    close_cavities(h, co, ((mo, 0.75 * iod, 0.3 * iod), (nose, 0.4 * iod, 0.22 * iod),
-                           (le, 0.42 * iod, 0.42 * iod), (re, 0.42 * iod, 0.42 * iod)), 0.1 * iod, body)
+    remove_hidden_face_walls(h, co, f, 2.0 * iod, le.y + 0.6 * iod, mo.z - 1.3 * iod, body)
     vg = h.vertex_groups.new(name="face_smooth")
-    r0, r1 = 0.95 * iod, 1.7 * iod
+    r0, r1 = 1.3 * iod, 2.0 * iod
     for v in h.data.vertices:
         gs = {g.group for g in v.groups}
         if body not in gs or ears in gs:
             continue
         c = co[v.index]
-        if c.y > le.y + 0.6 * iod or c.z < mo.z - 0.9 * iod:
+        if c.y > le.y + 0.6 * iod or c.z < mo.z - 1.3 * iod:
             continue
         d = (Vector((c.x, c.y, c.z)) - f).length
         w = 1.0 if d < r0 else max(0.0, 1 - (d - r0) / (r1 - r0))
@@ -117,27 +150,41 @@ def faceless(h, iters=120):
     # Smooth alone left a nose and an open O mouth (r5, r6); capping the cavities left a recessed ring (r8, r9).
     # So project the weighted face onto a smooth mask proxy: the head voxel remeshed (seals the lip slit and sockets)
     # and smoothed. The proxy is only a projection target and is never rendered.
-    dg = bpy.context.evaluated_depsgraph_get(); pm = bpy.data.meshes.new_from_object(h.evaluated_get(dg))
+    # Mask proxy = CONVEX HULL of the head (ears excluded): no concavity can survive, so no mouth, sockets or nostrils,
+    # and the profile becomes one slope from brow to chin like the reference. Earlier proxies (voxel remesh of the head,
+    # r10 to r19; plus a weighted smooth, r20) kept a lip mound or shrank into a dark recess.
+    import bmesh
+    dg = bpy.context.evaluated_depsgraph_get(); src = bpy.data.meshes.new_from_object(h.evaluated_get(dg))
+    bm = bmesh.new(); bm.from_mesh(src); dl = bm.verts.layers.deform.active
+    keep = [v for v in bm.verts if body in v[dl] and ears not in v[dl] and v.co.z > mo.z - 1.6 * iod and v.link_faces]
+    hull = bmesh.ops.convex_hull(bm, input=keep)
+    hv = {v for g in hull["geom"] if isinstance(g, bmesh.types.BMFace) for v in g.verts}
+    bmesh.ops.delete(bm, geom=[v for v in bm.verts if v not in hv], context="VERTS")
+    pm = bpy.data.meshes.new("face_proxy"); bm.to_mesh(pm); bm.free(); bpy.data.meshes.remove(src)
     proxy = bpy.data.objects.new("face_proxy", pm); bpy.context.collection.objects.link(proxy)
-    # keep the proxy closed: cutting it at the neck left an open mesh and the remesh grew a beak (r10)
-    rm = proxy.modifiers.new("seal", "REMESH"); rm.mode = "VOXEL"; rm.voxel_size = 0.09 * iod
-    ps = proxy.modifiers.new("soft", "SMOOTH"); ps.factor = 1.0; ps.iterations = 25
+    rm = proxy.modifiers.new("even", "REMESH"); rm.mode = "VOXEL"; rm.voxel_size = 0.06 * iod
+    ps = proxy.modifiers.new("round", "SMOOTH"); ps.factor = 1.0; ps.iterations = 12
     proxy.hide_render = True; proxy.hide_viewport = True
     sw = h.modifiers.new("faceless", "SHRINKWRAP"); sw.target = proxy; sw.vertex_group = vg.name
     sw.wrap_method = "NEAREST_SURFACEPOINT"
     h.modifiers.move(h.modifiers.find(sw.name), 0)
     sm = h.modifiers.new("blend", "SMOOTH"); sm.vertex_group = vg.name; sm.factor = 0.5; sm.iterations = 6
     h.modifiers.move(h.modifiers.find(sm.name), 1)
+    # shading normals of the face come from the smooth proxy: the lips and nostrils collapse into slivers on the
+    # proxy and their own normals drew a mouth line and a nostril mark even without ink (2026-11-24 d1). NO MOUTH.
+    dt = h.modifiers.new("mask_normals", "DATA_TRANSFER"); dt.object = proxy; dt.use_loop_data = True
+    dt.data_types_loops = {"CUSTOM_NORMAL"}; dt.loop_mapping = "POLYINTERP_NEAREST"; dt.vertex_group = vg.name
+    h.modifiers.move(h.modifiers.find(dt.name), 2)
     return le, re, iod
 
 
-def eyes(h, rig, le, re, iod, slant=22):
+def eyes(h, rig, le, re, iod, slant=27):
     """filled white slanted almonds, inner corners lower (angled toward the centre), hugging the face (Shrinkwrap)"""
     import bmesh
     white = HM.flat("eye_white", HM.C["eye"]); obs = []
     for c, sgn in ((le, 1), (re, -1)):
         me = bpy.data.meshes.new("eye"); bm = bmesh.new()
-        w, hh, n = 0.62 * iod, 0.2 * iod, 40
+        w, hh, n = 0.5 * iod, 0.15 * iod, 40  # reference eyes: small, thin, steep (r18 eyes were too big and round)
         rim = []
         for i in range(n):
             t = 2 * math.pi * i / n; x = w / 2 * math.cos(t)
@@ -218,19 +265,20 @@ if __name__ == "__main__":
     if "--info" in sys.argv:
         print("BONES", [b.name for b in rig.data.bones][:80])
     a_pose(rig, body)
-    outline(body)
+    if "--no-ink" not in sys.argv:
+        outline(body)
     dg = bpy.context.evaluated_depsgraph_get(); ev = body.evaluated_get(dg)
     zs = [(body.matrix_world @ v.co).z for v in ev.to_mesh().vertices]; zmax, zmin = max(zs), min(zs); ev.to_mesh_clear()
     print("height", round(zmax - zmin, 3))
     cam.data.ortho_scale = (zmax - zmin) * 1.12; cam.location = Vector((0, -8, (zmax + zmin) / 2)); cam.rotation_euler = (math.pi / 2, 0, 0)
-    for name, az in HM.VIEWS.items():  # turn the figure, not the camera, so the key light is the same in every view
+    for name, az in ([] if "--face-only" in sys.argv else HM.VIEWS.items()):  # turn the figure, not the camera, so the key light is the same in every view
         rig.rotation_euler.z = -math.radians(az); bpy.context.view_layer.update()
         s.render.filepath = os.path.join(out, f"body_{name}.png"); bpy.ops.render.render(write_still=True)
     rig.rotation_euler.z = 0
-    hz = max(le.z, re.z); cam.data.ortho_scale = 8 * iod; cam.location = Vector((0, -8, hz - 0.4 * iod))
+    hz = max(le.z, re.z); cam.data.ortho_scale = 10 * iod; cam.location = Vector((0, -8, hz - 0.4 * iod))
     for name, az in (("face_front", 0), ("face_threequarter", 35), ("face_right", -90)):
         rig.rotation_euler.z = -math.radians(az); bpy.context.view_layer.update()
-        hc = rig.matrix_world @ Vector((0, 0.5 * (le.y + 0.12), hz))  # head centre, framed after the turn
+        hc = rig.matrix_world @ Vector((0, 0.5 * le.y, hz))  # head centre, framed after the turn
         cam.location.x = hc.x
         s.render.filepath = os.path.join(out, f"{name}.png"); bpy.ops.render.render(write_still=True)
     rig.rotation_euler.z = 0
