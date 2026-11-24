@@ -40,6 +40,13 @@ def build_body():
             missing.append(name)
     if missing:
         print("missing targets", missing)
+    for name in BOOST:
+        if name not in REGION and h.data.shape_keys and name not in h.data.shape_keys.key_blocks:
+            p = TargetService.target_full_path(name)
+            if p:
+                TargetService.load_target(h, p, weight=0.5, name=name)
+            else:
+                print("missing boost target", name)
     kb = h.data.shape_keys.key_blocks
     for name, w in BOOST.items():  # comic exaggeration past MPFB's realistic 1.0 cap (same targets, larger weight)
         for k in kb:
@@ -48,16 +55,19 @@ def build_body():
     return h
 
 
-BOOST = {  # Phase 1 r27: reference arms, chest and taper are beyond the 1.0 human range
-    **{f"{s}-{p}": 1.9 for s in "lr" for p in ("upperarm-muscle-incr", "lowerarm-muscle-incr")},
-    **{f"{s}-{p}": 1.6 for s in "lr" for p in ("upperarm-scale-horiz-incr", "upperarm-scale-depth-incr",
-                                              "lowerarm-scale-horiz-incr", "lowerarm-scale-depth-incr")},
+BOOST = {  # past MPFB's realistic 1.0 cap; r42 = inspector REVISE on r40 (forearms +30, biceps +15, lower traps, calmer pecs/back)
+    **{f"{s}-{p}": 2.4 for s in "lr" for p in ("lowerarm-muscle-incr", "lowerarm-scale-horiz-incr", "lowerarm-scale-depth-incr")},
+    **{f"{s}-{p}": 2.2 for s in "lr" for p in ("upperarm-muscle-incr",)},
+    **{f"{s}-{p}": 1.9 for s in "lr" for p in ("upperarm-scale-horiz-incr", "upperarm-scale-depth-incr")},
     **{f"{s}-upperarm-shoulder-muscle-incr": 2.3 for s in "lr"},
-    "torso-muscle-pectoral-incr": 1.25, "torso-muscle-dorsi-incr": 1.5, "measure-waist-circ-decr": 1.4,
-    "measure-upperarm-length-decr": 2.2, "measure-lowerarm-length-decr": 2.0, "upperlegs-height-decr": 0.8,  # 2.2 kinked the legs (r33), 1.2 left an outer thigh bump (r34)
-    "measure-thigh-circ-incr": 1.0, "measure-calf-circ-incr": 1.2, "measure-hips-circ-decr": 1.4,  # r32: no hip flare  # r31: shorter arms, thicker shorter legs
-    "nose-scale-depth-decr": 2.2, "nose-volume-decr": 2.0, "neck-scale-depth-decr": 0.7,  # r38: no nose point in profile, slimmer neck depth
-    "torso-vshape-incr": 1.4, "neck-scale-horiz-incr": 1.8, "measure-neck-circ-incr": 0.8,  # traps up the neck (r28 shelf)
+    **{f"{s}-hand-scale-incr": 1.0 for s in "lr"}, **{f"{s}-hand-fingers-diameter-incr": 1.0 for s in "lr"},
+    "torso-muscle-pectoral-incr": 1.0, "torso-muscle-dorsi-incr": 1.1, "measure-waist-circ-decr": 1.0,
+    "stomach-pregnant-incr": 0.6, "torso-scale-depth-incr": 0.5,
+    "measure-upperarm-length-decr": 2.2, "measure-lowerarm-length-decr": 2.0, "upperlegs-height-decr": 0.8,
+    "measure-thigh-circ-incr": 1.6, "measure-calf-circ-incr": 1.2, "measure-hips-circ-decr": 2.3, **{f"{s}-upperleg-fat-decr": 1.0 for s in "lr"}, **{f"{s}-upperleg-muscle-incr": 0.5 for s in "lr"},  # r43: no bulge atop the thighs
+    "measure-knee-circ-incr": 1.0, "measure-wrist-circ-incr": 1.0,
+    "nose-scale-depth-decr": 2.2, "nose-volume-decr": 2.0, "neck-scale-depth-decr": 0.4,
+    "torso-vshape-incr": 1.4, "neck-scale-horiz-incr": 1.0, "measure-neck-circ-incr": 1.0,  # visible neck, traps lower
 }
 
 
@@ -66,7 +76,7 @@ FACE = {  # flatten the features first with targets (keeps the MPFB skull, jaw a
     "mouth-upperlip-volume-decr": 1.0, "mouth-lowerlip-volume-decr": 1.0, "mouth-scale-depth-decr": 1.0,
     "mouth-scale-horiz-decr": 0.5, "eyebrows-trans-backward": 1.0, "l-eye-bag-decr": 1.0, "r-eye-bag-decr": 1.0,
     # reference head: egg shaped mask, jaw tapering to a narrow chin (front view), one smooth slope brow to chin (profile)
-    "head-invertedtriangular": 0.7, "head-oval": 0.6, "chin-width-decr": 1.0, "chin-height-incr": 0.7, "chin-prominent-incr": 1.0, "chin-prognathism-incr": 1.0,  # reference profile: chin projects forward
+    "head-invertedtriangular": 1.0, "head-oval": 0.8, "chin-width-decr": 1.0, "chin-height-incr": 0.4,  # r42: chin targets made a muzzle (inspector)
 }
 
 
@@ -196,13 +206,13 @@ def faceless(h, iters=120):
     return le, re, iod
 
 
-def eyes(h, rig, le, re, iod, slant=18):
+def eyes(h, rig, le, re, iod, slant=24):
     """filled white slanted almonds, inner corners lower (angled toward the centre), hugging the face (Shrinkwrap)"""
     import bmesh
     white = HM.flat("eye_white", HM.C["eye"]); obs = []
     for c, sgn in ((le, 1), (re, -1)):
         me = bpy.data.meshes.new("eye"); bm = bmesh.new()
-        w, hh, n = 0.66 * iod, 0.19 * iod, 40  # reference eyes: small, thin, steep (r18 eyes were too big and round)
+        w, hh, n = 0.78 * iod, 0.22 * iod, 40  # reference eyes: small, thin, steep (r18 eyes were too big and round)
         rim = []
         for i in range(n):
             t = 2 * math.pi * i / n; x = w / 2 * math.cos(t)
@@ -242,7 +252,7 @@ def a_pose(rig, body, deg=17, clav=7, elbow=20):  # reference side view: forearm
             m.use_deform_preserve_volume = True
     bpy.context.view_layer.objects.active = rig; bpy.ops.object.mode_set(mode="POSE")
     for side, sgn in (("L", 1), ("R", -1)):
-        _rot(rig, f"clavicle.{side}", 14, "Y", sgn)  # slope the trapezius line like the reference (r25 flat shelf)
+        _rot(rig, f"clavicle.{side}", 10, "Y", sgn)  # slope the trapezius line like the reference (r25 flat shelf)
         _rot(rig, f"shoulder01.{side}", clav, "Y", sgn)
         _rot(rig, f"upperarm01.{side}", deg - clav, "Y", sgn)
         if elbow:
@@ -264,6 +274,29 @@ def fist(rig, curl=(75, 95, 70), thumb=(20, 35, 30)):
                 ang = (thumb if f == 1 else curl)[j - 1]
                 pb.rotation_quaternion = Quaternion((1, 0, 0), math.radians(ang))
     bpy.context.view_layer.update()
+
+
+CEL = {"skin": ("#36363C", "#48484E", "#1E1E24")}  # sampled from the reference sheet: shadow, base, crease
+KEY = Vector((-0.25, -0.85, 0.55)).normalized()  # one key light, upper front (reference shadows fall on both outer sides)
+
+
+def cel(name, tones, th=0.32, crease_ao=0.62, crease_dist=0.012):
+    """Phase 2: exactly 2 tones (no highlight band: the old 3rd band made the patchy blobs) plus thin comic crease
+    lines where local ambient occlusion is high (muscle separations), all emission so the palette is exact."""
+    sh, base, cr = (HM.HEX(t) for t in tones)
+    m = bpy.data.materials.new(name); m.use_nodes = True; nt = m.node_tree; n = nt.nodes; l = nt.links; n.clear()
+    out = n.new("ShaderNodeOutputMaterial"); em = n.new("ShaderNodeEmission")
+    geo = n.new("ShaderNodeNewGeometry"); dot = n.new("ShaderNodeVectorMath"); dot.operation = "DOT_PRODUCT"
+    dot.inputs[1].default_value = KEY; l.new(geo.outputs["Normal"], dot.inputs[0])
+    band = n.new("ShaderNodeValToRGB"); band.color_ramp.interpolation = "CONSTANT"; e = band.color_ramp.elements
+    e[0].color = sh; e[1].position = th; e[1].color = base; l.new(dot.outputs["Value"], band.inputs["Fac"])
+    ao = n.new("ShaderNodeAmbientOcclusion"); ao.only_local = True; ao.samples = 24; ao.inputs["Distance"].default_value = crease_dist
+    cr_r = n.new("ShaderNodeValToRGB"); cr_r.color_ramp.interpolation = "CONSTANT"; ce = cr_r.color_ramp.elements
+    ce[0].color = cr; ce[1].position = crease_ao; ce[1].color = (1, 1, 1, 1); l.new(ao.outputs["AO"], cr_r.inputs["Fac"])
+    mul = n.new("ShaderNodeMix"); mul.data_type = "RGBA"; mul.blend_type = "DARKEN"; mul.inputs[0].default_value = 1.0
+    l.new(band.outputs["Color"], mul.inputs[6]); l.new(cr_r.outputs["Color"], mul.inputs[7])
+    l.new(mul.outputs[2], em.inputs["Color"]); l.new(em.outputs[0], out.inputs[0])
+    return m
 
 
 def outline(body, thick=0.007):
@@ -292,7 +325,8 @@ if __name__ == "__main__":
     addon_utils.enable("bl_ext.user_default.mpfb", default_set=True)
     s, cam = HM.scene(HM.C["bg"]); s.render.use_freestyle = False  # Freestyle draws nothing on shape keyed meshes
     body = build_body()
-    body.data.materials.clear(); body.data.materials.append(HM.toon("skin", HM.C["skin"]))
+    body.data.materials.clear(); body.data.materials.append(cel("skin", CEL["skin"]))
+    s.cycles.samples = 32
     le, re, iod = faceless(body)
     rig = HumanService.add_builtin_rig(body, "default")
     eyes(body, rig, le, re, iod)
