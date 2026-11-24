@@ -20,7 +20,7 @@ Verbatim sources outrank this summary: skill `fight-playbook-rules` (R1 to R49, 
 | Skool Academy | R21, R48 | Walled off from YouTube and TikTok |
 
 ## 3. Characters (R1, R2, CHARACTER_SPEC; reference sheet in skill fight-playbook-rules)
-* Hero: dark charcoal skin, bald, muscular; faceless: smooth blank face with ONLY two small slanted white eyes (no mouth, nose, eyebrows, ever); clean 2D comic style, thin black outlines; barefoot always. Long form outfit: plain black sleeveless compression shirt with red side stripes, no lettering; navy shorts with red trim; black MMA gloves with red wrist straps, drawn padded with no separate fingers (conflict C4). Shorts/TikTok: gray tank top.
+* Hero: dark charcoal skin, bald, muscular; faceless: smooth blank face with ONLY two small slanted white eyes (no mouth, nose, eyebrows, ever); clean 2D comic style, thin black outlines; barefoot always. Long form outfit: plain black sleeveless compression shirt with red side stripes, no lettering; navy shorts with red trim; black MMA gloves with red wrist straps exactly as drawn on the reference sheet, visible finger segments allowed (Sean ruled C4 on 2026-11-24; supersedes "padded with no separate fingers"); bare fists, loose open fingers or boxing gloves fail. Shorts/TikTok: gray tank top.
 * Opponent: same faceless charcoal design; ALWAYS red sleeveless tank, no lettering, black shorts, plain black gloves, barefoot; ALWAYS clearly bigger (about half a head taller, broader). Drill partner: plain grey shirt.
 * Exactly the scripted cast; count arms, legs, gloves per character on every still; watch skin, shorts and shirt colour drift.
 * Claude's 3D rig is a pose and camera stand in, NOT an approved design for final videos unless Sean approves.

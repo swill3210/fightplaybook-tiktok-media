@@ -18,8 +18,11 @@ Updated 2026-11-24.
 4. Motion library v2 (fixed guard, real phases), then kicks, defence, footwork, grappling (Combat Mechanics spec, `memory/workflows/combat-mechanics-spec.md`).
 5. Next video: waiting on Sean's title and format (asked 2026-11-24).
 
+## Decided by Sean
+* 2026-11-24 C4: MMA gloves as on the reference sheet (finger segments OK). Liver v4: fix all 64 failed stills (grind), deliver only through the gate.
+
 ## Decisions waiting on Sean (current practice in brackets)
-C2 animation vs R26 stills only [stills base; rig for poses]; C4 MMA vs padded boxing gloves [MMA gloves drawn padded]; C6 ground line [thin line or contact shadow]; C7 thumbnail split [Thumbnail bot, Sean's newer taste]; C9 Longform Skill v2 missing [use existing]; C14 liver screen side [hero right, whip pan on side changes]; C15 pose model licences [validator advisory only]; C16 body hook elbow rule [hook_rules]; C17 "right shovel into the liver" narration [visuals show front lower ribs]. Also: cold open swap, Claude made thumbnails, narration before visual approval (liver v1). Full table: vault `Knowledge Base/09 Conflicts Needing Decision.md`.
+C2 animation vs R26 stills only [stills base; rig for poses]; C6 ground line [thin line or contact shadow]; C7 thumbnail split [Thumbnail bot, Sean's newer taste]; C9 Longform Skill v2 missing [use existing]; C14 liver screen side [hero right, whip pan on side changes]; C15 pose model licences [validator advisory only]; C16 body hook elbow rule [hook_rules]; C17 "right shovel into the liver" narration [visuals show front lower ribs]. Also: cold open swap, Claude made thumbnails, narration before visual approval (liver v1). Full table: vault `Knowledge Base/09 Conflicts Needing Decision.md`.
 
 ## Channel data (VERIFIED 2026-11-24, read only API; detail in vault 05 Analytics)
 87,967 lifetime views, 266 subs, 40 videos. Shorts carry the channel (top: Bigger Attacker 11.9K at 103.6% viewed; Someone Stronger 10.9K). Every long form loses viewers in seconds 1 to 3 and 0:11 to 0:31; YouTube rates all below similar videos. Underdog framing wins. CTR not in the API (newest: Nov 13 Studio, long form 2.4 to 4.0%). Topic decision: liver shot as the underdog weapon.

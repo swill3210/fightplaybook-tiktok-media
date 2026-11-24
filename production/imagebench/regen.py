@@ -32,6 +32,10 @@ def run_job(j, out, model, k):
     elif j["mode"] == "redraw":
         sc = {"prompt": " ".join([m.STYLE, j["prompt"], m.HERO, m.OPP, m.NOFX, "Plain flat sage green background #C4D6C4, thin ground line. Barefoot. Wide 16:9."])}
         refs, pose = bench.REFS, Path(j["pose"])
+    elif j["mode"] == "ref":
+        sc = {"prompt": " ".join(["Use the FIRST image ONLY as the reference for how the punching arm and the two bodies fit together (arm angles, glove on top of the shirt, contact point); draw a NEW picture with the camera and layout described below, in the same 2D comic style as the other reference images.",
+                                  m.STYLE, j["prompt"], m.HERO, m.OPP, m.NOFX, "Plain flat sage green background #C4D6C4, thin ground line. Barefoot. Wide 16:9."])}
+        refs, pose = [Path(j["src"])] + bench.REFS, None
     else:
         sc = {"prompt": " ".join([m.STYLE, j["prompt"], m.HERO, m.OPP, m.NOFX, "Plain flat sage green background #C4D6C4, thin ground line. Barefoot. Wide 16:9."])}
         refs, pose = bench.REFS, None

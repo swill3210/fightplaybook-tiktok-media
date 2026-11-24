@@ -1,6 +1,6 @@
 {
- "version": 6,
- "updated": "2026-11-24 07:29 UTC",
+ "version": 7,
+ "updated": "2026-11-24 07:39 UTC",
  "classes": {
   "VFC-A01": {
    "category": "A",
@@ -41,9 +41,9 @@
   "VFC-A05": {
    "category": "A",
    "severity": "major",
-   "name": "Fingered glove or bare fist instead of a padded glove",
+   "name": "Bare fist or wrong glove type",
    "description": "A glove drawn with separate fingers like a bare fist, or bare hands where gloves are locked.",
-   "prevention_rule": "Every glove is padded with no separate fingers (bare hands only in a grip tutorial).",
+   "prevention_rule": "Hero gloves are black MMA gloves with red wrist straps exactly as drawn on the reference sheet (visible finger segments are correct, Sean C4 ruling 2026-11-24); fail bare fists, loose open fingers, peach hands or boxing gloves (bare hands only in a grip tutorial).",
    "auto_checks": []
   },
   "VFC-A06": {
@@ -11029,6 +11029,81 @@
     "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V106.png",
     "inferred": false,
     "dhash": "0000029001000b200b200b10179017902e882e082f082f201720172016909690"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0374": {
+   "origin": "auto",
+   "class": "VFC-A02",
+   "also": [],
+   "title": "opponent (red shirt) has no right arm; caught by Sean, passed by the certified inspector",
+   "project": "Liver long form v3",
+   "shot": "V54",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:39 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "opponent (red shirt) has no right arm; caught by Sean, passed by the certified inspector",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0374/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V54_r8.png",
+    "inferred": false,
+    "dhash": "5b103bdcb466b66c626edb6ec92c997a89729b118332853203124a7946392710"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0375": {
+   "origin": "auto",
+   "class": "VFC-A07",
+   "also": [],
+   "title": "opponent's right arm shrunk and the opponent noticeably too large; caught by Sean, passed ",
+   "project": "Liver long form v3",
+   "shot": "V95",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:39 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "opponent's right arm shrunk and the opponent noticeably too large; caught by Sean, passed by the certified inspector",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0375/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V95_r8.png",
+    "inferred": false,
+    "dhash": "36b4b5b03680f730c758b65a921ab23ab256b6563e5246538e728c29af201324"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0376": {
+   "origin": "auto",
+   "class": "VFC-E05",
+   "also": [],
+   "title": "opponent's right arm shrunk and the opponent noticeably too large; caught by Sean, passed ",
+   "project": "Liver long form v3",
+   "shot": "V95",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:39 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "opponent's right arm shrunk and the opponent noticeably too large; caught by Sean, passed by the certified inspector",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0376/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V95_r8.png",
+    "inferred": false,
+    "dhash": "36b4b5b03680f730c758b65a921ab23ab256b6563e5246538e728c29af201324"
    },
    "corrected": null,
    "test_eligible": true

@@ -81,11 +81,9 @@
  "c175cc4d5f22379593aa1e4c568eb6e5a59050fff841c59b39ce95df0c72b98f": {
   "asset": "V8",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V8_r2.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "both gloves read as bare hands with separate open fingers",
   "lib": 4
@@ -480,11 +478,9 @@
  "ce79e88517f1f9e3aa79c4eda7fd65d9a7d3489eb2997860b454bdeaacebc452": {
   "asset": "V41",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V41.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "lead glove drawn with separate fingers and red finger bands",
   "lib": 4
@@ -502,11 +498,9 @@
  "7f099f3f27db4809042a9bc890b905b2c52d5585eed02c2cc5a871c789e7e2dd": {
   "asset": "V43",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V43.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "lead glove drawn with separate fingers and red finger bands",
   "lib": 4
@@ -637,12 +631,14 @@
  "a658f0d5ce2706a939ad4d526aa5dfd46344266958c8f0f8a328dfa7a891febb": {
   "asset": "V54",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V54_r8.png",
-  "verdict": "PASS",
-  "codes": [],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "",
-  "lib": 4
+  "verdict": "FAIL",
+  "codes": [
+   "A02"
+  ],
+  "by": "Sean",
+  "t": "2026-11-24 07:39 UTC",
+  "note": "opponent (red shirt) has no right arm; caught by Sean, passed by the certified inspector",
+  "lib": 6
  },
  "f12599b2c24037a318264c90a9489fe615d34280ec81e7e996b0cccc5ecfa9cf": {
   "asset": "V55",
@@ -686,11 +682,9 @@
  "f536eecec229129cd3d7004def22166b71e281c016524d075df8c1b540b4d787": {
   "asset": "V58",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V58_r1.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "both gloves open fingered with thumb",
   "lib": 4
@@ -780,11 +774,9 @@
  "015ab434b6a11acbc6886eb4cc3dbbeca5e6c4d1e6e2e1084f413a551f70807c": {
   "asset": "V66",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V66_r1.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "lead glove drawn with separate fingers",
   "lib": 4
@@ -805,11 +797,9 @@
  "ddd5a3f43fdd8bf7483820cd99200554bec109d2cfa807a0a06eb95adffa9529": {
   "asset": "V68",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V68.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "lead glove drawn with separate fingers",
   "lib": 4
@@ -817,11 +807,9 @@
  "da6c7ac2fcb0970c99afe8fae57e327818d643e45b5fcb1da37cb1b80c417506": {
   "asset": "V69",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V69_r3.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "chin glove shows separate fingers (shovel mechanics otherwise correct)",
   "lib": 4
@@ -918,11 +906,9 @@
  "1647847a489c1c913f750c49ca5a0f1d5abf0ce62b1ec190aa27ee5613ad9d8e": {
   "asset": "V77",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V77_r1.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "both gloves drawn as separate fingers with red bands",
   "lib": 4
@@ -930,11 +916,9 @@
  "234bd8b6dad1a74b9292ada29159aeaa275b39481c60d5f0339a53488160f916": {
   "asset": "V78",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V78_r1.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "lead glove drawn as a bare fist with separate fingers",
   "lib": 4
@@ -968,11 +952,9 @@
  "dd21fd75ea2739ebfc5e1f4a450f7e1ee56bda887490ba775cf33a142c1359aa": {
   "asset": "V81",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V81_r1.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "lead glove shows separate fingers; heavy bag in an unflagged beat",
   "lib": 4
@@ -1039,11 +1021,9 @@
  "bb16a6769a0048f7be57a0cf0297433dbba45b1c75c42a59498212ca9c6e83e7": {
   "asset": "V87",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V87_r1.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "hero lead glove and opponent glove drawn as separate fingers",
   "lib": 4
@@ -1136,12 +1116,15 @@
  "14f93f5cce971fa547375cc58b6d5125b54294ffba8993e1624109ef9d58f485": {
   "asset": "V95",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V95_r8.png",
-  "verdict": "PASS",
-  "codes": [],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "",
-  "lib": 4
+  "verdict": "FAIL",
+  "codes": [
+   "A07",
+   "E05"
+  ],
+  "by": "Sean",
+  "t": "2026-11-24 07:39 UTC",
+  "note": "opponent's right arm shrunk and the opponent noticeably too large; caught by Sean, passed by the certified inspector",
+  "lib": 6
  },
  "3c96cabf0d131df58e4bdc6a09671f4bffbe32b7f170ce94dba3c705b26253eb": {
   "asset": "V96",
@@ -1168,11 +1151,9 @@
  "6f9b2a20e0dfc3a9f13529c48849a0f10bb6462aef39e14a23cc4a02b722d6ef": {
   "asset": "V98",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V98_r1.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "both gloves drawn as separate fingers with red bands",
   "lib": 4
@@ -1190,11 +1171,9 @@
  "1a610bf6e62435e0ea84e28c59a92802d9835090e18a5fd554f941620a966b1f": {
   "asset": "V100",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V100.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "guard gloves drawn as separate fingers with red bands",
   "lib": 4
@@ -1232,11 +1211,9 @@
  "1b5bf3c45212c62a77b70b85d7ab9392a950d794191a49cedb0659d2c6ed799a": {
   "asset": "V105",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V105_r2.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "rear glove shows separate fingers with red bands",
   "lib": 4
@@ -1244,11 +1221,9 @@
  "93184dc8cfbf630ad9c5c86c516b135576510eeb7f02cfc38c11e4b999a804f6": {
   "asset": "V106",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V106.png",
-  "verdict": "FAIL",
-  "codes": [
-   "A05"
-  ],
-  "by": "combat-anatomy-specialist",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "Sean ruling C4 2026-11-24 (MMA gloves as on the reference sheet)",
   "t": "2026-11-24 07:29 UTC",
   "note": "both gloves drawn as separate finger digits",
   "lib": 4

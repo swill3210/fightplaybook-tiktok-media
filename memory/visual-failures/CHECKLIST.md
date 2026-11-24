@@ -6,7 +6,7 @@ Borderline = FAIL. Uncertain = UNSURE (escalated). Reply one line per asset: `ID
 - A02 !Missing head or missing body part: Every visible arm must trace to a shoulder, a torso and a head inside the frame or leave through the bottom or a corner. A limb attached to a shapeless blob fails.
 - A03 !Distorted, kinked or rubbery limb: Zoomed crop of every arm: one bend at the elbow only, segments of similar length, no stretch or snake shapes.
 - A04 !Impossible joint or reversed limb: Check which shoulder each arm leaves from and the thumb side; wrists straight behind the glove.
-- A05 Fingered glove or bare fist instead of a padded glove: Every glove is padded with no separate fingers (bare hands only in a grip tutorial).
+- A05 Bare fist or wrong glove type: Hero gloves are black MMA gloves with red wrist straps exactly as drawn on the reference sheet (visible finger segments are correct, Sean C4 ruling 2026-11-24); fail bare fists, loose open fingers, peach hands or boxing gloves (bare hands only in a grip tutorial).
 - A06 !Bodies merged or limbs tangled: For every limb, name its owner. Any limb whose owner is unclear fails. Keep a visible gap between torsos.
 - A07 Disproportion or lens distortion: Compare proportions with the reference sheet; no body part more than about 1.3x its reference size relative to the head.
 **B Strike and movement mechanics**
@@ -25,6 +25,7 @@ Borderline = FAIL. Uncertain = UNSURE (escalated). Reply one line per asset: `ID
 - C03 !Target on the wrong side of the body: Orthodox liver = opponent's RIGHT side; check image side for every liver contact and target graphic.
 - C04 !Wrong character performs the action: Confirm who acts in the narration and who acts in the picture.
 - C05 !Head or face orientation impossible: Check that the eyes sit on the side of the head that faces the camera for that body orientation.
+- C06 !Stance switched (southpaw instead of orthodox): Orthodox: LEFT hand and LEFT foot lead in every shot; the same jab hand throughout a sequence.
 **D Floating or disconnected parts**
 - D01 !Floating or detached glove, hand or limb: Every glove and hand must trace through a wrist, forearm and upper arm to a shoulder.
 - D02 Feet floating or detached from the ground: Planted feet touch the ground line; one foot at least is planted in every standing technique.
