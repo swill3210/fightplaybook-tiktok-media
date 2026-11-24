@@ -187,7 +187,7 @@ def eyes(ob, white="#FFFFFF"):
         e.location = hit[0] + Vector((0, -0.02, 0))
         e.rotation_euler = (0, math.radians(EYE["slant"]) * sgn, 0)  # inner ends lower (toward the centre)
         sw = e.modifiers.new("hug", "SHRINKWRAP"); sw.target = ob; sw.wrap_method = "PROJECT"
-        sw.use_project_y = True; sw.use_negative_direction = True; sw.use_positive_direction = True; sw.offset = 0.0015
+        sw.use_project_y = True; sw.use_negative_direction = True; sw.use_positive_direction = True; sw.offset = 0.003  # crisp edge, no z-fight
         obs.append(e)
     print("head top", round(top, 3), "chin", round(chin, 3), "width", round(W, 3), "eye z", round(cz, 3))
     return obs

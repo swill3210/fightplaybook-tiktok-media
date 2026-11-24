@@ -15,3 +15,11 @@ Goal: a three dimensional version of the approved 2D hero and opponent (referenc
 * Garments: offset shells of the body faces (Shrinkwrap + Solidify, 2 to 4 mm, no booleans), shorts loose and straight to above the knee; red yoke, side stripes and hem V notches as crisp texture decals; gloves sculpted as padded MMA gloves with knuckle rows and a wide red strap.
 * Look: 2 tone cel (Shader to RGB into a Constant ramp in EEVEE, or the emission toon in Cycles), one key light from the upper front, clean big shadow shapes; bold outer ink (inverted hull or Line Art) plus thinner interior lines.
 * Do not use: primitive or metaball bodies, voxel unions, skin modifier tubes, garment shells from body fragments, image to 3D generators (see production/blender/README_FAILED_APPROACHES.md).
+
+## SUCCESSFUL METHOD (Sean 2026-11-24: "significant improvement"; permanent checkpoints production/hero_checkpoints/t2_permanent and f3_refined)
+1. Mesh: Hunyuan3D-2mv (free HF Space) from the 4 sheet views (production/meshgen/run_hy2mv.py, token on the env proxy). Do not swap base models.
+2. Build: `cd production/meshgen && python3 hero_tex.py out/hy2mv_shape_generation_0.glb OUTDIR` (about 2 min, hi res 1400x2160 + 1600 close ups).
+3. Geometry fixes in hero_tex.py: remove_plate (floor plate generated from the sheet shadow), head_neck (head +14 percent above the chin, neck core slimmed 12 percent, smooth falloff).
+4. Texture = the sheet art itself: per view planar UVs (figure matched by height and centre), BVH visibility per vertex, weights sharpened RELATIVE to the best view (^24); sheet prepared with background + outer outline + eyes inpainted (cv2), bilateral smoothing, red snapped to #E0262B.
+5. Eyes: decal almonds from sheet head ratios (hero_hy.EYE), inner ends down, offset 3 mm. Ink: displaced hull copy.
+6. Pitfalls: absolute ^24 weights underflow (ghosting); sheet outer outline paints dark caps; zone rule colouring (hero_hy) is the fallback only.

@@ -32,10 +32,47 @@ def prepared_sheet():
         eye[bb[1] + int(0.15 * (bb[3] - bb[1])):] = False; eye[:bb[1] + 3] = False
         bgmask = (bg | eye).astype(np.uint8) * 255
         bgmask = cv2.dilate(bgmask, np.ones((3, 3), np.uint8))  # also drop the light halo next to the outline
+        bgmask = np.maximum(bgmask, cv2.dilate((bg * 255).astype(np.uint8), np.ones((13, 13), np.uint8)))  # f2: the sheet's OUTER outline painted dark caps on head, shoulder and fist tops; the 3D ink hull draws the silhouette
         fill = cv2.inpaint(crop, bgmask, 9, cv2.INPAINT_TELEA)
+        fill = cv2.bilateralFilter(fill, 7, 38, 5)  # smooth jpeg grit, keep the contour lines (final pass)
+        fb, fg, fr = (fill[..., i].astype(int) for i in range(3))
+        red = (fr > 110) & (fr - fg > 60)
+        fill[red] = (0.35 * fill[red] + 0.65 * np.array([43, 38, 224])).astype(np.uint8)  # one clean red #E0262B
         out[y0:y1, x0:x1] = fill
     path = os.path.join(SCRATCH, "sheet_filled.png"); cv2.imwrite(path, out)
     return path, boxes, img.shape[1], img.shape[0]
+
+
+def remove_plate(ob):
+    """delete the floor plate Hunyuan built from the sheet's floor shadow (black ellipses under the feet) and cap the soles"""
+    import bmesh
+    from scipy import ndimage
+    vs = np.array([v.co[:] for v in ob.data.vertices]); cell = 0.005
+    foot = vs[(vs[:, 2] > 0.04) & (vs[:, 2] < 0.08)]
+    gx = ((foot[:, 0] + 0.6) / cell).astype(int); gy = ((foot[:, 1] + 0.6) / cell).astype(int)
+    occ = np.zeros((240, 240), bool); occ[gx, gy] = True
+    occ = ndimage.binary_dilation(ndimage.binary_fill_holes(ndimage.binary_closing(occ, iterations=3)), iterations=2)
+    bm = bmesh.new(); bm.from_mesh(ob.data); bm.verts.ensure_lookup_table()
+    kill = [v for v in bm.verts if v.co.z < 0.035 and not occ[int((v.co.x + 0.6) / cell), int((v.co.y + 0.6) / cell)]]
+    bmesh.ops.delete(bm, geom=kill, context="VERTS")
+    caps = bmesh.ops.holes_fill(bm, edges=[e for e in bm.edges if e.is_boundary], sides=0)["faces"]
+    bmesh.ops.triangulate(bm, faces=caps); bm.to_mesh(ob.data); bm.free(); ob.data.update()
+    print("plate verts removed", len(kill))
+
+
+def head_neck(ob, chin=1.78, stretch=1.14, slim=0.12):
+    """taller egg head (sheet head ~12.7% of height vs mesh 11%) and a slimmer neck core, smooth falloffs, traps kept"""
+    vs = np.array([v.co[:] for v in ob.data.vertices]); z = vs[:, 2]
+    wz = np.clip((z - 1.70) / (chin - 1.70), 0, 1); wz = wz * wz * (3 - 2 * wz)
+    vs[:, 2] = z + wz * np.maximum(z - 1.70, 0) * (stretch - 1)
+    neck = (z > 1.62) & (z < 1.84)
+    yc = vs[(np.abs(z - 1.73) < 0.01), 1].mean()
+    rr = np.hypot(vs[:, 0], vs[:, 1] - yc)
+    bump = np.clip(1 - np.abs(z - 1.73) / 0.10, 0, 1); bump = bump * bump * (3 - 2 * bump)
+    wr = np.clip((0.15 - rr) / 0.06, 0, 1)
+    k = 1 - slim * bump * wr * neck
+    vs[:, 0] *= k; vs[:, 1] = yc + (vs[:, 1] - yc) * k
+    ob.data.vertices.foreach_set("co", vs.ravel()); ob.data.update()
 
 
 def project(ob, boxes, W, H):
@@ -52,13 +89,14 @@ def project(ob, boxes, W, H):
         loops_v = np.zeros(len(me.loops), int); me.loops.foreach_get("vertex_index", loops_v)
         co = np.stack([X / W, 1 - Y / H], 1)[loops_v]
         uv.data.foreach_set("uv", co.ravel())
-        facing = np.clip(ns @ np.array(d[:]), 0, 1) ** 12  # t1: ^4 ghosted red stripes where views overlap
+        facing = np.clip(ns @ np.array(d[:]), 0, 1)  # raw facing; sharpened below relative to the best view
         dv = Vector(d[:])
         vis = np.array([0.0 if f < 1e-3 else (1.0 if tree.ray_cast(Vector(p) + dv * 2e-3, dv)[0] is None else 0.0)
                         for p, f in zip(vs, facing)])
         wts[:, k] = facing * vis
-    s = wts.sum(1, keepdims=True); none = s[:, 0] < 1e-6
-    wts[none] = np.clip(ns[none] @ np.array([d[:] for d in HY.VIEWS.values()]).T, 0, 1) ** 4  # occluded everywhere
+    none = wts.max(1) < 1e-3
+    wts[none] = np.clip(ns[none] @ np.array([d[:] for d in HY.VIEWS.values()]).T, 0, 1)  # occluded everywhere
+    wts = (wts / np.maximum(wts.max(1, keepdims=True), 1e-9)) ** 24  # sharpen RELATIVE to the best view (f1: absolute ^24 underflowed, 72k verts fell back and ghosted red)
     wts /= np.maximum(wts.sum(1, keepdims=True), 1e-6)
     att = me.color_attributes.new("vw", "FLOAT_COLOR", "POINT")
     att.data.foreach_set("color", wts.astype(np.float32).ravel())
@@ -92,15 +130,23 @@ if __name__ == "__main__":
     src, out = sys.argv[1], sys.argv[2]; os.makedirs(out, exist_ok=True)
     HM.reset(); s, cam = HM.scene(HM.C["bg"]); s.render.use_freestyle = False; s.cycles.samples = 8
     s.view_settings.view_transform = "Standard"
-    ob = HY.load(src)
+    ob = HY.load(src); remove_plate(ob); head_neck(ob)
     path, boxes, W, H = prepared_sheet(); project(ob, boxes, W, H)
     ob.data.materials.clear(); ob.data.materials.append(material(path))
     root = bpy.data.objects.new("root", None); bpy.context.collection.objects.link(root); ob.parent = root
     for e in HY.eyes(ob): e.parent = root
     if "--no-ink" not in sys.argv:
         HY.outline(ob).parent = root
-    cam.data.ortho_scale = 2.2; cam.location = (0, -8, 1.0); cam.rotation_euler = (math.pi / 2, 0, 0)
-    for name, az in HM.VIEWS.items():
+    s.render.resolution_x, s.render.resolution_y = 1400, 2160; s.cycles.samples = 48; s.cycles.filter_width = 1.0
+    cam.data.ortho_scale = 2.25; cam.location = (0, -8, 1.02); cam.rotation_euler = (math.pi / 2, 0, 0)
+    shots = [("front", 0), ("right", -90), ("left", 90), ("back", 180), ("threequarter", 35)]
+    for name, az in shots:
         root.rotation_euler.z = -math.radians(az); bpy.context.view_layer.update()
         s.render.filepath = os.path.join(out, f"body_{name}.png"); bpy.ops.render.render(write_still=True)
+    s.render.resolution_x, s.render.resolution_y = 1600, 1600
+    cam.data.ortho_scale = 0.95; cam.location = (0, -8, 1.58)
+    for name, az in (("front", 0), ("threequarter", 35), ("right", -90)):
+        root.rotation_euler.z = -math.radians(az); bpy.context.view_layer.update()
+        s.render.filepath = os.path.join(out, f"closeup_{name}.png"); bpy.ops.render.render(write_still=True)
+    root.rotation_euler.z = 0
     print("done")
