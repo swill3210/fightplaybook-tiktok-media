@@ -148,7 +148,7 @@ def zone_fix(bm, cls):
 
 
 # eye layout measured on the sheet's front view, relative to the head box (h4: projecting sheet blobs was fragile)
-EYE = {"x": 0.19, "down": 0.54, "w": 0.2, "h": 0.058, "slant": -20}  # h5: +20 tilted the inner ends up (sad); reference dips them
+EYE = {"x": 0.19, "down": 0.52, "w": 0.22, "h": 0.07, "slant": -22}  # h5: +20 tilted the inner ends up (sad); reference dips them
 
 
 def head_box(ob):
@@ -175,7 +175,7 @@ def eyes(ob, white="#FFFFFF"):
             ring = []
             for i in range(n):
                 t = 2 * math.pi * i / n; x = w / 2 * math.cos(t)
-                z = h * math.sin(t) * (1 - (2 * x / w) ** 2) ** 0.8 * (1.0 if t < math.pi else 0.6)
+                z = h * math.sin(t) * (1 - abs(2 * x / w) ** 1.15) ** 1.35 * (1.0 if t < math.pi else 0.5)  # angular blade, sharp tips (reference)
                 ring.append(bm.verts.new((x * rr, 0, z * rr)))
             rings.append(ring)
         for i in range(n):
@@ -214,6 +214,7 @@ def outline(ob, thick=0.007):
     nt.links.new(em.outputs[0], mix.inputs[2]); nt.links.new(mix.outputs[0], o.inputs[0])
     hull = ob.copy(); hull.data = ob.data.copy(); hull.name = "ink"; bpy.context.collection.objects.link(hull)
     hull.data.materials.clear(); hull.data.materials.append(ink)
+    sm = hull.modifiers.new("calm", "SMOOTH"); sm.factor = 1.0; sm.iterations = 8  # g8: noisy jaw normals poked ink through
     d = hull.modifiers.new("push", "DISPLACE"); d.direction = "NORMAL"; d.mid_level = 0.0; d.strength = thick
     return hull
 

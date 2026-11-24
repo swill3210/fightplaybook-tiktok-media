@@ -16,6 +16,7 @@ import hero_hy as HY
 import hero_model as HM
 import compare_ref as CR
 
+CHIN = 1.775
 SCRATCH = os.environ.get("HERO_TEX_DIR", "/tmp/claude-0/hero_tex"); os.makedirs(SCRATCH, exist_ok=True)
 
 
@@ -34,7 +35,8 @@ def prepared_sheet():
         bgmask = cv2.dilate(bgmask, np.ones((3, 3), np.uint8))  # also drop the light halo next to the outline
         bgmask = np.maximum(bgmask, cv2.dilate((bg * 255).astype(np.uint8), np.ones((13, 13), np.uint8)))  # f2: the sheet's OUTER outline painted dark caps on head, shoulder and fist tops; the 3D ink hull draws the silhouette
         fill = cv2.inpaint(crop, bgmask, 9, cv2.INPAINT_TELEA)
-        fill = cv2.bilateralFilter(fill, 7, 38, 5)  # smooth jpeg grit, keep the contour lines (final pass)
+        fill = cv2.bilateralFilter(fill, 5, 30, 4)  # smooth jpeg grit, keep the contour lines
+        fill = cv2.addWeighted(fill, 1.5, cv2.GaussianBlur(fill, (0, 0), 1.6), -0.5, 0)  # head pass: sharper contours
         fb, fg, fr = (fill[..., i].astype(int) for i in range(3))
         red = (fr > 110) & (fr - fg > 60)
         fill[red] = (0.35 * fill[red] + 0.65 * np.array([43, 38, 224])).astype(np.uint8)  # one clean red #E0262B
@@ -96,8 +98,12 @@ def project(ob, boxes, W, H):
         wts[:, k] = facing * vis
     none = wts.max(1) < 1e-3
     wts[none] = np.clip(ns[none] @ np.array([d[:] for d in HY.VIEWS.values()]).T, 0, 1)  # occluded everywhere
-    wts = (wts / np.maximum(wts.max(1, keepdims=True), 1e-9)) ** 24  # sharpen RELATIVE to the best view (f1: absolute ^24 underflowed, 72k verts fell back and ghosted red)
+    wts = (wts / np.maximum(wts.max(1, keepdims=True), 1e-9)) ** 40  # sharpen RELATIVE to the best view (f1: absolute ^24 underflowed, 72k verts fell back and ghosted red)
     wts /= np.maximum(wts.sum(1, keepdims=True), 1e-6)
+    nk = np.hypot(vs[:, 0], vs[:, 1] - 0.043) < 0.1  # neck core
+    hw = np.where(nk, np.clip((vs[:, 2] - 1.665) / 0.02, 0, 1), np.clip((vs[:, 2] - CHIN) / 0.03, 0, 1))  # g7: neck carried misaligned sheet shading
+    hw = hw * hw * (3 - 2 * hw)
+    ha = me.color_attributes.new("headw", "FLOAT_COLOR", "POINT"); ha.data.foreach_set("color", np.repeat(hw, 4).astype(np.float32))
     att = me.color_attributes.new("vw", "FLOAT_COLOR", "POINT")
     att.data.foreach_set("color", wts.astype(np.float32).ravel())
     print("verts", len(vs), "unseen", int(none.sum()))
@@ -122,7 +128,15 @@ def material(img_path):
         else:
             add = n.new("ShaderNodeMix"); add.data_type = "RGBA"; add.blend_type = "ADD"; add.inputs[0].default_value = 1
             l.new(acc, add.inputs[6]); l.new(mul.outputs[2], add.inputs[7]); acc = add.outputs[2]
-    l.new(acc, em.inputs["Color"]); l.new(em.outputs[0], out.inputs[0])
+    head = HY.cel("head_tmp", ("#2B2B30", "#45454B"), th=0.28).node_tree  # sheet head tones (shadow, base)
+    geo = n.new("ShaderNodeNewGeometry"); dot = n.new("ShaderNodeVectorMath"); dot.operation = "DOT_PRODUCT"
+    dot.inputs[1].default_value = HY.KEY; l.new(geo.outputs["Normal"], dot.inputs[0])
+    band = n.new("ShaderNodeValToRGB"); band.color_ramp.interpolation = "CONSTANT"; e = band.color_ramp.elements
+    e[0].color = HM.HEX("#34343A"); e[1].position = 0.05; e[1].color = HM.HEX("#45454B")  # g3: 0.28 band blotched the head; l.new(dot.outputs["Value"], band.inputs["Fac"])
+    hm = n.new("ShaderNodeAttribute"); hm.attribute_name = "headw"; hm.attribute_type = "GEOMETRY"
+    mix = n.new("ShaderNodeMix"); mix.data_type = "RGBA"; l.new(hm.outputs["Fac"], mix.inputs[0])
+    l.new(acc, mix.inputs[6]); l.new(band.outputs["Color"], mix.inputs[7])
+    l.new(mix.outputs[2], em.inputs["Color"]); l.new(em.outputs[0], out.inputs[0])
     return m
 
 
@@ -130,11 +144,13 @@ if __name__ == "__main__":
     src, out = sys.argv[1], sys.argv[2]; os.makedirs(out, exist_ok=True)
     HM.reset(); s, cam = HM.scene(HM.C["bg"]); s.render.use_freestyle = False; s.cycles.samples = 8
     s.view_settings.view_transform = "Standard"
-    ob = HY.load(src); remove_plate(ob); head_neck(ob)
+    ob = HY.load(src); remove_plate(ob)
+    import head_fit; head_fit.fit(ob); CHIN = head_fit.LAST_CHIN  # final head pass: silhouette fit to the sheet replaces head_neck()
     path, boxes, W, H = prepared_sheet(); project(ob, boxes, W, H)
+    import head_fit
     ob.data.materials.clear(); ob.data.materials.append(material(path))
     root = bpy.data.objects.new("root", None); bpy.context.collection.objects.link(root); ob.parent = root
-    for e in HY.eyes(ob): e.parent = root
+    for e in head_fit.sheet_eyes(ob, lambda: HY.cel("eye_white", ("#FFFFFF", "#FFFFFF"))): e.parent = root  # g2: drawn eyes were wrong; trace the sheet's
     if "--no-ink" not in sys.argv:
         HY.outline(ob).parent = root
     s.render.resolution_x, s.render.resolution_y = 1400, 2160; s.cycles.samples = 48; s.cycles.filter_width = 1.0
