@@ -1,18 +1,20 @@
-# Session handoff (overwrite at the end of every session; keep under 30 lines)
+# Session handoff (overwrite at the end of every session; keep it short)
 
-Session 2026-11-24 (cloud, branch `claude/determined-cannon-ry2m6g`).
+Last session: 2026-11-24, cloud, branch `claude/determined-cannon-ry2m6g` (repo fightplaybook-tiktok-media, PUBLIC). Nothing uploaded or published.
 
-State
-* Liver v4 fix PAUSED: ElevenLabs credits 0 and Sean said no paid generation without approval.
-* Inspector `combat-anatomy-specialist` certified (run 4). Rules added this session: beat required, limb census, measured shovel height.
-* 106 stills: 28 PASS (hash cache memory/visual-failures/approvals.json; new approved files in production/liver_v4/approved/), 78 to fix. All 55 candidates inspected; generated hooks and shovels 0 of 38 (do not repeat those methods; see LESSONS_LEARNED).
-* V18 and V31 redesigned without generation: production/liver_v4/redesign_v18_v31.md.
-* Cheaper method research: memory/TOOLS_AND_SKILLS.md "Research already done".
+## Active track: Blender hero character (design only; Sean must approve before rigging, combat or animation)
+* Method and gates: `memory/workflows/blender-character.md`. Failed approaches (do not repeat): `production/blender/README_FAILED_APPROACHES.md`, evidence `production/blender/failed_attempts/`, library VFI-0487 to VFI-0491.
+* Fresh container first: `bash production/blender/setup_blender.sh` (pip bpy, Mesa EGL, MPFB2 clone to /tmp/claude-0/bl/mpfb2 and install as a Blender extension; Sean approved MPFB2 2026-11-24).
+* Current script: `production/blender/hero_mpfb.py OUTDIR` (MPFB2 body: macros + region targets; default rig; `a_pose()` lowers the arms through the rig; `outline()` inverted hull ink; frames from the evaluated mesh). Stage 1 body render was clean (no holes); the A pose + outline run was interrupted before review, so rerun and check it first.
+* Shared helpers: `production/blender/hero_model.py` (`toon()`, `scene()`, VIEWS, colours `C`). Reference: `.claude/skills/fight-playbook-rules/main_character_reference.jpg`.
+* Next, in order: (1) rerun hero_mpfb.py, compare with the reference; (2) faceless head (remove features with targets and smoothing, keep jaw and ears) + eye decals; (3) offset shell shirt and loose shorts, red yoke, side stripes, hem V notches as decals; (4) padded MMA gloves with knuckles and red strap; (5) 2 tone cel + bold outer and thin interior ink; (6) both inspectors on front, right, left, back, three quarter; (7) send to Sean; (8) only after approval: opponent (red tank, black shorts, plain gloves, about 1.08x) and combat poses.
 
-Blender character track (newest)
-* Hero model attempts FAILED (specialist FAIL, creative director REVISE). Do not reuse hero_model.py / hero_mh.py approaches. Next: MPFB2 professional base (needs permission to install it as a Blender extension), then inspections, then Sean's approval before any rigging or combat.
+## Paused track: liver long form v4 fix
+* Blocked: ElevenLabs credits 0; no paid generation without Sean's approval.
+* 28 of 106 stills PASS (hash cache `memory/visual-failures/approvals.json`; new approved files `production/liver_v4/approved/` V20, V27, V74); 78 to fix. Verdicts `production/liver_v4/verdicts/`, beats `production/liver_v4/beats.json`, manifest `production/liver_v4/manifest.json` (paths into the handoff repo), plan `production/liver_v4/vcd_plan.md`, V18/V31 redesign `production/liver_v4/redesign_v18_v31.md`.
+* Generated hooks and shovels: 0 of 38 passed; do not repeat those methods. If the Blender route is approved, redo the failed combat stills from Blender.
+* Source render and timeline: handoff repo branch `claude/fight-playbook-youtube-ccyjcd`, folder `CLAUDE-EXPORT/` (attach the repo, `git worktree add` the branch). Splice plan: re-render only changed shot frame ranges with the Remotion project rebuilt from CLAUDE-EXPORT/CODE/longform-remotion (base layers: still resized to 1920x1080, flat background repainted #C4D6C4; lines via Grok build.lines at timeline glove points), keep the original audio.
 
-Next (needs Sean)
-1. Sean picks a method and approves spend (masked arm inpainting, 1K edits, free arm compositing, reuse with motion graphics).
-2. Rebuild working dirs if the container reset: Remotion project from CLAUDE-EXPORT (attach the handoff repo, worktree the branch; base layers mk_bases logic: resize to 1920x1080, repaint flat background to #C4D6C4; lines with Grok build.lines at timeline glove points).
-3. Fix, inspect (vfl.py), splice changed shot frame ranges into liver_v3_final.mp4 with original audio, vfl.py render + gate, VCD review, deliver to Sean. Never upload.
+## QC state
+* Primary inspector `combat-anatomy-specialist` certified (run 4, 16/16). Added rules live in `.claude/agents/combat-anatomy-specialist.md`; editing it voids certification (re-run `vfl.py certify`).
+* Open Sean decisions: C2, C6, C7, C9, C14, C15, C16, C17 (PROJECT_STATE.md).
