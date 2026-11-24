@@ -2,7 +2,10 @@
 
 Last session: 2026-11-24, cloud, branch `claude/blender-character-replication-vdcbo8` (based on `claude/determined-cannon-ry2m6g`) (repo fightplaybook-tiktok-media, PUBLIC). Nothing uploaded or published.
 
-## Active track: Blender hero character (design only; Sean must approve before rigging, combat or animation)
+## Active track: hero 3D model via image to 3D (Sean 2026-11-24: stop hand sculpting)
+* Best so far: Hunyuan3D-2mv shape `production/meshgen/out/hy2mv_shape_generation_0.glb` (inputs production/meshgen/input, scripts run_hy2mv.py, render_glb.py, ../blender/compare_ref.py). Next: textured run when quota allows, then Blender (cel, ink, materials by region, rig). Tripo/Meshy: web free tiers only (APIs paid or blocked); licence check needed. Hand built MPFB fallback: checkpoints/hero_mpfb_r44_phase1_revise.py.
+
+## Fallback track: Blender hero character (design only; Sean must approve before rigging, combat or animation)
 * Method and gates: `memory/workflows/blender-character.md`. Failed approaches (do not repeat): `production/blender/README_FAILED_APPROACHES.md`, evidence `production/blender/failed_attempts/`, library VFI-0487 to VFI-0491.
 * Fresh container first: `bash production/blender/setup_blender.sh` (pip bpy, Mesa EGL, MPFB2 clone to /tmp/claude-0/bl/mpfb2 and install as a Blender extension; Sean approved MPFB2 2026-11-24).
 * Current script: `production/blender/hero_mpfb.py OUTDIR` builds body (macro + region targets), default rig A pose (dual quaternion), linked ink hull, faceless head (cavity removal + proxy Shrinkwrap), white almond eyes, and renders body_* turnaround + face_* close ups. Latest: r25 (2026-11-24): NO mouth, nose or nostrils from any angle (hidden face walls removed by frontal ray test, face projected on a convex hull proxy, normals transferred); egg head with tapered jaw. Evidence `production/blender/progress/` (r25_head_vs_reference.jpg). Flags: --face-only, --no-ink. Residuals: toon is still the old 3 band ramp (forehead streak; step 5 replaces it); reference chin is more pointed and the face slope steeper in profile.
