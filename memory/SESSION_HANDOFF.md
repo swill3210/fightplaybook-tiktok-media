@@ -1,13 +1,13 @@
 # Session handoff (overwrite at the end of every session; keep it short)
 
-Last session: 2026-11-24, cloud, branch `claude/determined-cannon-ry2m6g` (repo fightplaybook-tiktok-media, PUBLIC). Nothing uploaded or published.
+Last session: 2026-11-24, cloud, branch `claude/blender-character-replication-vdcbo8` (based on `claude/determined-cannon-ry2m6g`) (repo fightplaybook-tiktok-media, PUBLIC). Nothing uploaded or published.
 
 ## Active track: Blender hero character (design only; Sean must approve before rigging, combat or animation)
 * Method and gates: `memory/workflows/blender-character.md`. Failed approaches (do not repeat): `production/blender/README_FAILED_APPROACHES.md`, evidence `production/blender/failed_attempts/`, library VFI-0487 to VFI-0491.
 * Fresh container first: `bash production/blender/setup_blender.sh` (pip bpy, Mesa EGL, MPFB2 clone to /tmp/claude-0/bl/mpfb2 and install as a Blender extension; Sean approved MPFB2 2026-11-24).
-* Current script: `production/blender/hero_mpfb.py OUTDIR` (MPFB2 body: macros + region targets; default rig; `a_pose()` lowers the arms through the rig; `outline()` inverted hull ink; frames from the evaluated mesh). Stage 1 body render was clean (no holes); the A pose + outline run was interrupted before review, so rerun and check it first.
+* Current script: `production/blender/hero_mpfb.py OUTDIR` builds body (macro + region targets), default rig A pose (dual quaternion), linked ink hull, faceless head (cavity removal + proxy Shrinkwrap), white almond eyes, and renders body_* turnaround + face_* close ups. Latest: r18 (2026-11-24), evidence `production/blender/progress/`. Known residuals: small nostril tick on the front view; toon is still the old 3 band emission ramp (step 5 replaces it).
 * Shared helpers: `production/blender/hero_model.py` (`toon()`, `scene()`, VIEWS, colours `C`). Reference: `.claude/skills/fight-playbook-rules/main_character_reference.jpg`.
-* Next, in order: (1) rerun hero_mpfb.py, compare with the reference; (2) faceless head (remove features with targets and smoothing, keep jaw and ears) + eye decals; (3) offset shell shirt and loose shorts, red yoke, side stripes, hem V notches as decals; (4) padded MMA gloves with knuckles and red strap; (5) 2 tone cel + bold outer and thin interior ink; (6) both inspectors on front, right, left, back, three quarter; (7) send to Sean; (8) only after approval: opponent (red tank, black shorts, plain gloves, about 1.08x) and combat poses.
+* Done: (1) rerun and compare, (2) faceless head + eyes. Next, in order: (3) offset shell shirt and loose shorts, red yoke, side stripes, hem V notches as decals; (4) padded MMA gloves with knuckles and red strap; (5) 2 tone cel + bold outer and thin interior ink; (6) both inspectors on front, right, left, back, three quarter; (7) send to Sean; (8) only after approval: opponent (red tank, black shorts, plain gloves, about 1.08x) and combat poses.
 
 ## Paused track: liver long form v4 fix
 * Blocked: ElevenLabs credits 0; no paid generation without Sean's approval.
