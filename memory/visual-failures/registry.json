@@ -1,6 +1,6 @@
 {
- "version": 1,
- "updated": "2026-11-24 07:00 UTC",
+ "version": 3,
+ "updated": "2026-11-24 07:17 UTC",
  "classes": {
   "VFC-A01": {
    "category": "A",
@@ -1541,7 +1541,12 @@
     "inferred": false,
     "dhash": "00c0092922d20ed231a9732c6364632863d962d272d2f272c372a972c0f250d2"
    },
-   "corrected": null,
+   "corrected": {
+    "path": "evidence/VFI-0036/corrected.jpg",
+    "provenance": "handoff edit/stills/V30_r2.png (colour edit, still_qa_pass2.md)",
+    "status": "Grok fix V30_r2",
+    "dhash": "01c0112c72d20ed231a9732c6364632861d962d272d2f272c372a8f2d0f252d2"
+   },
    "test_eligible": true
   },
   "VFI-0037": {
@@ -5100,7 +5105,9 @@
    "version": "attempt 1",
    "source": "handoff VIDEO-PROJECTS/build-superhuman-cardio-v2/edit/qa_report.md and qa/qa_report.md",
    "detected_by": "Grok still QA",
-   "approved_by": [],
+   "approved_by": [
+    "combat-anatomy-specialist (certification 2026-11-24)"
+   ],
    "explanation": "Idle guard where the beat needed a punch.",
    "severity": "critical",
    "status": "fixed",
@@ -8012,5 +8019,20 @@
   }
  },
  "workers": {},
- "certifications": []
+ "certifications": [
+  {
+   "worker": "combat-anatomy-specialist",
+   "worker_hash": "8251c48c3aea9ffd",
+   "date": "2026-11-24 07:17 UTC",
+   "library_version": 2,
+   "n": 16,
+   "result": "FAIL",
+   "approved_known_defects": [
+    "VFI-0146"
+   ],
+   "unanswered": [],
+   "unsure": [],
+   "class_hits": 7
+  }
+ ]
 }

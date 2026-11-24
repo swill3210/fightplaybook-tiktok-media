@@ -31,6 +31,9 @@ def known_defect(path, reg, thr=22):
     out = []
     for iid, v in reg["instances"].items():
         o = v.get("original") or {}
+        c = (v.get("corrected") or {}).get("dhash")
+        if c and L.hamming(h, c) <= L.hamming(h, o.get("dhash") or "0" * 64):
+            continue  # this is (an edit close to) the documented fix, e.g. a colour or barefoot edit of the same drawing
         if o.get("dhash") and L.hamming(h, o["dhash"]) <= thr:
             out.append((v["class"][4:], "FAIL", f"matches known defect {iid} ({v['title'][:50]})"))
     return out[:3]
