@@ -117,6 +117,10 @@ CLASSES = {
    "Eyes drawn on the back of a head seen from behind, a face turned the wrong way for the body.",
    "Check that the eyes sit on the side of the head that faces the camera for that body orientation.",
    []),
+ "VFC-C06": ("C", "critical", "Stance switched (southpaw instead of orthodox)",
+   "The orthodox hero drawn with the right hand and right foot leading, or the jab hand flipping between shots of one sequence.",
+   "Orthodox: LEFT hand and LEFT foot lead in every shot; the same jab hand throughout a sequence.",
+   []),
  # D floating
  "VFC-D01": ("D", "critical", "Floating or detached glove, hand or limb",
    "A glove without a forearm, an arm detached from the shoulder, a hand with no visible owner.",

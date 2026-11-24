@@ -1,1 +1,1266 @@
-{}
+{
+ "7fe1a8934dc295141ba868c0157f5f69dab0448aa14b5bceaf36166ce8a55b6a": {
+  "asset": "V2",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hook arm nearly straight (about 160 degrees), glove on the far flank edge",
+  "lib": 4
+ },
+ "f47e6a3aa069a6d9b3a0cb16b10c228e6117a82617d054a22bec9c93125ece97": {
+  "asset": "V1",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V1_r2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "front foot lift drawn as a hip height knee raise that reads as a knee strike",
+  "lib": 4
+ },
+ "acace3ed23c2184fd87dac11fad1300f72122fe1a59dd515488e560c82cfcb31": {
+  "asset": "V3",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V3.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "left hook arm almost straight and wrapped round the torso like a hug",
+  "lib": 4
+ },
+ "57fe17e9ad94662b751884788a365716531e81c55d8468241e153973b51fd2a0": {
+  "asset": "V4",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V4.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A07",
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "worms eye giant feet and stretched legs; opponent hands hang at the knees",
+  "lib": 4
+ },
+ "792c35a5c0115243b2c2d0c0395262c5d7ba233ff5a744bc5a4c3c5f10a4e8ae": {
+  "asset": "V5",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V5.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "4a7183c5a62bffe88179998b2e3817af664c0206fe980f57703d501247295ab1": {
+  "asset": "V6",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V6.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "ed3d216b3cbeaed472dd37b767d13aa3c9e8b917d7a13ec7f5746c75ebbfb238": {
+  "asset": "V7",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V7.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "c175cc4d5f22379593aa1e4c568eb6e5a59050fff841c59b39ce95df0c72b98f": {
+  "asset": "V8",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V8_r2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "both gloves read as bare hands with separate open fingers",
+  "lib": 4
+ },
+ "effb744365e087c98345d36a7081bf05e43526a226ffbc65a1a2cf44296f8e3a": {
+  "asset": "V9",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V9.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "F02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hook arm straight and horizontal; glove past the far torso edge, no compression",
+  "lib": 4
+ },
+ "1d1edbc670ce3810dc92ad9c11de975422eab5226771ace04ed04bec9e7f4d1b": {
+  "asset": "V10",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V10_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "B05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "angle is eye level side view, not the high overhead birds eye in the beat; hero guard glove at chest",
+  "lib": 4
+ },
+ "646e92a47e6332d303b416065e4e7a6811fe3cfc1974c6b62b66596e760cc4ea": {
+  "asset": "V11",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V11.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hero raises the LEFT glove for three fingers; beat says right glove",
+  "lib": 4
+ },
+ "6314934d2e1112677dd65c25a02bafd78b7a6ae930df1af46026495b84c45f8c": {
+  "asset": "V12",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V12.png",
+  "verdict": "FAIL",
+  "codes": [
+   "E02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "opponent gloves have red wrist trim",
+  "lib": 4
+ },
+ "86b0fa11d2838670fa03077a92e6a8c702d0942c511d2180afecbb2aa168f7ac": {
+  "asset": "V13",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V13.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "e1d0a8c031119a5e9dbcc6563c8082c002695022827629dc06b93a7b7ce075ed": {
+  "asset": "V14",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V14.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "e51037792b5103ac8b1df038af611f0f7138bd8187cdd498216014de0c53d52d": {
+  "asset": "V15",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V15.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "slow left hook drawn near straight and wrapping",
+  "lib": 4
+ },
+ "feb167a9e1bca8562712a8d5ea9402877727c264e446aafec43d81f1f7794f6c": {
+  "asset": "V16",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V16_r15.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A07",
+   "E05",
+   "A06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "opponent about 3x the hero; hero head pressed into the opponent's arm",
+  "lib": 4
+ },
+ "f2e1a8aef4f4a6391b44bd979882fc7f9a3bda12c1b7dbe9b970ce3d76b4a25f": {
+  "asset": "V17",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V17.png",
+  "verdict": "FAIL",
+  "codes": [
+   "D02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "no ground, opponent foot hovers, right foot on tiptoe",
+  "lib": 4
+ },
+ "1bcbcf34910d0b320a634a1b7acfaf9f182db779f1f6c21850f253e9e84c359d": {
+  "asset": "V18",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V18.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "eyes stay level, do not drop to the ribs",
+  "lib": 4
+ },
+ "aa158f514426510630fd290b3fb6535f4a55c4d35cf7338fed751ff6564b83b4": {
+  "asset": "V19",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V19.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B09",
+   "E05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "both fighters square to camera, not in stance; opponent barely taller",
+  "lib": 4
+ },
+ "5c0afabddd6272e5aaa28ea6e9b29df97ef6c49c819468ee1c11502249000a64": {
+  "asset": "V20",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V20.png",
+  "verdict": "FAIL",
+  "codes": [
+   "E02",
+   "C02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "opponent lead glove has a red strap; screen side switch after V19",
+  "lib": 4
+ },
+ "1e3219d4d57089eaf34a82bd4aa4a31010e2c9f52abc8462223a2b4a73d05a27": {
+  "asset": "V21",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V21.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hook arm straight shoulder to glove (about 170 degrees)",
+  "lib": 4
+ },
+ "4c9cd7e6ad852cc309fa9a13b6d9c61c7fc77911dce61907e3893ea919f668c8": {
+  "asset": "V22",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V22.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "C01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "head not slipped, opponent glove stops in front of the face; opponent throws the rear hand (cross) not a jab",
+  "lib": 4
+ },
+ "29e30ea3a03d45bbf699c992506cb4a4bdacf223ee69f11305029e3d3b3f32d5": {
+  "asset": "V23",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V23.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "E02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hook arm straight and wrapped, glove beyond the far torso edge; opponent glove red strap",
+  "lib": 4
+ },
+ "1d58c8a13d92ff26473169208d2e16b2c5280a724aeeed3ad58b435d99959f44": {
+  "asset": "V24",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V24.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B03"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "shovel elbow out at chest height off the hip; glove lands at lower chest",
+  "lib": 4
+ },
+ "3966bc807df536d6b06034c8a6b9767a812b250fce0d2395d66f13ad6431c26c": {
+  "asset": "V25",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V25_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "H06",
+   "A02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "horizontal cut line slices the opponent's arm and shoulder; opponent has no head",
+  "lib": 4
+ },
+ "8917b4b4feb9fd3b41b279e70effab302b72040db73c67c1b53aa513a97d3771": {
+  "asset": "V26",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V26_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I03"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "front foot planted flat, no step in visible",
+  "lib": 4
+ },
+ "9f065d136f32787cf344f52f17098eadd79e64fcf6c58701e3a2f9334192d71a": {
+  "asset": "V27",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V27.png",
+  "verdict": "FAIL",
+  "codes": [
+   "H06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "lighter horizontal band across the top of the frame",
+  "lib": 4
+ },
+ "88e3523ffcc38932360c1b10e40ab583decb665e3717d59bba5fbc151bb77aef": {
+  "asset": "V28",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V28_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "G01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hero head cut by the left frame edge",
+  "lib": 4
+ },
+ "6f30fc3826d292cce0b424bbe1099494b824d496ad2a99594535e812a8b46bbd": {
+  "asset": "V29",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V29.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "e801cb9c09fbf679073bfe9e8a00e3c35321b26cb660271a454c03668df885ec": {
+  "asset": "V30",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V30_r2.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "3421df696e4a6bcdf5be1b9bcbc4e20f727d884238afffcac0e2acca9d2384b4": {
+  "asset": "V31",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V31.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "opponent eyes look straight ahead, not up following the jab",
+  "lib": 4
+ },
+ "64807a9b95e75b9d924bde73ba578e7680d97ae3d14c1964740f6364ba9feca5": {
+  "asset": "V32",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V32.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B09"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hips loading drawn as an extreme wide sumo squat",
+  "lib": 4
+ },
+ "1c21ca8e5cb9722d97c9524e1155fb44905df98216bced3a1b7eabc1fbd444c9": {
+  "asset": "V33",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V33.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "B01",
+   "E02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "glove already landed in a mid swing beat; arm near straight; opponent glove red strap",
+  "lib": 4
+ },
+ "f922b5714f0d1b85081178fad6a7aeb0b6851e8d404b28cdef3d83f29c14d407": {
+  "asset": "V34",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V34.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "F02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hook arm straight and horizontal; glove past the torso edge, no compression",
+  "lib": 4
+ },
+ "4ab5072428117eea7ed87d45f6e9b78ab56619456738b8b3760175fcc5682c06": {
+  "asset": "V35",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V35_r12.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F04",
+   "F03"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "red swirl and ripple rings around the glove; glove sinks into the shirt",
+  "lib": 4
+ },
+ "fe8da06a2a9f0adf83de850a59c5239fd1be0bb3b38f43d4efed88f93386ebe4": {
+  "asset": "V36",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V36_r7.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "39c4e426d71c7d151fc3429be8597487699c91b6d7512518feca8a09cbdd3517": {
+  "asset": "V37",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V37_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "E05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hero only stands in guard, no pivot out; opponent not clearly bigger",
+  "lib": 4
+ },
+ "a29779544809a4e4a7f4556d30f7e7871df29e09e2216f33885dc1dacb317d07": {
+  "asset": "V38",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V38_r12.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "left arm nearly straight (about 150 degrees) into the stomach; hips not turned",
+  "lib": 4
+ },
+ "b4337dc905592ddd28a25894b77e005a9de7988668a93bcec48ef8ca168e06a5": {
+  "asset": "V39",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V39_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "narration says dig the knuckles in but the glove sits idle at the chin",
+  "lib": 4
+ },
+ "83b3e67b7764ca6a941cbd0be8de58d2e6a35a9205b75a2d6d8868b0f445d3ca": {
+  "asset": "V40",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V40_r1.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "ce79e88517f1f9e3aa79c4eda7fd65d9a7d3489eb2997860b454bdeaacebc452": {
+  "asset": "V41",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V41.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "lead glove drawn with separate fingers and red finger bands",
+  "lib": 4
+ },
+ "fe9003a67777b0284be0eaca35cd0ecb275cc08fd50d5f88f3535fca8ddae1e5": {
+  "asset": "V42",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V42_r11.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "7f099f3f27db4809042a9bc890b905b2c52d5585eed02c2cc5a871c789e7e2dd": {
+  "asset": "V43",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V43.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "lead glove drawn with separate fingers and red finger bands",
+  "lib": 4
+ },
+ "47e5f674ecca11d68f0b4d67fae8e14522303056e9e577388591b49b3de4a5b6": {
+  "asset": "V44",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V44_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C06",
+   "F01",
+   "A06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hero drawn in southpaw stance (right hand and right foot lead); opponent jab lands on the hero's forehead; lead feet overlap",
+  "lib": 4
+ },
+ "4a0aa76ab4606697404e51d43c43b7dd30a03b9b041463d7524adbe8067c20bf": {
+  "asset": "V45",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V45.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "opponent jabs with the right arm while neighbouring shots use the left",
+  "lib": 4
+ },
+ "015493787008a76ffba23e5dd4a876b2ddf30273f8a402e79317cac1af133283": {
+  "asset": "V46",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V46.png",
+  "verdict": "UNSURE",
+  "codes": [
+   "C01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "opponent jab hand inconsistent across the sequence",
+  "lib": 4
+ },
+ "82092246baf8eb94074bd139472c38552167d2c8a95fbf8d4f83738b9ebc1b02": {
+  "asset": "V47",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V47_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "F02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "no slip: hero upright, jab glove at his face reads as landing",
+  "lib": 4
+ },
+ "56fde2e321ae481d3fe602def86b94e5846132f13a932a975a502a94239e3e28": {
+  "asset": "V48",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V48_r2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "C01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hero ducks under instead of slipping outside; opponent jabs with the right",
+  "lib": 4
+ },
+ "193b265c4cf2545ef7d402d3957c4f8fca9b1cb01b18e4b0693c4c1f8557dc76": {
+  "asset": "V49",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V49_r1.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "42dae7bf65c64464bd5ca46fbfcc14ab8418d86721308c2116270c85f6acf9f7": {
+  "asset": "V50",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V50_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05",
+   "G03"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "lead glove fingers; medium two shot instead of the ribs close up",
+  "lib": 4
+ },
+ "1dc0fe390821ebfd7417ba3b8e4c411092bf4d569ad1b034dce048c9eca77d60": {
+  "asset": "V51",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V51_r2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "E01",
+   "A06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "opponent face has nose, brow and mouth; hero body overlaps the opponent's legs",
+  "lib": 4
+ },
+ "f6892c7682db7c5c034d1caa1d47fb07530f07571b7527e14e24564aef440f8d": {
+  "asset": "V52",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V52_r6.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "9345e4bbe456dbb8b367e4f3ae405506fe28563c5a40ebcc5ca104868015ad81": {
+  "asset": "V53",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V53.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "F02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "left arm almost straight wrapping the belly like a clinch; glove past the torso edge",
+  "lib": 4
+ },
+ "a658f0d5ce2706a939ad4d526aa5dfd46344266958c8f0f8a328dfa7a891febb": {
+  "asset": "V54",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V54_r8.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "f12599b2c24037a318264c90a9489fe615d34280ec81e7e996b0cccc5ecfa9cf": {
+  "asset": "V55",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V55_r2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "E05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "both just in guard, no jab pulled back; opponent same size as the hero",
+  "lib": 4
+ },
+ "9eb6b315cc02db46690cb24126af3342a188264bbbdbfd42878b237b26d87deb": {
+  "asset": "V56",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V56.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "H06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "RED MISTAKE does not show standing still in the slip; dark band across the top",
+  "lib": 4
+ },
+ "95460e2d96a4161a85776f92bf837651c2336be387dbb5b5cd80f5f56b9e1ad7": {
+  "asset": "V57",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V57.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A04",
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "left forearm folded back so the glove points at the hero's own body",
+  "lib": 4
+ },
+ "f536eecec229129cd3d7004def22166b71e281c016524d075df8c1b540b4d787": {
+  "asset": "V58",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V58_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "both gloves open fingered with thumb",
+  "lib": 4
+ },
+ "f38ec7725411b93d47ee34f5d6f8bb04ef607543476a8a32cb2b0fadfd00661f": {
+  "asset": "V59",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V59_r8.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "left glove still chambered at the hip, no hook travelling",
+  "lib": 4
+ },
+ "b53a40060e99ebbdc974c10ebace4664ec0f917ff4fdde014fe48850703cd161": {
+  "asset": "V60",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V60.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hero drawn in southpaw stance (right hand lead)",
+  "lib": 4
+ },
+ "5382f9e64d70d637cc859f13aff55584105469370f4d7742f609acc6e289c0a8": {
+  "asset": "V61",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V61_r10.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A04",
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "folded forearm: glove points back at the hero, forearm hits the bag",
+  "lib": 4
+ },
+ "917f4ef7505c3631c6fee8ed4a0f79f1828331d0bfa5dea4a7b25f0c32db9793": {
+  "asset": "V62",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V62_r7.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "f343d2bae9118ffa8ea81bfd77782ad43f2c28ac067477c1dd86822647233e1e": {
+  "asset": "V63",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V63.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "ccbb0b6b93c81b30fa1a6490b0cdf481e177b49b7f39d9548c73f72a3a62cf08": {
+  "asset": "V64",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V64.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C06",
+   "A06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hero southpaw stance; gloves interlocked at centre",
+  "lib": 4
+ },
+ "0c99d793a7abfe93fd47187acc45290103ec036b2a9a4a79c9eb3ee56e63746f": {
+  "asset": "V65",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V65.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "lead feet overlap and gloves stacked, no separation",
+  "lib": 4
+ },
+ "015ab434b6a11acbc6886eb4cc3dbbeca5e6c4d1e6e2e1084f413a551f70807c": {
+  "asset": "V66",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V66_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "lead glove drawn with separate fingers",
+  "lib": 4
+ },
+ "62d57582856345f99209c9ebbed238a071967b16f1a8161082e50421b3710795": {
+  "asset": "V67",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V67_r2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C01",
+   "A06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "chambered hand is the LEFT (southpaw like); hero leg merges with the opponent's leg",
+  "lib": 4
+ },
+ "ddd5a3f43fdd8bf7483820cd99200554bec109d2cfa807a0a06eb95adffa9529": {
+  "asset": "V68",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V68.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "lead glove drawn with separate fingers",
+  "lib": 4
+ },
+ "da6c7ac2fcb0970c99afe8fae57e327818d643e45b5fcb1da37cb1b80c417506": {
+  "asset": "V69",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V69_r3.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "chin glove shows separate fingers (shovel mechanics otherwise correct)",
+  "lib": 4
+ },
+ "7b57389dbda50f0c69fd9c50d034e998a5cc1ed04e77ed048bf9382aaaad938b": {
+  "asset": "V70",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V70.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C01",
+   "G01",
+   "H06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "shovel thrown with the LEFT arm; opponent head cut by the top edge; white halo",
+  "lib": 4
+ },
+ "9ce70a63c09dc3b12c5bce5b5b297fc327d05fadd756ac8e9764a2506a31c4e1": {
+  "asset": "V71",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V71_r3.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F03",
+   "B09",
+   "A02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "glove under the tank top (Sean 1:26); opponent's only arm flung out the right edge, other arm missing",
+  "lib": 4
+ },
+ "f231c12893446df8165d59d5ca27c1d999391bd343efb9e40508b84cbdf7dc16": {
+  "asset": "V72",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V72_r3.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F03"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "glove under the lifted shirt (same drawing as V79, Sean 1:35); inspector passed it, overridden on Sean's documented finding",
+  "lib": 4
+ },
+ "26d8d9156d07ca5be3207b6b01de2e90e65e6fecc5d9566e1e3a9385d4c49e93": {
+  "asset": "V73",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V73_r3.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "e0aa71745297a919943abf9dfaae8cf9d246e793ee7ebc06eb37c27417aa0e28": {
+  "asset": "V74",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V74.png",
+  "verdict": "FAIL",
+  "codes": [
+   "E03",
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hero POV arms peach skin; bare fingers stick out of the gloves",
+  "lib": 4
+ },
+ "a011ddbe43130ca54d464d0e369f2d100983835d395a1259395cc061263816de": {
+  "asset": "V75",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V75_r9.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C01",
+   "C03"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "arm in the ribs is the hero's LEFT (shovel beat needs the right), lands on the opponent's LEFT side",
+  "lib": 4
+ },
+ "9ebef709c7ce57357402f1fb6b5c81090528b81c926a16d02f706c7c22388617": {
+  "asset": "V76",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V76_r3.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F03",
+   "B03"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "shirt hem folds over the glove; elbow forward of the body, not at the hip",
+  "lib": 4
+ },
+ "1647847a489c1c913f750c49ca5a0f1d5abf0ce62b1ec190aa27ee5613ad9d8e": {
+  "asset": "V77",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V77_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "both gloves drawn as separate fingers with red bands",
+  "lib": 4
+ },
+ "234bd8b6dad1a74b9292ada29159aeaa275b39481c60d5f0339a53488160f916": {
+  "asset": "V78",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V78_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "lead glove drawn as a bare fist with separate fingers",
+  "lib": 4
+ },
+ "0ef514b1d2128f302ad1ec05c4ad2f97d4992483203b2c6d3851a85aa9bbbaa1": {
+  "asset": "V79",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V79.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "F03"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "beat is a right shovel into the heavy bag but shows the opponent; glove under the lifted shirt hem",
+  "lib": 4
+ },
+ "d4f05b3a2395b4befeb6e76182d29ca7946c6aa682fb4ecce3eea46db645ecf8": {
+  "asset": "V80",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V80_r3.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A03",
+   "A02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "arm grows out of a sleeve-like shoulder blob, no readable elbow or head",
+  "lib": 4
+ },
+ "dd21fd75ea2739ebfc5e1f4a450f7e1ee56bda887490ba775cf33a142c1359aa": {
+  "asset": "V81",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V81_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "lead glove shows separate fingers; heavy bag in an unflagged beat",
+  "lib": 4
+ },
+ "6c8b097c67bf1f9ec22090afc64333beb2b5349863b1d3a528b6d2f01483c446": {
+  "asset": "V82",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V82_r1.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "2b16d3ebc192b4d3be2c8751ebcca6c57e05f65fca94070e62c541d253d7669b": {
+  "asset": "V83",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V83.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "57bbc7a8d3d3d3ce26d54744519a949d9456698beb3c496a770a7489f0fb26fa": {
+  "asset": "V84",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V84.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "A06",
+   "E02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "left hook arm nearly straight wrapping the ribs; red strapped glove on the opponent's raised arm",
+  "lib": 4
+ },
+ "2fd280911b3ae2ac59ee71a8485be2b1c577749be29a693b9a6ab3626396cdbb": {
+  "asset": "V85",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V85_r9.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "no slip: hero upright square, jab misses far wide",
+  "lib": 4
+ },
+ "8cc909d435ed57b379a575a3a14850af9bdd34efacd2ac36a41ecdca5a6bf213": {
+  "asset": "V86",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V86.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "left hook arm straight wrapping the opponent's back; glove a featureless ball",
+  "lib": 4
+ },
+ "bb16a6769a0048f7be57a0cf0297433dbba45b1c75c42a59498212ca9c6e83e7": {
+  "asset": "V87",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V87_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hero lead glove and opponent glove drawn as separate fingers",
+  "lib": 4
+ },
+ "97a6207983c717cbda878c1efb58a7b65c05b8ca3d21bc50380b653105a8b266": {
+  "asset": "V88",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V88.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F03",
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "shovel glove under the opponent's lifted shirt hem; guard glove bare-looking fingers",
+  "lib": 4
+ },
+ "b886c17a973cf26229a669d39667ae1c1183a66dfc312c2e377df67f8f1fd445": {
+  "asset": "V89",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V89_r5.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F04",
+   "C05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "swirl lines on the shirt; eye on the back of the head (Sean 1:48)",
+  "lib": 4
+ },
+ "e11cfa4d3b9dbfdb6ddf9969b7114f6d130f1572fbdfee997860b5e5c46dc1b6": {
+  "asset": "V90",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V90.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "C01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "hero holds up the LEFT glove; beat says three fingers of the RIGHT glove",
+  "lib": 4
+ },
+ "b249065c77e995c1e20d41e816287bd97cbda2a27c341d4d356680f870022f55": {
+  "asset": "V91",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V91_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "E03",
+   "H06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "opponent skin drifted light gray; dark band across the top",
+  "lib": 4
+ },
+ "5bc3927bfe1dd0e83c77c2b78f7eb964725c662bbc893576cfdc636e2cf0b538": {
+  "asset": "V92",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V92.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "c2a8dc85f32e8252dba50c3f3a06f162b22e2a7545aa3753e2424c8364e0c448": {
+  "asset": "V93",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V93.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "97eb7cedd1c7342ce537c4879d441c0cb992f83b3e6677115f57c1df208ed852": {
+  "asset": "V94",
+  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V94.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "E02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "left hook near straight wrapped across the ribs; red strapped gloves on the opponent's raised arm",
+  "lib": 4
+ },
+ "14f93f5cce971fa547375cc58b6d5125b54294ffba8993e1624109ef9d58f485": {
+  "asset": "V95",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V95_r8.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "3c96cabf0d131df58e4bdc6a09671f4bffbe32b7f170ce94dba3c705b26253eb": {
+  "asset": "V96",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V96.png",
+  "verdict": "FAIL",
+  "codes": [
+   "E02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "opponent in tight compression shorts instead of loose black fight shorts (borderline)",
+  "lib": 4
+ },
+ "bda20f180e86add9b8ee5e9011b5660d99127d465397401b1b33b93a79957abd": {
+  "asset": "V97",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V97.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "6f9b2a20e0dfc3a9f13529c48849a0f10bb6462aef39e14a23cc4a02b722d6ef": {
+  "asset": "V98",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V98_r1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "both gloves drawn as separate fingers with red bands",
+  "lib": 4
+ },
+ "8e4c384bd60b97941d64c48bf4242eae27ab21044f1f8c11a40a9c853a50d205": {
+  "asset": "V99",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V99.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "1a610bf6e62435e0ea84e28c59a92802d9835090e18a5fd554f941620a966b1f": {
+  "asset": "V100",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V100.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "guard gloves drawn as separate fingers with red bands",
+  "lib": 4
+ },
+ "ad92ab6f4f18720cba56f51996ebd7b4ce46e279edbfecb1ad0349a5b1027ee6": {
+  "asset": "V101",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V101_r2.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "92acd231468842d39e7367b8dead78ef2e00c03be17b698384ac4c2ace39de23": {
+  "asset": "V103",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V103_r1.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "f0bfbfe6be92e972380aa6aa697e0f04317d414de06e064ada2c5ae9e3d6adc0": {
+  "asset": "V104",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V104.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ },
+ "1b5bf3c45212c62a77b70b85d7ab9392a950d794191a49cedb0659d2c6ed799a": {
+  "asset": "V105",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V105_r2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "rear glove shows separate fingers with red bands",
+  "lib": 4
+ },
+ "93184dc8cfbf630ad9c5c86c516b135576510eeb7f02cfc38c11e4b999a804f6": {
+  "asset": "V106",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V106.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "both gloves drawn as separate finger digits",
+  "lib": 4
+ },
+ "f2106ba9c464026d93e7974c90b45ce7b52ef20d016eb5215659b2f80fd85dda": {
+  "asset": "V107",
+  "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V107.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:29 UTC",
+  "note": "",
+  "lib": 4
+ }
+}

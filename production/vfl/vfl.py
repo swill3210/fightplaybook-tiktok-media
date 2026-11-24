@@ -151,6 +151,11 @@ def cmd_sheet(a):
 LINE = re.compile(r"^\s*(\S+)\s+(PASS|FAIL|UNSURE)\b\s*([A-I]\d\d(?:\s*,\s*[A-I]\d\d)*|NEW)?\s*(.*)$", re.I)
 
 
+def _proj(a, b):
+    a, b = a.lower(), b.lower()
+    return bool(a and b) and (a.startswith(b) or b.startswith(a))
+
+
 def record(reg, aid, path, codes, note, by, project):
     """Add a failure to the library without duplicating: same image (dhash) or same project+asset+class appends an occurrence."""
     h = L.dhash(path)
@@ -160,7 +165,7 @@ def record(reg, aid, path, codes, note, by, project):
         dup = None
         for k, v in reg["instances"].items():
             same_img = (v.get("original") or {}).get("dhash") and L.hamming((v["original"]["dhash"]), h) <= 10
-            if (v["class"] == cid or cid in v.get("also", [])) and (same_img or (v.get("project") == project and v.get("shot") == aid)):
+            if (v["class"] == cid or cid in v.get("also", [])) and (same_img or (_proj(v.get("project", ""), project) and v.get("shot") == aid)):
                 dup = k
                 break
         if dup:
