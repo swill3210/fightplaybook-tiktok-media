@@ -1,6 +1,6 @@
 {
- "version": 8,
- "updated": "2026-11-24 07:43 UTC",
+ "version": 9,
+ "updated": "2026-11-24 07:46 UTC",
  "classes": {
   "VFC-A01": {
    "category": "A",
@@ -11148,6 +11148,18 @@
    "approved_known_defects": [
     "VFI-0118"
    ],
+   "unanswered": [],
+   "unsure": [],
+   "class_hits": 8
+  },
+  {
+   "worker": "combat-anatomy-specialist",
+   "worker_hash": "de7436d51e5fd8c0",
+   "date": "2026-11-24 07:46 UTC",
+   "library_version": 8,
+   "n": 16,
+   "result": "PASS",
+   "approved_known_defects": [],
    "unanswered": [],
    "unsure": [],
    "class_hits": 8
