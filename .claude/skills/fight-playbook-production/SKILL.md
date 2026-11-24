@@ -110,3 +110,7 @@ Report what was checked, what passed and what still needs Sean's decision. State
 | 2026-11-23 | punch_with_body rebuild (A/B vs Grok) | Same script and voice, 3D rig, 17 shots | Rig mechanics, over the shoulder contact, outline highlights | First pass: emissive glow recoloured the costume (fixed with outline glow); profile contact shots unreadable (fixed with over the shoulder) | Not posted |
 
 When YouTube Studio data arrives, record per video: CTR, average view duration, percent viewed, the retention dips with timestamps, and which shot sat at each dip.
+
+## 0.6 Project memory and visual QC (Sean, 2026-11-24; appended, nothing above changed)
+* Project knowledge lives in this repo under `memory/` (see `CLAUDE.md`); the Obsidian vault is optional. Where this file says vault notes, the repo copy in `memory/` is the working copy.
+* Visual QC follows `memory/workflows/visual-qc.md` and the Visual Failure Library (`memory/visual-failures/`, tool `production/vfl/vfl.py`).

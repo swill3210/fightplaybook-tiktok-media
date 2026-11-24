@@ -5,8 +5,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python3 production/kb/kb.py pull && python3 production/kb/kb.py brief) 2>&1 || echo 'Fight Playbook vault not cloned yet (see production/kb/README.md)'",
-            "timeout": 60
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 production/memory_hook.py start",
+            "timeout": 30
           }
         ]
       }
@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 production/kb/kb.py remind",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 production/memory_hook.py stop",
             "timeout": 30
           }
         ]
