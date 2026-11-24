@@ -2,16 +2,13 @@
 
 Session 2026-11-24 (cloud, branch `claude/determined-cannon-ry2m6g`).
 
-Done
-* Merged Claude's production code into this branch; built `production/vfl/` (Visual Failure Library: harvest, screeners, cache, verdicts, certification, gate).
-* Audited all QA reports, ledgers, lessons and Sean feedback: 249 documented failures, 147 with original images, 98 blind test eligible, in `memory/visual-failures/` (45 classes, CHECKLIST.md, INDEX.md).
-* Added Sean's 4 liver v3 examples (VFI-0150 to VFI-0153) with render frames, his screenshots and source stills.
-* Built this memory system; copied the vault's 5 skills and 2 subagents into `.claude/` so they load natively.
+State
+* Liver v4 fix in progress. Primary inspector `combat-anatomy-specialist` certified on run 4 (runs 1 and 3 failed; rules added: beat required, limb census, measured shovel height).
+* 106 unique stills: 25 PASS (hash cache `memory/visual-failures/approvals.json`), 81 being regenerated. Sean ruled C4 (MMA gloves as on the reference sheet) and "grind all 64" (now 81).
+* Creative director plan: `production/liver_v4/vcd_plan.md` (hero on screen right facing left, no side switches). Generation ledger: `production/liver_v4/ledger.jsonl`.
+* Working files (rebuildable, not in git): /tmp/claude-0/liver (manifest, beats, sheets, candidates regen/ regen2/), /tmp/claude-0/lf (Remotion project rebuilt from CLAUDE-EXPORT timeline; base layers via mk_bases.py, lines via mk_lines.py).
 
-In progress / next
-* Certify `combat-anatomy-specialist` (`vfl.py certify make`), then reinspect liver v3 per `memory/workflows/visual-qc.md`. Nothing has been delivered or uploaded.
-* The liver v3 render lives on the handoff repo branch `claude/fight-playbook-youtube-ccyjcd` in `CLAUDE-EXPORT/` (attach that repo, clone, `git worktree add` the branch).
-
-Watch out
-* This repo is PUBLIC (Sean's choice 2026-11-24): no credentials, tokens or emails.
-* Engine `qc.py` still passes rig poses the specialist rejects (pending task 3).
+Next
+1. Inspect candidates (vfl.py sheet + specialist, terse lines), pick passing take per shot, regenerate only failures.
+2. Replace stills in /tmp/claude-0/lf, rebuild their layers, render only changed shot frame ranges, splice into liver_v3_final.mp4 with the original audio.
+3. vfl.py render + gate, creative director render review, then send to Sean. Never upload.
