@@ -1,0 +1,2 @@
+V54 FAIL A02 opponent (red shirt) has no right arm; caught by Sean, passed by the certified inspector
+V95 FAIL A07,E05 opponent's right arm shrunk and the opponent noticeably too large; caught by Sean, passed by the certified inspector

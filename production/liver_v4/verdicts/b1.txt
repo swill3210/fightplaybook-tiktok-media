@@ -1,0 +1,36 @@
+V2 FAIL B01 hook arm nearly straight (about 160 degrees), glove on the far flank edge
+V1 FAIL B06 front foot lift drawn as a hip height knee raise that reads as a knee strike
+V3 FAIL B01 left hook arm almost straight and wrapped round the torso like a hug
+V4 FAIL A07,I01 worms eye giant feet and stretched legs; opponent hands hang at the knees
+V5 PASS
+V6 PASS
+V7 PASS
+V8 FAIL A05 both gloves read as bare hands with separate open fingers
+V9 FAIL B01,F02 hook arm straight and horizontal; glove past the far torso edge, no compression
+V10 FAIL NEW angle is eye level side view, not the high overhead birds eye in the beat; hero guard glove at chest
+V11 FAIL C01 hero raises the LEFT glove for three fingers; beat says right glove
+V12 FAIL E02 opponent gloves have red wrist trim
+V13 PASS
+V14 PASS
+V15 FAIL B01 slow left hook drawn near straight and wrapping
+V16 FAIL A07,E05,A06 opponent about 3x the hero; hero head pressed into the opponent's arm
+V17 FAIL D02 no ground, opponent foot hovers, right foot on tiptoe
+V18 FAIL I01 eyes stay level, do not drop to the ribs
+V19 FAIL B09,E05 both fighters square to camera, not in stance; opponent barely taller
+V20 FAIL E02,C02 opponent lead glove has a red strap; screen side switch after V19
+V21 FAIL B01 hook arm straight shoulder to glove (about 170 degrees)
+V22 FAIL I01,C01 head not slipped, opponent glove stops in front of the face; opponent throws the rear hand (cross) not a jab
+V23 FAIL B01,E02 hook arm straight and wrapped, glove beyond the far torso edge; opponent glove red strap
+V24 FAIL B03 shovel elbow out at chest height off the hip; glove lands at lower chest
+V25 FAIL H06,A02 horizontal cut line slices the opponent's arm and shoulder; opponent has no head
+V26 FAIL I03 front foot planted flat, no step in visible
+V27 FAIL H06 lighter horizontal band across the top of the frame
+V28 FAIL G01 hero head cut by the left frame edge
+V29 PASS
+V30 PASS
+V31 FAIL I01 opponent eyes look straight ahead, not up following the jab
+V32 FAIL B09 hips loading drawn as an extreme wide sumo squat
+V33 FAIL I01,B01,E02 glove already landed in a mid swing beat; arm near straight; opponent glove red strap
+V34 FAIL B01,F02 hook arm straight and horizontal; glove past the torso edge, no compression
+V35 FAIL F04,F03 red swirl and ripple rings around the glove; glove sinks into the shirt
+V36 PASS

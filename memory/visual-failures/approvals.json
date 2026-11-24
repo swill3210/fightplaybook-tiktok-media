@@ -1675,5 +1675,313 @@
   "t": "2026-11-24 07:56 UTC",
   "note": "right arm straight; opponent mouth",
   "lib": 11
+ },
+ "eacde74e8bfb92d56fd85f6894458c1ddb53307317cfc94c4372a97a308b5678": {
+  "asset": "V16_1",
+  "path": "/tmp/claude-0/liver/regen2/V16_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "G01",
+   "H06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "opponent's head cut by a light band and the top edge",
+  "lib": 13
+ },
+ "616766a0649dbfd17d273ad3bc65ed79e4bf1618cc8304d816051471f1dda312": {
+  "asset": "V16_2",
+  "path": "/tmp/claude-0/liver/regen2/V16_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight left to the stomach; wide shot, beat is an extreme close up",
+  "lib": 13
+ },
+ "f32b44cb7c2a55f58ca34428c54703d42e328027999e51e49772e0aff25ad840": {
+  "asset": "V24_1",
+  "path": "/tmp/claude-0/liver/regen2/V24_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B03",
+   "F01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "horizontal near straight arm, elbow off the hip, glove at chest height",
+  "lib": 13
+ },
+ "d8a5c81f8bb6986599e7bbf4addd330aa0249f18bcb4dcf8e208176b5a8080e8": {
+  "asset": "V24_2",
+  "path": "/tmp/claude-0/liver/regen2/V24_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B06",
+   "B05",
+   "F04"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "arm rises into the opponent's glove at face height; opponent glove at hip; motion marks",
+  "lib": 13
+ },
+ "bc6943c2906ed5158cde6016e3e7e59401edca5122720a1bdbc77bf033d7511d": {
+  "asset": "V2_1",
+  "path": "/tmp/claude-0/liver/regen2/V2_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "E01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "arm about 150 degrees; hero face has no eyes",
+  "lib": 13
+ },
+ "7a6d833397c314445842e13e6579e3f147a3db44d26b513603318ed6390a2ad2": {
+  "asset": "V2_2",
+  "path": "/tmp/claude-0/liver/regen2/V2_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight arm, elbow below the glove",
+  "lib": 13
+ },
+ "ee6bb722bbd3debbd279c38f1fa0e1b4f85e1fea3fccfe46a5ba6152da85ca9a": {
+  "asset": "V33_1",
+  "path": "/tmp/claude-0/liver/regen2/V33_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight arm at guard height, no contact",
+  "lib": 13
+ },
+ "81bc7d9bb4765a9b2d02ea64e285a72eeae222bb85736961f4c3dc34555ba35c": {
+  "asset": "V33_2",
+  "path": "/tmp/claude-0/liver/regen2/V33_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "F01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight arm at pec height",
+  "lib": 13
+ },
+ "0351d724f357f165e042db6b32dc0b0538cd156882847302752b568acf03fc15": {
+  "asset": "V38_1",
+  "path": "/tmp/claude-0/liver/regen2/V38_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B06",
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight to the chest, hips not turned",
+  "lib": 13
+ },
+ "7403652dd2b6eba8fb7da04b7cd936df518e9f07f58a6aa6eb096e665226b3ef": {
+  "asset": "V38_2",
+  "path": "/tmp/claude-0/liver/regen2/V38_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight arm to the chest",
+  "lib": 13
+ },
+ "e4f854b2168fa35a00a1db83b5eda2410025c696ba8eb56b8f9aedd382226765": {
+  "asset": "V53_1",
+  "path": "/tmp/claude-0/liver/regen2/V53_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight arm into the chest; jab not pulling back",
+  "lib": 13
+ },
+ "5a65665ddb7e2ba186fd8aad5b95ed2190f14d1dbb33ebd6fdeee549f23ba138": {
+  "asset": "V53_2",
+  "path": "/tmp/claude-0/liver/regen2/V53_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight arm (about 160 degrees) to the stomach",
+  "lib": 13
+ },
+ "e9aba4dd84e3cee1de044d178804d947d29b3abd05802ace428670b50875bc97": {
+  "asset": "V57_1",
+  "path": "/tmp/claude-0/liver/regen2/V57_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B06",
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "no slip; straight arm",
+  "lib": 13
+ },
+ "5e03ce9aae9751af14959a7b8c2968598a8187604e08b3c9768db1b9efc8eb36": {
+  "asset": "V57_2",
+  "path": "/tmp/claude-0/liver/regen2/V57_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A06",
+   "B01",
+   "F01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "tangled arms; straight arm at pec height",
+  "lib": 13
+ },
+ "552ac048a2e768530d1a743c919b3f3e452442ab97a94f9bb56d14cb9c4acab4": {
+  "asset": "V70_1",
+  "path": "/tmp/claude-0/liver/regen2/V70_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B03",
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "horizontal arm, elbow off the hip; wide not close up",
+  "lib": 13
+ },
+ "b3f57d96876c26f14ab7713cb7aa73997293ab45b25f7fdc1894ac9141ade199": {
+  "asset": "V70_2",
+  "path": "/tmp/claude-0/liver/regen2/V70_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A06",
+   "E01",
+   "B06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "lower arm merges into the opponent's glove; no uppercut; no eyes",
+  "lib": 13
+ },
+ "29f9869fbd4f3d374efe5bc0ab82d63dc86773f2be3229a1d5f1bc925f1674e8": {
+  "asset": "V75_2",
+  "path": "/tmp/claude-0/liver/regen2/V75_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B03",
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "arm near straight to the chest",
+  "lib": 13
+ },
+ "bed92388ff2e795519538fc2a101f1f340a6d1b5870cef06557ca251cf5c6a7f": {
+  "asset": "V76_1",
+  "path": "/tmp/claude-0/liver/regen2/V76_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F02",
+   "B06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "no contact; elbow not tucked",
+  "lib": 13
+ },
+ "20924e90ad6b3f00452ce848145e26a8696332f7d8b883fb4156fb9dbd44cb04": {
+  "asset": "V84_1",
+  "path": "/tmp/claude-0/liver/regen2/V84_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight arm to the chest",
+  "lib": 13
+ },
+ "a833c1fc17a0314f2c1312543334f32b99d1131b107856e5c7979b7b022fe195": {
+  "asset": "V84_2",
+  "path": "/tmp/claude-0/liver/regen2/V84_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "F01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "arm about 150 degrees at the pecs",
+  "lib": 13
+ },
+ "cc78e651eb4798d9770e13a5d446c7e81d5ae6cc2442831cc733d74ea3534d25": {
+  "asset": "V86_1",
+  "path": "/tmp/claude-0/liver/regen2/V86_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "nearly straight arm to the lower chest",
+  "lib": 13
+ },
+ "fadfcbb837a1f1202603d4d95c25882ed30d5d778a80eefae3aadd6ef4f2f0e3": {
+  "asset": "V86_2",
+  "path": "/tmp/claude-0/liver/regen2/V86_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "F01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight arm at chest height",
+  "lib": 13
+ },
+ "e962a7e93762b2cd4f1b9d45411c00c3d2a4b243067cf1010252a5bb88a9fe0d": {
+  "asset": "V94_1",
+  "path": "/tmp/claude-0/liver/regen2/V94_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "B05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight arm; opponent glove at the hip",
+  "lib": 13
+ },
+ "7cd8ebcddae71e2f912942b80fa2fd73d163954e4fb36a66899c898be278d58c": {
+  "asset": "V94_2",
+  "path": "/tmp/claude-0/liver/regen2/V94_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:58 UTC",
+  "note": "straight arm to the chest",
+  "lib": 13
  }
 }

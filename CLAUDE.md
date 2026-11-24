@@ -6,7 +6,7 @@ This repo is the permanent home of project knowledge (no Obsidian needed). It is
 | Need | File |
 | --- | --- |
 | Where we left off (shown at session start by a hook) | `memory/SESSION_HANDOFF.md` |
-| Status, pending tasks, Sean's open decisions | `memory/PROJECT_STATE.md` |
+| Status, pending tasks, Sean's open decisions, active video files (`production/<video>/`) | `memory/PROJECT_STATE.md` |
 | Permanent production rules | `memory/MASTER_RULES.md` (verbatim originals: skill `fight-playbook-rules`) |
 | What worked and failed | `memory/LESSONS_LEARNED.md` |
 | Workers, inspectors, bots | `memory/WORKERS.md` |

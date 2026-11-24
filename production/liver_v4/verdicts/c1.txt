@@ -1,0 +1,31 @@
+V12_1 FAIL C01,I01,B05,E05 straight-ish rear arm; two shot not close up; guards dropped; opponent towers
+V18_1 FAIL I01,E01 eyes do not drop; brow lines on the face
+V18_2 FAIL I01,E01 eyes level; brow lines
+V20_1 PASS
+V20_2 PASS
+V27_1 PASS
+V27_2 PASS
+V2_1 FAIL B01,G01,B05 arm about 160 degrees; opponent cut by left edge; guard dropped
+V2_2 FAIL I01,A06,C04 no glove on the ribs; arms tangled
+V31_1 FAIL I01 eyes level, no upward gaze
+V31_2 FAIL I01 eyes level
+V35_1 FAIL A05,A02,G01 boxing gloves; opponent right arm missing; head cut by top edge
+V35_2 FAIL A05,A02,G01 same
+V38_1 FAIL B06,C01 straight rear arm, not a hook
+V38_2 FAIL A06,B06,E02 clinch, merged bodies; white belt
+V53_1 FAIL F01,A06,B01,G01 glove at the beltline; open arm; tangled
+V53_2 FAIL F01,A06,B01,G01 same
+V74_1 PASS
+V74_2 PASS
+V86_1 FAIL F01,A06,B01 glove at the waistband; arm about 150 degrees; owner unclear
+V86_2 FAIL F01,A06,B01,G01 same
+V91_1 FAIL I01,A02 no pivot; rear arm untraced
+V91_2 FAIL I01,A02 no pivot; rear arm hidden
+V96_1 FAIL B09,I01 opponent's gloves raised overhead like a celebration
+V96_2 FAIL B09,I01 same
+V15_1 FAIL C01,B01,C06 right arm punches, straight; right leg leads
+V15_2 FAIL C01,B01 right arm, open, glove at the waist
+V3_1 FAIL C01,B01 right arm, nearly straight
+V3_2 FAIL B06,I01,E03 straight jab at head height; skin lighter gray
+V9_1 FAIL C01,B01 right arm, straight
+V9_2 FAIL C01,B01,E01 right arm straight; opponent mouth

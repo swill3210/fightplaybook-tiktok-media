@@ -1,0 +1,36 @@
+V37 FAIL I01,E05 hero only stands in guard, no pivot out; opponent not clearly bigger
+V38 FAIL B01,I01 left arm nearly straight (about 150 degrees) into the stomach; hips not turned
+V39 FAIL I01 narration says dig the knuckles in but the glove sits idle at the chin
+V40 PASS
+V41 FAIL A05 lead glove drawn with separate fingers and red finger bands
+V42 PASS
+V43 FAIL A05 lead glove drawn with separate fingers and red finger bands
+V44 FAIL NEW hero drawn in southpaw stance (right hand and right foot lead); opponent jab lands on the hero's forehead; lead feet overlap
+V45 FAIL C01 opponent jabs with the right arm while neighbouring shots use the left
+V46 UNSURE C01 opponent jab hand inconsistent across the sequence
+V47 FAIL I01,F02 no slip: hero upright, jab glove at his face reads as landing
+V48 FAIL I01,C01 hero ducks under instead of slipping outside; opponent jabs with the right
+V49 PASS
+V50 FAIL A05,G03 lead glove fingers; medium two shot instead of the ribs close up
+V51 FAIL E01,A06 opponent face has nose, brow and mouth; hero body overlaps the opponent's legs
+V52 PASS
+V53 FAIL B01,F02 left arm almost straight wrapping the belly like a clinch; glove past the torso edge
+V54 PASS
+V55 FAIL I01,E05 both just in guard, no jab pulled back; opponent same size as the hero
+V56 FAIL I01,H06 RED MISTAKE does not show standing still in the slip; dark band across the top
+V57 FAIL A04,B01 left forearm folded back so the glove points at the hero's own body
+V58 FAIL A05 both gloves open fingered with thumb
+V59 FAIL I01 left glove still chambered at the hip, no hook travelling
+V60 FAIL NEW hero drawn in southpaw stance (right hand lead)
+V61 FAIL A04,B01 folded forearm: glove points back at the hero, forearm hits the bag
+V62 PASS
+V63 PASS
+V64 FAIL NEW,A06 hero southpaw stance; gloves interlocked at centre
+V65 FAIL A06 lead feet overlap and gloves stacked, no separation
+V66 FAIL A05 lead glove drawn with separate fingers
+V67 FAIL C01,A06 chambered hand is the LEFT (southpaw like); hero leg merges with the opponent's leg
+V68 FAIL A05 lead glove drawn with separate fingers
+V69 FAIL A05 chin glove shows separate fingers (shovel mechanics otherwise correct)
+V70 FAIL C01,G01,H06 shovel thrown with the LEFT arm; opponent head cut by the top edge; white halo
+V71 FAIL F03,B09,A02 glove under the tank top (Sean 1:26); opponent's only arm flung out the right edge, other arm missing
+V72 FAIL F03 glove under the lifted shirt (same drawing as V79, Sean 1:35); inspector passed it, overridden on Sean's documented finding

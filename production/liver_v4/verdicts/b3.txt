@@ -1,0 +1,34 @@
+V73 PASS
+V74 FAIL E03,A05 hero POV arms peach skin; bare fingers stick out of the gloves
+V75 FAIL C01,C03 arm in the ribs is the hero's LEFT (shovel beat needs the right), lands on the opponent's LEFT side
+V76 FAIL F03,B03 shirt hem folds over the glove; elbow forward of the body, not at the hip
+V77 FAIL A05 both gloves drawn as separate fingers with red bands
+V78 FAIL A05 lead glove drawn as a bare fist with separate fingers
+V79 FAIL I01,F03 beat is a right shovel into the heavy bag but shows the opponent; glove under the lifted shirt hem
+V80 FAIL A03,A02 arm grows out of a sleeve-like shoulder blob, no readable elbow or head
+V81 FAIL A05 lead glove shows separate fingers; heavy bag in an unflagged beat
+V82 PASS
+V83 PASS
+V84 FAIL B01,A06,E02 left hook arm nearly straight wrapping the ribs; red strapped glove on the opponent's raised arm
+V85 FAIL I01 no slip: hero upright square, jab misses far wide
+V86 FAIL B01,A05 left hook arm straight wrapping the opponent's back; glove a featureless ball
+V87 FAIL A05 hero lead glove and opponent glove drawn as separate fingers
+V88 FAIL F03,A05 shovel glove under the opponent's lifted shirt hem; guard glove bare-looking fingers
+V89 FAIL F04,C05 swirl lines on the shirt; eye on the back of the head (Sean 1:48)
+V90 FAIL I01,C01 hero holds up the LEFT glove; beat says three fingers of the RIGHT glove
+V91 FAIL E03,H06 opponent skin drifted light gray; dark band across the top
+V92 PASS
+V93 PASS
+V94 FAIL B01,E02 left hook near straight wrapped across the ribs; red strapped gloves on the opponent's raised arm
+V95 PASS
+V96 FAIL E02 opponent in tight compression shorts instead of loose black fight shorts (borderline)
+V97 PASS
+V98 FAIL A05 both gloves drawn as separate fingers with red bands
+V99 PASS
+V100 FAIL A05 guard gloves drawn as separate fingers with red bands
+V101 PASS
+V103 PASS
+V104 PASS
+V105 FAIL A05 rear glove shows separate fingers with red bands
+V106 FAIL A05 both gloves drawn as separate finger digits
+V107 PASS

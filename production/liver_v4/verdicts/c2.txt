@@ -1,0 +1,24 @@
+V16_1 FAIL G01,H06 opponent's head cut by a light band and the top edge
+V16_2 FAIL B01,I01 straight left to the stomach; wide shot, beat is an extreme close up
+V24_1 FAIL B03,F01 horizontal near straight arm, elbow off the hip, glove at chest height
+V24_2 FAIL B06,B05,F04 arm rises into the opponent's glove at face height; opponent glove at hip; motion marks
+V2_1 FAIL B01,E01 arm about 150 degrees; hero face has no eyes
+V2_2 FAIL B01 straight arm, elbow below the glove
+V33_1 FAIL B01,I01 straight arm at guard height, no contact
+V33_2 FAIL B01,F01 straight arm at pec height
+V38_1 FAIL B06,B01 straight to the chest, hips not turned
+V38_2 FAIL B01 straight arm to the chest
+V53_1 FAIL B01 straight arm into the chest; jab not pulling back
+V53_2 FAIL B01 straight arm (about 160 degrees) to the stomach
+V57_1 FAIL B06,B01 no slip; straight arm
+V57_2 FAIL A06,B01,F01 tangled arms; straight arm at pec height
+V70_1 FAIL B03,I01 horizontal arm, elbow off the hip; wide not close up
+V70_2 FAIL A06,E01,B06 lower arm merges into the opponent's glove; no uppercut; no eyes
+V75_2 FAIL B03,B01 arm near straight to the chest
+V76_1 FAIL F02,B06 no contact; elbow not tucked
+V84_1 FAIL B01 straight arm to the chest
+V84_2 FAIL B01,F01 arm about 150 degrees at the pecs
+V86_1 FAIL B01 nearly straight arm to the lower chest
+V86_2 FAIL B01,F01 straight arm at chest height
+V94_1 FAIL B01,B05 straight arm; opponent glove at the hip
+V94_2 FAIL B01 straight arm to the chest

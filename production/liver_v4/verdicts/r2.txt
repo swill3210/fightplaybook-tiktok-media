@@ -1,0 +1,20 @@
+V69 FAIL I01,B06 right glove still at mid chest, elbow back, not driving up from below, level not dropped
+V73 FAIL I01,G03 hero still in a deep crouch, not rising; mild high angle, not a birds eye view
+V77 PASS
+V78 FAIL E05 opponent about 0.85 head taller with a stretched body (screen side handled at plan level, C14)
+V81 PASS
+V82 FAIL A02 opponent's right shoulder has no arm and no visible exit
+V83 PASS
+V87 FAIL B05,A06 hero rear elbow flared to shoulder height; front feet overlap; opponent squared to camera
+V92 PASS
+V93 FAIL B05,E02 hero rear guard glove dropped to chest; opponent wears MMA gloves instead of plain black
+V97 FAIL B09 opponent in a double biceps flex, reads as posing, not a guard climbing
+V98 PASS
+V99 PASS
+V100 PASS
+V101 PASS
+V103 PASS
+V104 PASS
+V105 PASS
+V106 PASS
+V107 PASS

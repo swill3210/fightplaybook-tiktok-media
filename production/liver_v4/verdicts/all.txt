@@ -1,0 +1,106 @@
+V2 FAIL B01 hook arm nearly straight (about 160 degrees), glove on the far flank edge
+V1 FAIL B06 front foot lift drawn as a hip height knee raise that reads as a knee strike
+V3 FAIL B01 left hook arm almost straight and wrapped round the torso like a hug
+V4 FAIL A07,I01 worms eye giant feet and stretched legs; opponent hands hang at the knees
+V5 PASS
+V6 PASS
+V7 PASS
+V8 FAIL A05 both gloves read as bare hands with separate open fingers
+V9 FAIL B01,F02 hook arm straight and horizontal; glove past the far torso edge, no compression
+V10 FAIL I01,B05 angle is eye level side view, not the high overhead birds eye in the beat; hero guard glove at chest
+V11 FAIL C01 hero raises the LEFT glove for three fingers; beat says right glove
+V12 FAIL E02 opponent gloves have red wrist trim
+V13 PASS
+V14 PASS
+V15 FAIL B01 slow left hook drawn near straight and wrapping
+V16 FAIL A07,E05,A06 opponent about 3x the hero; hero head pressed into the opponent's arm
+V17 FAIL D02 no ground, opponent foot hovers, right foot on tiptoe
+V18 FAIL I01 eyes stay level, do not drop to the ribs
+V19 FAIL B09,E05 both fighters square to camera, not in stance; opponent barely taller
+V20 FAIL E02,C02 opponent lead glove has a red strap; screen side switch after V19
+V21 FAIL B01 hook arm straight shoulder to glove (about 170 degrees)
+V22 FAIL I01,C01 head not slipped, opponent glove stops in front of the face; opponent throws the rear hand (cross) not a jab
+V23 FAIL B01,E02 hook arm straight and wrapped, glove beyond the far torso edge; opponent glove red strap
+V24 FAIL B03 shovel elbow out at chest height off the hip; glove lands at lower chest
+V25 FAIL H06,A02 horizontal cut line slices the opponent's arm and shoulder; opponent has no head
+V26 FAIL I03 front foot planted flat, no step in visible
+V27 FAIL H06 lighter horizontal band across the top of the frame
+V28 FAIL G01 hero head cut by the left frame edge
+V29 PASS
+V30 PASS
+V31 FAIL I01 opponent eyes look straight ahead, not up following the jab
+V32 FAIL B09 hips loading drawn as an extreme wide sumo squat
+V33 FAIL I01,B01,E02 glove already landed in a mid swing beat; arm near straight; opponent glove red strap
+V34 FAIL B01,F02 hook arm straight and horizontal; glove past the torso edge, no compression
+V35 FAIL F04,F03 red swirl and ripple rings around the glove; glove sinks into the shirt
+V36 PASS
+V37 FAIL I01,E05 hero only stands in guard, no pivot out; opponent not clearly bigger
+V38 FAIL B01,I01 left arm nearly straight (about 150 degrees) into the stomach; hips not turned
+V39 FAIL I01 narration says dig the knuckles in but the glove sits idle at the chin
+V40 PASS
+V41 FAIL A05 lead glove drawn with separate fingers and red finger bands
+V42 PASS
+V43 FAIL A05 lead glove drawn with separate fingers and red finger bands
+V44 FAIL C06,F01,A06 hero drawn in southpaw stance (right hand and right foot lead); opponent jab lands on the hero's forehead; lead feet overlap
+V45 FAIL C01 opponent jabs with the right arm while neighbouring shots use the left
+V46 UNSURE C01 opponent jab hand inconsistent across the sequence
+V47 FAIL I01,F02 no slip: hero upright, jab glove at his face reads as landing
+V48 FAIL I01,C01 hero ducks under instead of slipping outside; opponent jabs with the right
+V49 PASS
+V50 FAIL A05,G03 lead glove fingers; medium two shot instead of the ribs close up
+V51 FAIL E01,A06 opponent face has nose, brow and mouth; hero body overlaps the opponent's legs
+V52 PASS
+V53 FAIL B01,F02 left arm almost straight wrapping the belly like a clinch; glove past the torso edge
+V54 PASS
+V55 FAIL I01,E05 both just in guard, no jab pulled back; opponent same size as the hero
+V56 FAIL I01,H06 RED MISTAKE does not show standing still in the slip; dark band across the top
+V57 FAIL A04,B01 left forearm folded back so the glove points at the hero's own body
+V58 FAIL A05 both gloves open fingered with thumb
+V59 FAIL I01 left glove still chambered at the hip, no hook travelling
+V60 FAIL C06 hero drawn in southpaw stance (right hand lead)
+V61 FAIL A04,B01 folded forearm: glove points back at the hero, forearm hits the bag
+V62 PASS
+V63 PASS
+V64 FAIL C06,A06 hero southpaw stance; gloves interlocked at centre
+V65 FAIL A06 lead feet overlap and gloves stacked, no separation
+V66 FAIL A05 lead glove drawn with separate fingers
+V67 FAIL C01,A06 chambered hand is the LEFT (southpaw like); hero leg merges with the opponent's leg
+V68 FAIL A05 lead glove drawn with separate fingers
+V69 FAIL A05 chin glove shows separate fingers (shovel mechanics otherwise correct)
+V70 FAIL C01,G01,H06 shovel thrown with the LEFT arm; opponent head cut by the top edge; white halo
+V71 FAIL F03,B09,A02 glove under the tank top (Sean 1:26); opponent's only arm flung out the right edge, other arm missing
+V72 FAIL F03 glove under the lifted shirt (same drawing as V79, Sean 1:35); inspector passed it, overridden on Sean's documented finding
+V73 PASS
+V74 FAIL E03,A05 hero POV arms peach skin; bare fingers stick out of the gloves
+V75 FAIL C01,C03 arm in the ribs is the hero's LEFT (shovel beat needs the right), lands on the opponent's LEFT side
+V76 FAIL F03,B03 shirt hem folds over the glove; elbow forward of the body, not at the hip
+V77 FAIL A05 both gloves drawn as separate fingers with red bands
+V78 FAIL A05 lead glove drawn as a bare fist with separate fingers
+V79 FAIL I01,F03 beat is a right shovel into the heavy bag but shows the opponent; glove under the lifted shirt hem
+V80 FAIL A03,A02 arm grows out of a sleeve-like shoulder blob, no readable elbow or head
+V81 FAIL A05 lead glove shows separate fingers; heavy bag in an unflagged beat
+V82 PASS
+V83 PASS
+V84 FAIL B01,A06,E02 left hook arm nearly straight wrapping the ribs; red strapped glove on the opponent's raised arm
+V85 FAIL I01 no slip: hero upright square, jab misses far wide
+V86 FAIL B01,A05 left hook arm straight wrapping the opponent's back; glove a featureless ball
+V87 FAIL A05 hero lead glove and opponent glove drawn as separate fingers
+V88 FAIL F03,A05 shovel glove under the opponent's lifted shirt hem; guard glove bare-looking fingers
+V89 FAIL F04,C05 swirl lines on the shirt; eye on the back of the head (Sean 1:48)
+V90 FAIL I01,C01 hero holds up the LEFT glove; beat says three fingers of the RIGHT glove
+V91 FAIL E03,H06 opponent skin drifted light gray; dark band across the top
+V92 PASS
+V93 PASS
+V94 FAIL B01,E02 left hook near straight wrapped across the ribs; red strapped gloves on the opponent's raised arm
+V95 PASS
+V96 FAIL E02 opponent in tight compression shorts instead of loose black fight shorts (borderline)
+V97 PASS
+V98 FAIL A05 both gloves drawn as separate fingers with red bands
+V99 PASS
+V100 FAIL A05 guard gloves drawn as separate fingers with red bands
+V101 PASS
+V103 PASS
+V104 PASS
+V105 FAIL A05 rear glove shows separate fingers with red bands
+V106 FAIL A05 both gloves drawn as separate finger digits
+V107 PASS

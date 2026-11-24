@@ -38,4 +38,9 @@ PATHS.md in each Grok skill maps old box paths; verbatim originals also live in 
 To read a private repo in a cloud session, attach it with the add_repo tool, then clone with `--depth 1`.
 
 ## Research already done (do not repeat)
+* 2026-11-24 Cheaper illustration methods (web research, prices as listed by vendors on that date, unverified):
+  * ElevenLabs Nano Banana 2 at 1K costs 406 credits vs 1,224 at 2K (from a quota error message); 3x cheaper, needs upscaling for 1080p.
+  * Masked inpainting (edit ONLY the arm, rest pixel identical): FLUX.1 Fill [pro] about $0.05 per image or per MP (fal.ai, BFL); Kontext [pro] about $0.055/MP for instruction edits. Best fit for near correct stills (V36, V54, V95). Needs a new vendor key and Sean's approval.
+  * Pose conditioned generation (OpenPose/ControlNet from our rig skeleton): SDXL or Z Image Turbo ControlNet about $0.003 to $0.012 per image, FLUX ControlNet Union Pro 2.0 about $0.03 (ModelsLab, WaveSpeed, fal.ai, Cut.Pro). Character and style consistency would need our LoRA (`imagebench/lora_dataset.py`, 22 approved images, trigger `tfphero`); untested.
+  * Free: composite a verified L hook arm cut from an approved still onto other approved stills (deterministic, seam risk); reuse approved stills with Remotion camera moves, crops and motion graphics (limited by the one image at most twice law).
 Image model bake-off (all models draw body hooks straight); pose tool verdicts (keep rig + redraw; rtmlib as validator runtime; ControlNet, MediaToPose, Blender Rigify rejected for now); motion tool audit (Remotion and GSAP installable; Manim available; Blender not needed yet); channel analytics 2026-11-23/24 (summary in PROJECT_STATE.md).

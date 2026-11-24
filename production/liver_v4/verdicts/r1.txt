@@ -1,0 +1,20 @@
+V5 PASS
+V6 FAIL H06,A06 stray horizontal line across the top; hero jab glove tangled with the opponent's far glove
+V7 PASS
+V8 PASS
+V13 PASS
+V14 PASS
+V29 FAIL I01,D02 jab glove small, not filling the frame at the guard; rear foot dangles
+V30 PASS
+V36 FAIL I01 opponent torso upright, not twisting away (hook, liver side and contact correct)
+V40 PASS
+V41 PASS
+V42 PASS
+V43 PASS
+V49 FAIL C01,C06 opponent extends his RIGHT arm, reads as a cross; orthodox jab is the left
+V52 FAIL A05 hero wears bulky boxing gloves, not the reference MMA gloves
+V58 PASS
+V62 PASS
+V63 FAIL A02,B05 hero lead arm missing, no lead glove visible
+V66 FAIL B05 opponent guard dropped, one glove at chest, one at the belt
+V68 FAIL B03 hero right elbow flares behind the body, not tight at the hip
