@@ -12,19 +12,19 @@ addon_utils.enable("bl_ext.user_default.mpfb", default_set=True)
 from bl_ext.user_default.mpfb.services.humanservice import HumanService
 from bl_ext.user_default.mpfb.services.targetservice import TargetService
 
-MACRO = {"gender": 1.0, "age": 0.5, "muscle": 1.0, "weight": 0.62, "proportions": 1.0, "height": 0.8, "cupsize": 0.5,
+MACRO = {"gender": 1.0, "age": 0.5, "muscle": 1.0, "weight": 0.5, "proportions": 1.0, "height": 0.8, "cupsize": 0.5,
          "firmness": 0.5, "race": {"african": 0.34, "asian": 0.33, "caucasian": 0.33}}
-REGION = {  # target name -> weight (heroic comic build, reference sheet); tuned 2026-11-24 r4 against the side views
+REGION = {  # target name -> weight; Phase 1 (r26) against compare_ref.py: thicker arms, narrow waist and hips, deeper chest
     "measure-shoulder-dist-incr": 0.45, "torso-muscle-pectoral-incr": 1.0, "torso-muscle-dorsi-incr": 1.0,
-    "torso-vshape-incr": 0.8, "torso-scale-depth-incr": 0.45, "measure-bust-circ-incr": 0.5,
-    "measure-waist-circ-decr": 0.6, "measure-hips-circ-decr": 0.3, "torso-scale-horiz-incr": 0.2,
-    "measure-neck-circ-incr": 1.0, "neck-scale-horiz-incr": 0.6, "measure-neck-height-decr": 0.6,
-    "head-scale-horiz-decr": 0.3, "head-scale-vert-decr": 0.12, "head-scale-depth-decr": 0.12,
-    "measure-upperarm-circ-incr": 1.0, "measure-thigh-circ-incr": 0.6, "measure-calf-circ-incr": 0.6,
+    "torso-vshape-incr": 1.0, "torso-scale-depth-incr": 0.35, "measure-bust-circ-incr": 1.0, "measure-frontchest-dist-incr": 0.5,
+    "measure-waist-circ-decr": 1.0, "measure-hips-circ-decr": 0.9, "measure-underbust-circ-decr": 0.3,
+    "measure-neck-circ-incr": 1.0, "neck-scale-horiz-incr": 0.4, "measure-neck-height-decr": 0.4,
+    "head-scale-horiz-decr": 0.35, "head-scale-vert-incr": 0.5, "head-scale-depth-decr": 0.0,  # r40: taller egg head
+    "measure-upperarm-circ-incr": 1.0, "measure-upperarm-length-decr": 0.35, "measure-lowerarm-length-decr": 0.3,
+    "measure-thigh-circ-incr": 0.7, "measure-calf-circ-incr": 0.7, "upperlegs-height-decr": 0.25,
     **{f"{s}-{part}": 1.0 for s in "lr" for part in (
         "upperarm-muscle-incr", "lowerarm-muscle-incr", "upperarm-shoulder-muscle-incr",
-        "upperleg-muscle-incr", "lowerleg-muscle-incr")},
-    **{f"{s}-{part}": 0.5 for s in "lr" for part in (
+        "upperleg-muscle-incr", "lowerleg-muscle-incr",
         "upperarm-scale-horiz-incr", "upperarm-scale-depth-incr", "lowerarm-scale-horiz-incr", "lowerarm-scale-depth-incr")},
 }
 
@@ -40,7 +40,25 @@ def build_body():
             missing.append(name)
     if missing:
         print("missing targets", missing)
+    kb = h.data.shape_keys.key_blocks
+    for name, w in BOOST.items():  # comic exaggeration past MPFB's realistic 1.0 cap (same targets, larger weight)
+        for k in kb:
+            if k.name == name or k.name.endswith(name):
+                k.slider_max = 3.0; k.value = w
     return h
+
+
+BOOST = {  # Phase 1 r27: reference arms, chest and taper are beyond the 1.0 human range
+    **{f"{s}-{p}": 1.9 for s in "lr" for p in ("upperarm-muscle-incr", "lowerarm-muscle-incr")},
+    **{f"{s}-{p}": 1.6 for s in "lr" for p in ("upperarm-scale-horiz-incr", "upperarm-scale-depth-incr",
+                                              "lowerarm-scale-horiz-incr", "lowerarm-scale-depth-incr")},
+    **{f"{s}-upperarm-shoulder-muscle-incr": 2.3 for s in "lr"},
+    "torso-muscle-pectoral-incr": 1.25, "torso-muscle-dorsi-incr": 1.5, "measure-waist-circ-decr": 1.4,
+    "measure-upperarm-length-decr": 2.2, "measure-lowerarm-length-decr": 2.0, "upperlegs-height-decr": 0.8,  # 2.2 kinked the legs (r33), 1.2 left an outer thigh bump (r34)
+    "measure-thigh-circ-incr": 1.0, "measure-calf-circ-incr": 1.2, "measure-hips-circ-decr": 1.4,  # r32: no hip flare  # r31: shorter arms, thicker shorter legs
+    "nose-scale-depth-decr": 2.2, "nose-volume-decr": 2.0, "neck-scale-depth-decr": 0.7,  # r38: no nose point in profile, slimmer neck depth
+    "torso-vshape-incr": 1.4, "neck-scale-horiz-incr": 1.8, "measure-neck-circ-incr": 0.8,  # traps up the neck (r28 shelf)
+}
 
 
 FACE = {  # flatten the features first with targets (keeps the MPFB skull, jaw and ears), then smooth what is left
@@ -48,7 +66,7 @@ FACE = {  # flatten the features first with targets (keeps the MPFB skull, jaw a
     "mouth-upperlip-volume-decr": 1.0, "mouth-lowerlip-volume-decr": 1.0, "mouth-scale-depth-decr": 1.0,
     "mouth-scale-horiz-decr": 0.5, "eyebrows-trans-backward": 1.0, "l-eye-bag-decr": 1.0, "r-eye-bag-decr": 1.0,
     # reference head: egg shaped mask, jaw tapering to a narrow chin (front view), one smooth slope brow to chin (profile)
-    "head-invertedtriangular": 0.7, "head-oval": 0.6, "chin-width-decr": 1.0, "chin-height-incr": 0.5, "chin-prominent-incr": 0.4,
+    "head-invertedtriangular": 0.7, "head-oval": 0.6, "chin-width-decr": 1.0, "chin-height-incr": 0.7, "chin-prominent-incr": 1.0, "chin-prognathism-incr": 1.0,  # reference profile: chin projects forward
 }
 
 
@@ -178,17 +196,17 @@ def faceless(h, iters=120):
     return le, re, iod
 
 
-def eyes(h, rig, le, re, iod, slant=27):
+def eyes(h, rig, le, re, iod, slant=18):
     """filled white slanted almonds, inner corners lower (angled toward the centre), hugging the face (Shrinkwrap)"""
     import bmesh
     white = HM.flat("eye_white", HM.C["eye"]); obs = []
     for c, sgn in ((le, 1), (re, -1)):
         me = bpy.data.meshes.new("eye"); bm = bmesh.new()
-        w, hh, n = 0.5 * iod, 0.15 * iod, 40  # reference eyes: small, thin, steep (r18 eyes were too big and round)
+        w, hh, n = 0.66 * iod, 0.19 * iod, 40  # reference eyes: small, thin, steep (r18 eyes were too big and round)
         rim = []
         for i in range(n):
             t = 2 * math.pi * i / n; x = w / 2 * math.cos(t)
-            z = hh * math.sin(t) * (1 - (2 * x / w) ** 2) ** 0.35 * (1.0 if t < math.pi else 0.55)  # flatter lower lid
+            z = hh * math.sin(t) * (1 - (2 * x / w) ** 2) ** 0.8 * (1.0 if t < math.pi else 0.55)  # sharp tips (reference)  # flatter lower lid
             rim.append((x, z))
         ctr = bm.verts.new((0, 0, 0)); rings = 4; prev = None; vs_all = []
         for r in range(1, rings + 1):
@@ -215,7 +233,7 @@ def _rot(rig, bone, deg, axis, sgn):
     bpy.context.view_layer.update()
 
 
-def a_pose(rig, body, deg=30, clav=7, elbow=30):
+def a_pose(rig, body, deg=17, clav=7, elbow=20):  # reference side view: forearms angle forward, fists in front of the hips
     """lower both arms toward the reference stance through the professional rig (skin weights, no tearing).
     The drop is shared between shoulder01 and upperarm01 and the armature uses dual quaternion skinning,
     so the deltoid keeps its volume instead of collapsing into a box (2026-11-24 render r2)."""
@@ -224,11 +242,28 @@ def a_pose(rig, body, deg=30, clav=7, elbow=30):
             m.use_deform_preserve_volume = True
     bpy.context.view_layer.objects.active = rig; bpy.ops.object.mode_set(mode="POSE")
     for side, sgn in (("L", 1), ("R", -1)):
+        _rot(rig, f"clavicle.{side}", 14, "Y", sgn)  # slope the trapezius line like the reference (r25 flat shelf)
         _rot(rig, f"shoulder01.{side}", clav, "Y", sgn)
         _rot(rig, f"upperarm01.{side}", deg - clav, "Y", sgn)
         if elbow:
             _rot(rig, f"lowerarm01.{side}", elbow, "X", 1)  # +X swings the hand back; the MPFB base forearm points forward (0 and -25 left the hands reaching forward, r4, r17)
+    fist(rig)
     bpy.ops.object.mode_set(mode="OBJECT")
+
+
+def fist(rig, curl=(75, 95, 70), thumb=(20, 35, 30)):
+    """close both hands through the finger bones (reference: fists; open hands read as over long arms, r34)"""
+    from mathutils import Quaternion
+    for side in "LR":
+        for f in range(1, 6):
+            for j in range(1, 4):
+                n = f"finger{f}-{j}.{side}"
+                if n not in rig.pose.bones:
+                    continue
+                pb = rig.pose.bones[n]; pb.rotation_mode = "QUATERNION"
+                ang = (thumb if f == 1 else curl)[j - 1]
+                pb.rotation_quaternion = Quaternion((1, 0, 0), math.radians(ang))
+    bpy.context.view_layer.update()
 
 
 def outline(body, thick=0.007):
@@ -275,7 +310,7 @@ if __name__ == "__main__":
         rig.rotation_euler.z = -math.radians(az); bpy.context.view_layer.update()
         s.render.filepath = os.path.join(out, f"body_{name}.png"); bpy.ops.render.render(write_still=True)
     rig.rotation_euler.z = 0
-    hz = max(le.z, re.z); cam.data.ortho_scale = 10 * iod; cam.location = Vector((0, -8, hz - 0.4 * iod))
+    hz = max(le.z, re.z); cam.data.ortho_scale = 10 * iod; cam.location = Vector((0, -8, hz - 0.6 * iod))
     for name, az in (("face_front", 0), ("face_threequarter", 35), ("face_right", -90)):
         rig.rotation_euler.z = -math.radians(az); bpy.context.view_layer.update()
         hc = rig.matrix_world @ Vector((0, 0.5 * le.y, hz))  # head centre, framed after the turn
