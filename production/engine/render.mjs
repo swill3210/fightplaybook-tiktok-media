@@ -21,18 +21,19 @@ const srv = http.createServer((req, res) => {
 const port = srv.address().port;
 
 const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
-const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
+const page = await browser.newPage({ viewport: { width: 1920, height: 1920 } });
 page.on('console', (m) => { if (m.type() === 'error') console.error('PAGE', m.text()); });
 page.on('pageerror', (e) => { console.error('PAGEERR', e.message, e.stack); process.exit(1); });
 await page.goto(`http://localhost:${port}/index.html?board=${board}`);
 await page.waitForFunction('window.FP_READY === true', null, { timeout: 120000 });
 const meta = await page.evaluate(() => window.FP.board);
 console.log('stage', JSON.stringify(await page.evaluate(() => window.FP.stage)));
+if (rest.includes('--pose')) await page.evaluate(() => { window.FP_POSE = true; });
 if (arg('--cam')) await page.evaluate((c) => { window.FP_CAM = c.split(',').map(Number); }, arg('--cam'));
 
 const grab = async (t) => {
   const m = await page.evaluate((t) => window.FP.render(t), t);
-  const b64 = await page.evaluate(() => document.querySelector('canvas').toDataURL('image/png').split(',')[1]);
+  const b64 = await page.evaluate(() => document.querySelectorAll('canvas')[document.querySelectorAll('canvas').length - 1].toDataURL('image/png').split(',')[1]);
   return [m, Buffer.from(b64, 'base64')];
 };
 

@@ -2,14 +2,16 @@
 // window.FP.render(t) draws frame at video time t and returns QC metrics for that frame.
 import * as THREE from 'three';
 import { Fighter } from './rig.js';
-import { MOVES, stance, applyCross, impulse, applyReaction, headYawTo } from './motion.js';
+import { MOVES, stance, applyCross, applyJab, applyHook, impulse, foldCurve, applyReaction, headYawTo } from './motion.js';
+const APPLY = { cross_body: applyCross, cross_arm: applyCross, jab_high: applyJab, hook_body: applyHook, tap_ribs: applyHook };
 
 const V = (x = 0, y = 0, z = 0) => new THREE.Vector3(x, y, z);
-const W = 1080, H = 1920;
+let W = 1080, H = 1920;
 
 export class Engine {
   constructor(board) {
     this.board = board;
+    W = board.width || 1080; H = board.height || 1920;
     const bg = new THREE.Color(board.style.bg);
     this.gl = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
     this.gl.setPixelRatio(1); this.gl.setSize(W, H);
@@ -44,7 +46,7 @@ export class Engine {
     document.body.appendChild(this.out);
     this.prev = {};
     this.stage = {};
-    for (const k of Object.keys(MOVES)) this.stage[k] = this.fitRange(k);
+    for (const k of Object.keys(MOVES)) this.stage[k] = MOVES[k].range ?? this.fitRange(k);
     // each move is staged at its own true range; range only changes on a cut between angles
   }
 
@@ -55,7 +57,8 @@ export class Engine {
       const x = (lo + hi) / 2;
       const r = this.solveAt(MOVES[moveName].impact * MOVES[moveName].dur, { move: moveName, moveAt: 0, oppX: x, noReact: true });
       // reach is target distance over arm length; aim for 0.975
-      if (r.heroMetrics.reach.armR > 0.975) hi = x; else lo = x;
+      const mv = MOVES[moveName];
+      if (r.heroMetrics.reach['arm' + mv.hand] > mv.reach) hi = x; else lo = x;
     }
     return (lo + hi) / 2;
   }
@@ -64,44 +67,59 @@ export class Engine {
   solveAt(tau, s) {
     const move = s.move ? MOVES[s.move] : null;
     const oppX = s.oppX ?? this.stage[s.move || 'cross_body'];
-    const bob = (ph) => 0.007 * Math.sin(2 * Math.PI * 1.35 * tau + ph);
-
-    // opponent
-    const oP = stance('opponent'); oP.elbowOut = 0.2;
-    oP.pelvis.y += bob(1.3);
+    const bob = (ph) => (s.still ? 0 : 0.007 * Math.sin(2 * Math.PI * 1.35 * tau + ph));
+    const guardStyle = s.oppGuard || (move && move.target === 'liver' ? 'high' : 'normal');
     const oRoot = { pos: V(oppX, 0, 0.02), yaw: Math.PI };
-    oP.rootPos = oRoot.pos; oP.rootYaw = oRoot.yaw;
-    oP.head.yaw = 0;
-    let impactTau = null, c = { foot: 0, hips: 0, shoulders: 0, arm: 0 };
+    const oppPose = () => { const o = stance('opponent', guardStyle); o.elbowOut = 0.2; o.pelvis.y += bob(1.3); o.rootPos = oRoot.pos; o.rootYaw = oRoot.yaw; o.head.yaw = 0; return o; };
+
+    let impactTau = null, c = { foot: 0, hips: 0, shoulders: 0, arm: 0, chamber: 0, dip: 0 };
     if (move) {
       const u = (tau - s.moveAt) / move.dur;
-      c = move.ch(Math.max(-1, Math.min(2, u)));
+      c = Object.assign({ foot: 0, hips: 0, shoulders: 0, arm: 0, chamber: 0, dip: 0 }, move.ch(Math.max(-1, Math.min(2, u))));
       impactTau = s.moveAt + move.impact * move.dur;
     }
-    // reference chin (no reaction) is the aim point
-    let OJ = this.opp.solve(oP);
-    const chin0 = OJ.chinW.clone();
-    const r = move && !s.noReact ? impulse(tau - impactTau, move.power) : 0;
-    const contact = move && !s.noReact ? Math.exp(-Math.pow((tau - impactTau) / 0.035, 2)) * move.power : 0;
-    if (r > 0 || contact > 0) {
-      const oP2 = stance('opponent'); oP2.elbowOut = 0.2; oP2.pelvis.y += bob(1.3); oP2.rootPos = oRoot.pos; oP2.rootYaw = oRoot.yaw; oP2.head.yaw = 0;
-      applyReaction(oP2, r, contact);
-      OJ = this.opp.solve(oP2);
+    // aim points come from the opponent before any reaction
+    let OJ = this.opp.solve(oppPose());
+    const aim = { chin: OJ.chinW.clone(), guard: OJ.gloveW.R.clone(), liver: OJ.liverW.clone() };
+    let r = 0, contact = 0;
+    if (move && !s.noReact && move.reaction !== 'none') {
+      const dt = tau - impactTau;
+      r = move.reaction === 'fold' ? foldCurve(dt, move.power) : impulse(dt, move.power);
+      contact = Math.exp(-Math.pow(dt / 0.035, 2)) * move.power;
+      if (r > 0 || contact > 0) { const o = oppPose(); applyReaction(o, move.reaction, r, contact); OJ = this.opp.solve(o); }
     }
 
     // hero
     const P = stance('hero');
     P.pelvis.y += bob(0);
     P.rootPos = V(0, 0, 0); P.rootYaw = 0;
-    applyCross(P, c);
+    if (move) (APPLY[s.move] || applyCross)(P, c);
     P.head.yaw = headYawTo(V(0, 0, 0), OJ.headW) * 0.9;
     let J = this.hero.solve(P);
-    if (c.arm > 0.001) {
-      const dir = chin0.clone().sub(J.shoulderW.R).normalize();
-      const pen = 0.012;
-      P.hands.R.target = chin0.clone().sub(dir.clone().multiplyScalar(0.14 - pen));
-      P.hands.R.w = c.arm;
-      J = this.hero.solve(P);
+    if (move) {
+      const h = move.hand;
+      if (move.shape === 'straight' && c.arm > 0.001) {
+        const tgt = aim[move.target];
+        const dir = tgt.clone().sub(J.shoulderW[h]).normalize();
+        const stand = move.target === 'guard' ? 0.14 + 0.07 : 0.14 - 0.012;  // stop on the glove, sink slightly into the chin
+        P.hands[h].target = tgt.clone().sub(dir.multiplyScalar(stand));
+        P.hands[h].w = c.arm;
+        J = this.hero.solve(P);
+      } else if (move.shape === 'hook' && (c.chamber > 0.001 || c.arm > 0.001)) {
+        // L shaped arm on a short curved horizontal path around the guard into the side of the ribs
+        const guardW = J.wristW[h].clone();
+        const chamberW = J.hipW.L.clone().add(V(0.16, 0.26, -0.12));
+        const fdir = V(0.35, 0, 1).normalize();
+        const hitW = aim.liver.clone().sub(fdir.clone().multiplyScalar(0.12));
+        const ctrl = chamberW.clone().lerp(hitW, 0.5).add(V(-0.02, 0.03, -0.20));
+        const bez = (a, b, cc, t) => a.clone().multiplyScalar((1 - t) * (1 - t)).add(cc.clone().multiplyScalar(2 * t * (1 - t))).add(b.clone().multiplyScalar(t * t));
+        const p = c.arm > 0.001 ? bez(chamberW, hitW, ctrl, Math.min(1, c.arm)) : guardW.clone().lerp(chamberW, c.chamber);
+        const k = Math.max(c.chamber, c.arm);
+        P.hands[h].target = guardW.clone().lerp(p, Math.min(1, k * 1.5));
+        P.hands[h].w = 1;
+        P.elbowPole = { L: V(0, 0.8, -2.4).multiplyScalar(h === 'L' ? k : 0), R: V(0.1, 0, 0.6) };
+        J = this.hero.solve(P);
+      }
     }
     return { J, OJ, c, r, contact, impactTau, heroMetrics: this.hero.metrics, oppMetrics: this.opp.metrics };
   }
@@ -131,17 +149,42 @@ export class Engine {
     this.fx.clear();
     if (s.fx3d) s.fx3d(this.fx, st, tl / dur, tau);
 
-    this.gl.render(this.scene, this.cam);
     const g = this.ctx;
+    const proj = (v) => { const p = v.clone().project(this.cam); return { x: (p.x + 1) / 2 * W, y: (1 - p.y) / 2 * H, z: p.z }; };
+    if (window.FP_POSE) { this.drawPose(g, [st.J, st.OJ], proj); return this.qc(t, s, idx, st, proj); }
+    this.gl.render(this.scene, this.cam);
     g.globalAlpha = 1; g.drawImage(this.gl.domElement, 0, 0);
 
     // 2D layer
-    const proj = (v) => { const p = v.clone().project(this.cam); return { x: (p.x + 1) / 2 * W, y: (1 - p.y) / 2 * H, z: p.z }; };
     this.drawSpeedLines(g, st, proj, tau, s);
     if (s.draw2d) s.draw2d(g, st, proj, tl / dur, tau, this);
     this.drawText(g, t, s);
 
     return this.qc(t, s, idx, st, proj);
+  }
+
+  // OpenPose COCO 18 skeleton (black background, standard limb colours) for ControlNet / pose conditioning
+  drawPose(g, fighters, proj) {
+    g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+    const COL = [[255,0,0],[255,85,0],[255,170,0],[255,255,0],[170,255,0],[85,255,0],[0,255,0],[0,255,85],[0,255,170],[0,255,255],[0,170,255],[0,85,255],[0,0,255],[85,0,255],[170,0,255],[255,0,255],[255,0,170],[255,0,85]];
+    const PAIRS = [[1,2],[1,5],[2,3],[3,4],[5,6],[6,7],[1,8],[8,9],[9,10],[1,11],[11,12],[12,13],[1,0],[0,14],[14,16],[0,15],[15,17]];
+    const sc = H / 1080;
+    for (const J of fighters) {
+      const up = V(0, 1, 0), fwd = J.forwardW.clone(), right = fwd.clone().cross(up).normalize();
+      const nose = J.headW.clone().add(fwd.clone().multiplyScalar(0.10)).add(V(0, -0.01, 0));
+      const k = [nose, J.shoulderW.L.clone().lerp(J.shoulderW.R, 0.5).add(V(0, 0.02, 0)),
+        J.shoulderW.R, J.elbowW.R, J.wristW.R, J.shoulderW.L, J.elbowW.L, J.wristW.L,
+        J.hipW.R, J.kneeW.R, J.ankleW.R, J.hipW.L, J.kneeW.L, J.ankleW.L,
+        nose.clone().add(V(0, 0.035, 0)).add(right.clone().multiplyScalar(0.035)), nose.clone().add(V(0, 0.035, 0)).add(right.clone().multiplyScalar(-0.035)),
+        J.headW.clone().add(right.clone().multiplyScalar(0.09)), J.headW.clone().add(right.clone().multiplyScalar(-0.09))].map(proj);
+      PAIRS.forEach(([a, b], i) => {
+        const A = k[a], B = k[b]; const mx = (A.x + B.x) / 2, my = (A.y + B.y) / 2;
+        const len = Math.hypot(A.x - B.x, A.y - B.y) / 2, ang = Math.atan2(B.y - A.y, B.x - A.x);
+        g.save(); g.globalAlpha = 0.6; g.fillStyle = `rgb(${COL[i].join(',')})`;
+        g.beginPath(); g.ellipse(mx, my, len, 4 * sc, ang, 0, Math.PI * 2); g.fill(); g.restore();
+      });
+      k.forEach((p, i) => { g.fillStyle = `rgb(${COL[i].join(',')})`; g.beginPath(); g.arc(p.x, p.y, 4 * sc, 0, Math.PI * 2); g.fill(); });
+    }
   }
 
   applyHighlights(h) {
@@ -302,6 +345,6 @@ export class Engine {
       const v = k === 'heroHead' ? J.headW : k === 'oppHead' ? OJ.headW : k === 'rearFoot' ? J.ballW.R : k === 'gloveR' ? J.gloveW.R : null;
       if (v && !onScreen(v)) issues.push(`${k} out of frame`);
     }
-    return { t: +t.toFixed(3), shot: s.id, angle: s.angle, issues, arm: +st.c.arm.toFixed(3), reach: +(hm.reach.armR || 0).toFixed(3) };
+    return { t: +t.toFixed(3), shot: s.id, angle: s.angle, issues, arm: +st.c.arm.toFixed(3), reach: +(hm.reach.armR || 0).toFixed(3), elbowL: +(hm.elbowDegL || 0).toFixed(0), elbowR: +(hm.elbowDegR || 0).toFixed(0) };
   }
 }

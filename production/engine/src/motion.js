@@ -14,6 +14,9 @@ export const ease = {
 export const seg = (u, a, b, f = ease.inOut) => f(clamp01((u - a) / (b - a)));
 const lerp = (a, b, t) => a + (b - a) * t;
 
+// hooks are thrown inside: opponent root this far from the hero (metres), set by eye and checked by elbow angle QC
+export const RANGE_HOOK = parseFloat((typeof window !== 'undefined' && window.FP_HOOK_RANGE) || 0.50);
+
 export const MOVES = {
   // Rear straight (cross) with the whole body: foot, hips, shoulders, then arm.
   cross_body: {
@@ -48,7 +51,7 @@ export const MOVES = {
   // Lead hook to the liver: level change with both knees, chamber, then hips, shoulders and
   // the L shaped arm turn through together, pivot on the ball of the lead foot, rear glove on chin.
   hook_body: {
-    dur: 0.85, impact: 0.55, power: 1.0, hand: 'L', shape: 'hook', target: 'liver', reaction: 'fold', reach: 0.73,
+    dur: 0.85, impact: 0.55, power: 1.0, hand: 'L', shape: 'hook', target: 'liver', reaction: 'fold', reach: 0.73, range: RANGE_HOOK,
     ch: (u) => ({
       dip: seg(u, 0.0, 0.32) - seg(u, 0.78, 1.0),
       chamber: seg(u, 0.05, 0.32) - seg(u, 0.36, 0.55),
@@ -60,7 +63,7 @@ export const MOVES = {
   },
   // Glove touches the ribs once (pointing at the door). No power.
   tap_ribs: {
-    dur: 0.7, impact: 0.5, power: 0.08, hand: 'L', shape: 'hook', target: 'liver', reaction: 'none', reach: 0.73,
+    dur: 0.7, impact: 0.5, power: 0.08, hand: 'L', shape: 'hook', target: 'liver', reaction: 'none', reach: 0.73, range: RANGE_HOOK,
     ch: (u) => ({
       dip: 0.6 * (seg(u, 0.0, 0.35) - seg(u, 0.7, 1.0)),
       arm: seg(u, 0.1, 0.5, ease.sine) - seg(u, 0.6, 0.95),
@@ -76,13 +79,15 @@ export function stance(kind, guard = 'normal') {
       ? { L: { guard: { f: 0.15, side: -0.075, up: 0.03 } }, R: { guard: { f: 0.14, side: 0.075, up: 0.03 } } }
       : { L: { guard: { f: 0.22, side: -0.03, up: -0.32 } }, R: { guard: { f: 0.12, side: 0.085, up: -0.04 } } })
     : { L: { guard: { f: 0.24, side: -0.065, up: -0.02 } }, R: { guard: { f: 0.13, side: 0.078, up: -0.055 } } };
+  // covering the head high squares the torso up a little, which turns the liver toward the attacker
+  const sq = kind === 'opponent' && guard === 'high' ? 0.3 : 0;
   return {
     feet: {
       L: { x: 0.27, z: -0.13, yaw: 0.30, lift: 0, h: 0 },
       R: { x: -0.30, z: 0.15, yaw: 0.78, lift: 0, h: 0 },
     },
-    pelvis: { x: -0.02, y: 0.835, z: 0.0, yaw: -0.55, lean: 0.08 },
-    chest: { yaw: -0.62, lean: 0.14, roll: 0 },
+    pelvis: { x: -0.02, y: 0.835, z: 0.0, yaw: -0.55 + sq, lean: 0.08 },
+    chest: { yaw: -0.62 + sq * 1.2, lean: 0.14, roll: 0 },
     head: { yaw: 0, pitch: 0.16, roll: 0, drop: 0, tuck: 0, squash: 0, squint: 0 },
     shoulderRaise: { L: 0, R: 0 },
     hands,
@@ -113,6 +118,8 @@ export function applyJab(P, c) {
   P.pelvis.x = -0.02 + 0.03 * c.shoulders;
   P.shoulderRaise.L = 0.035 * c.arm; // lead shoulder up to cover the chin
   P.head.drop = 0.015 * c.arm;
+  P.elbowPole = { L: V(0, 0, 0), R: V(0.1, 0, 0.6) }; // rear elbow stays just outside the ribs
+  P.hands.R.guard.side += 0.015; P.hands.R.guard.f += 0.01; // glove rests on the cheek, not inside it
 }
 
 export function applyHook(P, c) {
@@ -130,6 +137,7 @@ export function applyHook(P, c) {
   P.head.drop = 0.02 * c.dip;
   // rear glove glued to the chin as the torso turns
   P.hands.R.guard.f += 0.02 * c.shoulders;
+  P.hands.R.guard.side += 0.02 * c.shoulders;
 }
 
 // lead foot step forward then rear foot follows (dx metres), with the pelvis travelling between
