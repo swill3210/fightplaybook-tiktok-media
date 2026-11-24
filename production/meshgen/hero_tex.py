@@ -101,7 +101,7 @@ def project(ob, boxes, W, H):
     wts = (wts / np.maximum(wts.max(1, keepdims=True), 1e-9)) ** 40  # sharpen RELATIVE to the best view (f1: absolute ^24 underflowed, 72k verts fell back and ghosted red)
     wts /= np.maximum(wts.sum(1, keepdims=True), 1e-6)
     nk = np.hypot(vs[:, 0], vs[:, 1] - 0.043) < 0.1  # neck core
-    hw = np.where(nk, np.clip((vs[:, 2] - 1.665) / 0.02, 0, 1), np.clip((vs[:, 2] - CHIN) / 0.03, 0, 1))  # g7: neck carried misaligned sheet shading
+    hw = np.where(nk, np.clip((vs[:, 2] - 1.665) / 0.02, 0, 1), np.clip((vs[:, 2] - CHIN + 0.045) / 0.03, 0, 1))  # g11: sheet under chin shadow read as a mouth; g7: neck carried misaligned sheet shading
     hw = hw * hw * (3 - 2 * hw)
     ha = me.color_attributes.new("headw", "FLOAT_COLOR", "POINT"); ha.data.foreach_set("color", np.repeat(hw, 4).astype(np.float32))
     att = me.color_attributes.new("vw", "FLOAT_COLOR", "POINT")
@@ -135,7 +135,7 @@ def material(img_path):
     e[0].color = HM.HEX("#34343A"); e[1].position = 0.05; e[1].color = HM.HEX("#45454B")  # g3: 0.28 band blotched the head; l.new(dot.outputs["Value"], band.inputs["Fac"])
     hm = n.new("ShaderNodeAttribute"); hm.attribute_name = "headw"; hm.attribute_type = "GEOMETRY"
     mix = n.new("ShaderNodeMix"); mix.data_type = "RGBA"; l.new(hm.outputs["Fac"], mix.inputs[0])
-    l.new(acc, mix.inputs[6]); l.new(band.outputs["Color"], mix.inputs[7])
+    l.new(acc, mix.inputs[6]); l.new(band.outputs["Color"], mix.inputs[7])  # g13: a down facing jaw shadow blotched the lower face (reverted)
     l.new(mix.outputs[2], em.inputs["Color"]); l.new(em.outputs[0], out.inputs[0])
     return m
 

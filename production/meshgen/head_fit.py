@@ -90,6 +90,12 @@ def fit(ob):
     wr_ = 1 - np.abs(vs[ring, 2] - chin) / 0.05
     for _ in range(60):
         avg = np.array([vs[adj[i]].mean(0) for i in ring]); vs[ring] += (avg - vs[ring]) * (0.7 * wr_)[:, None]
+    # chin underside: noisy normals drew a jagged shadow spike and an ink crease under the jaw (g10, Sean item 3)
+    fr_ = (np.abs(vs[:, 2] - chin) < 0.01) & (np.abs(vs[:, 0]) < 0.02)
+    tip = np.array([0.0, vs[fr_, 1].min(), chin]) if fr_.any() else np.array([0.0, yc - 0.17, chin])
+    dloc = np.linalg.norm(vs - tip, axis=1); loc = np.nonzero(dloc < 0.07)[0]; wl = (1 - dloc[loc] / 0.07) ** 0.5
+    for _ in range(120):
+        avg = np.array([vs[adj[i]].mean(0) for i in loc]); vs[loc] += (avg - vs[loc]) * (0.8 * wl)[:, None]
     z = vs[:, 2]
     # per row scale factors from silhouettes (model rows measured after the remap)
     zb = np.arange(Z0, s_top - 0.005, 0.005)
