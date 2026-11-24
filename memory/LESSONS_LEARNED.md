@@ -26,6 +26,8 @@ Full history: vault `Knowledge Base/08 Mistakes and Lessons Learned.md`, handoff
 * 2026-11-23 Lenient QA (whole frames, borderline passed) missed defects Sean caught at 0:04, 0:21, 0:32, 0:37, 1:15, 1:56, 2:02; a strict zoomed audit then failed 37 "passing" stills; all 25 hooks failed the hook rules audit after that.
 
 ## Environment discoveries
+* 2026-11-24 ElevenLabs quota (2,781,816) exhausted during liver v4 regeneration; the API answers 401 with code quota_exceeded. Check with a tiny POST before a big batch.
+* 2026-11-24 Liver v4 round 1: 0 of 14 hook candidates passed (rig pose redraws and V36 reference generations); models draw the hero's RIGHT (far) arm or a straight arm when the hero is on screen right facing left. Edits of near correct stills remain the best bet.
 * rtmlib pose weights: download.openmmlab.com unreachable from cloud sessions (2026-11-24); huggingface.co reachable. Pose model licence question open (C15).
 * ElevenLabs key lacks `user_read`: credit balance cannot be read; stop and report only on an actual quota error.
 * Cloud containers are ephemeral: anything not pushed to GitHub is lost.

@@ -36,3 +36,36 @@
 {"id": "V84", "file": "/tmp/claude-0/liver/regen2/V84_2.png", "mode": "ref", "gen": "i3H0nOymrOKyL512DrP9", "credits": null, "s": 28.2, "t": "2026-11-24 07:51"}
 {"id": "V33", "file": "/tmp/claude-0/liver/regen2/V33_1.png", "mode": "ref", "gen": "iC0ee0tb6uX2z0v0hwcz", "credits": null, "s": 28.4, "t": "2026-11-24 07:51"}
 {"id": "V33", "file": "/tmp/claude-0/liver/regen2/V33_2.png", "mode": "ref", "gen": "GV3Z7dZwPQNI66ujAJ8l", "credits": null, "s": 28.5, "t": "2026-11-24 07:51"}
+{"id": "V94", "file": "/tmp/claude-0/liver/regen2/V94_1.png", "mode": "ref", "gen": "5d2ibMetFmEPJc11B62S", "credits": null, "s": 21.9, "t": "2026-11-24 07:52"}
+{"id": "V94", "file": "/tmp/claude-0/liver/regen2/V94_2.png", "mode": "ref", "gen": "8ExlUw74xM8QlWRzKnMc", "credits": null, "s": 24.4, "t": "2026-11-24 07:52"}
+{"id": "V57", "file": "/tmp/claude-0/liver/regen2/V57_1.png", "mode": "ref", "gen": "aiIZzNcxBP1gBVu5SmZv", "credits": null, "s": 24.8, "t": "2026-11-24 07:52"}
+{"id": "V53", "file": "/tmp/claude-0/liver/regen2/V53_2.png", "mode": "ref", "gen": "yFsRU0iYqRYvvskiWlOf", "credits": null, "s": 21.5, "t": "2026-11-24 07:52"}
+{"id": "V57", "file": "/tmp/claude-0/liver/regen2/V57_2.png", "mode": "ref", "gen": "5Wuyx4g7XJoVUwuPNM7t", "credits": null, "s": 24.4, "t": "2026-11-24 07:52"}
+{"id": "V53", "file": "/tmp/claude-0/liver/regen2/V53_1.png", "mode": "ref", "gen": "OAVpcNwzDadfVgyDjJ6r", "credits": null, "s": 24.4, "t": "2026-11-24 07:52"}
+{"id": "V86", "file": "/tmp/claude-0/liver/regen2/V86_1.png", "mode": "ref", "gen": "mabrSGb6F0ErTtRXtPf3", "credits": null, "s": 24.9, "t": "2026-11-24 07:52"}
+{"id": "V2", "file": "/tmp/claude-0/liver/regen2/V2_1.png", "mode": "ref", "gen": "yGUyQP76uO6FxfsMndXk", "credits": null, "s": 21.6, "t": "2026-11-24 07:52"}
+{"id": "V21", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V86", "file": "/tmp/claude-0/liver/regen2/V86_2.png", "mode": "ref", "gen": "ZmUMl0epaPVD0g7DJ2U9", "credits": null, "s": 24.5, "t": "2026-11-24 07:52"}
+{"id": "V21", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V23", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V23", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V34", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V16", "file": "/tmp/claude-0/liver/regen2/V16_2.png", "mode": "ref", "gen": "rdovN9cHYgscixP2u9D8", "credits": null, "s": 21.4, "t": "2026-11-24 07:52"}
+{"id": "V34", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V39", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V39", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V2", "file": "/tmp/claude-0/liver/regen2/V2_2.png", "mode": "ref", "gen": "yeZ2eg6xRP3NeiekO9FC", "credits": null, "s": 25.6, "t": "2026-11-24 07:52"}
+{"id": "V25", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V25", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V61", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V59", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "text"}
+{"id": "V59", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "text"}
+{"id": "V61", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "ref"}
+{"id": "V75", "err": "<HTTPError 401: 'Unauthorized'>", "mode": "text"}
+{"id": "V16", "file": "/tmp/claude-0/liver/regen2/V16_1.png", "mode": "ref", "gen": "ruj3CizzAwGdxivkntuj", "credits": null, "s": 28.3, "t": "2026-11-24 07:52"}
+{"id": "V70", "file": "/tmp/claude-0/liver/regen2/V70_1.png", "mode": "text", "gen": "J3HnUv6mIrEu6uuNsTmK", "credits": null, "s": 21.3, "t": "2026-11-24 07:52"}
+{"id": "V24", "file": "/tmp/claude-0/liver/regen2/V24_1.png", "mode": "text", "gen": "AYBPqGPNNCRTa8xbqLd3", "credits": null, "s": 24.5, "t": "2026-11-24 07:52"}
+{"id": "V24", "file": "/tmp/claude-0/liver/regen2/V24_2.png", "mode": "text", "gen": "IOBlVeilOps9YmvqkCsH", "credits": null, "s": 24.5, "t": "2026-11-24 07:53"}
+{"id": "V70", "file": "/tmp/claude-0/liver/regen2/V70_2.png", "mode": "text", "gen": "sJ8uVHW22TNKGMWLgeTz", "credits": null, "s": 24.9, "t": "2026-11-24 07:53"}
+{"id": "V75", "file": "/tmp/claude-0/liver/regen2/V75_2.png", "mode": "text", "gen": "aahJhM0IVZJYc8gqQVUu", "credits": null, "s": 24.5, "t": "2026-11-24 07:53"}
+{"id": "V76", "file": "/tmp/claude-0/liver/regen2/V76_1.png", "mode": "text", "gen": "nzGsaqOozl7tjrtAe11E", "credits": null, "s": 27.3, "t": "2026-11-24 07:53"}

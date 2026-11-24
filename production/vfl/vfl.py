@@ -159,6 +159,7 @@ def _proj(a, b):
 def record(reg, aid, path, codes, note, by, project):
     """Add a failure to the library without duplicating: same image (dhash) or same project+asset+class appends an occurrence."""
     h = L.dhash(path)
+    aid = re.sub(r"_\d+$", "", aid)  # candidate takes (V9_1, V9_2) dedupe to their shot
     added = []
     for c in codes:
         cid = "VFC-" + c

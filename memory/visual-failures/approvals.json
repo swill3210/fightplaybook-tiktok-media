@@ -1275,5 +1275,405 @@
   "t": "2026-11-24 07:49 UTC",
   "note": "",
   "lib": 9
+ },
+ "69fe77a1296ec9c02672215cbf6d59ab37573916dbb8e11d1d267f839b84ec06": {
+  "asset": "V12_1",
+  "path": "/tmp/claude-0/liver/regen/V12_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C01",
+   "I01",
+   "B05",
+   "E05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "straight-ish rear arm; two shot not close up; guards dropped; opponent towers",
+  "lib": 11
+ },
+ "bee0dd0405e1d048488c556f847af563da2f6fa7ad81617beeee4b6263aaebf8": {
+  "asset": "V18_1",
+  "path": "/tmp/claude-0/liver/regen/V18_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "E01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "eyes do not drop; brow lines on the face",
+  "lib": 11
+ },
+ "ef961b7ef7e001bb4bb0b08d694ddf193719f46f24e99725b61da7db2015952f": {
+  "asset": "V18_2",
+  "path": "/tmp/claude-0/liver/regen/V18_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "E01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "eyes level; brow lines",
+  "lib": 11
+ },
+ "1eb086d5dd3cb39afd7dcf882d7278a7da150d2b9ed7ce61734aa30f760ea325": {
+  "asset": "V20_1",
+  "path": "/tmp/claude-0/liver/regen/V20_1.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "",
+  "lib": 11
+ },
+ "56744611c6997fe246d482873dad46c20125c87ddadbf481b3be56d62e508946": {
+  "asset": "V20_2",
+  "path": "/tmp/claude-0/liver/regen/V20_2.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "",
+  "lib": 11
+ },
+ "1bc07e18ba79a14832462ce62b8bb1f563fb8f6b2fa8c9ef28f528b4ee0c10e1": {
+  "asset": "V27_1",
+  "path": "/tmp/claude-0/liver/regen/V27_1.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "",
+  "lib": 11
+ },
+ "42033219cfa66d6596bff94aa8935c8e70eb04cdb3dc3fedb468b6cdbec0a81d": {
+  "asset": "V27_2",
+  "path": "/tmp/claude-0/liver/regen/V27_2.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "",
+  "lib": 11
+ },
+ "7e4e26ffcb5dc09fbcf7a6f6d1e463b5265b5950fef29875fbec93e4f8e7bd58": {
+  "asset": "V2_1",
+  "path": "/tmp/claude-0/liver/regen/V2_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B01",
+   "G01",
+   "B05"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "arm about 160 degrees; opponent cut by left edge; guard dropped",
+  "lib": 11
+ },
+ "89c39b28436abade4069b238f40fbe65cd1f7a5403cbd0eea68ca3dda4df46bf": {
+  "asset": "V2_2",
+  "path": "/tmp/claude-0/liver/regen/V2_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "A06",
+   "C04"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "no glove on the ribs; arms tangled",
+  "lib": 11
+ },
+ "85650c51a224a6ad7838a1807227d9691f8c6e16c44c135a2838c8482e698ad4": {
+  "asset": "V31_1",
+  "path": "/tmp/claude-0/liver/regen/V31_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "eyes level, no upward gaze",
+  "lib": 11
+ },
+ "5d94ffecd16c47d1681436f11ebd1655e80fc4e4c7d2f472e626eeeb43ba0f58": {
+  "asset": "V31_2",
+  "path": "/tmp/claude-0/liver/regen/V31_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "eyes level",
+  "lib": 11
+ },
+ "8cc9f344a8bf0ec284ee9a975556529bb05583056b2eb536e33bb2e3930c5f65": {
+  "asset": "V35_1",
+  "path": "/tmp/claude-0/liver/regen/V35_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05",
+   "A02",
+   "G01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "boxing gloves; opponent right arm missing; head cut by top edge",
+  "lib": 11
+ },
+ "56b1a99cc2f99bc117cb2bcf77678a8e17fef13ae4022c19aa7651431eeea5aa": {
+  "asset": "V35_2",
+  "path": "/tmp/claude-0/liver/regen/V35_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A05",
+   "A02",
+   "G01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "same",
+  "lib": 11
+ },
+ "af03759b106f323dc02bbd41fc897fb0d680b3b2b363cde85e3694ff6bc3bfa0": {
+  "asset": "V38_1",
+  "path": "/tmp/claude-0/liver/regen/V38_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B06",
+   "C01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "straight rear arm, not a hook",
+  "lib": 11
+ },
+ "b9b3dab3602c26ed9d2f2098c602d64c7fe9ca827f9e3fbbd686b9337f31a040": {
+  "asset": "V38_2",
+  "path": "/tmp/claude-0/liver/regen/V38_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A06",
+   "B06",
+   "E02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "clinch, merged bodies; white belt",
+  "lib": 11
+ },
+ "e1de40235423497b557a9049ba7ba4cdc1d6153931d6c7174506a84410df8341": {
+  "asset": "V53_1",
+  "path": "/tmp/claude-0/liver/regen/V53_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F01",
+   "A06",
+   "B01",
+   "G01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "glove at the beltline; open arm; tangled",
+  "lib": 11
+ },
+ "e08ee0a8964cb9ac139b8e06b63045b1d9162abab91644beb9fdd4cdd1c5b52a": {
+  "asset": "V53_2",
+  "path": "/tmp/claude-0/liver/regen/V53_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F01",
+   "A06",
+   "B01",
+   "G01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "same",
+  "lib": 11
+ },
+ "b67768981eee4cb1ecb82d88889f5f59ed2d1443ec5bcd5ccff04a4ebe5f9238": {
+  "asset": "V74_1",
+  "path": "/tmp/claude-0/liver/regen/V74_1.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "",
+  "lib": 11
+ },
+ "a57161e185e3f968e6deb30004ff686e9be19f813678921fb38461203830012d": {
+  "asset": "V74_2",
+  "path": "/tmp/claude-0/liver/regen/V74_2.png",
+  "verdict": "PASS",
+  "codes": [],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "",
+  "lib": 11
+ },
+ "0f0bf8b27571953a709531a178ea1b4aab2aa73a90c61e3bf5c5032dd48af48d": {
+  "asset": "V86_1",
+  "path": "/tmp/claude-0/liver/regen/V86_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F01",
+   "A06",
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "glove at the waistband; arm about 150 degrees; owner unclear",
+  "lib": 11
+ },
+ "ac7e9b99600184c87f4972a945ec6f030f5b7c2abfd26ff09e68567642854c8b": {
+  "asset": "V86_2",
+  "path": "/tmp/claude-0/liver/regen/V86_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F01",
+   "A06",
+   "B01",
+   "G01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "same",
+  "lib": 11
+ },
+ "d5c7656528dab2252884de57cdd153e41f139b7e574a3e3fd8d57bf83d86db08": {
+  "asset": "V91_1",
+  "path": "/tmp/claude-0/liver/regen/V91_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "A02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "no pivot; rear arm untraced",
+  "lib": 11
+ },
+ "f6981905adb05a31af81d7a51acbde0eab6f0aa78dc57ebadab82d9cc6f9f583": {
+  "asset": "V91_2",
+  "path": "/tmp/claude-0/liver/regen/V91_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "I01",
+   "A02"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "no pivot; rear arm hidden",
+  "lib": 11
+ },
+ "e5a7ab22536f486162996c2801caed4b593768ab1e54de4c927ce4a25d3e6141": {
+  "asset": "V96_1",
+  "path": "/tmp/claude-0/liver/regen/V96_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B09",
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "opponent's gloves raised overhead like a celebration",
+  "lib": 11
+ },
+ "aebcb8911974f8f9b43b3c8aab24c4aaa28e1a0471741374722388af03bf466b": {
+  "asset": "V96_2",
+  "path": "/tmp/claude-0/liver/regen/V96_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B09",
+   "I01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "same",
+  "lib": 11
+ },
+ "99057f3e02bbe3b431f6dde020b24f9de1aa0c4f0cab509d0fe71a24b748f3ee": {
+  "asset": "V15_1",
+  "path": "/tmp/claude-0/liver/regen2/V15_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C01",
+   "B01",
+   "C06"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "right arm punches, straight; right leg leads",
+  "lib": 11
+ },
+ "c8d284c3cc4385aeeafd105bd2c1672ef5d483c6468801e2c92b4f92245d88c0": {
+  "asset": "V15_2",
+  "path": "/tmp/claude-0/liver/regen2/V15_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C01",
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "right arm, open, glove at the waist",
+  "lib": 11
+ },
+ "68f1c78e57584c19cf7d5ee12c800d91f9256b6633832db08b60ca0746092d09": {
+  "asset": "V3_1",
+  "path": "/tmp/claude-0/liver/regen2/V3_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C01",
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "right arm, nearly straight",
+  "lib": 11
+ },
+ "3d715afbf199e28e889f7208121ca9fe70cebe8c77e50d229b660d849aef8038": {
+  "asset": "V3_2",
+  "path": "/tmp/claude-0/liver/regen2/V3_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "B06",
+   "I01",
+   "E03"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "straight jab at head height; skin lighter gray",
+  "lib": 11
+ },
+ "bf47f7936b962caea9fad168843e4cb5c56b9372586dc42594291c59e84c9540": {
+  "asset": "V9_1",
+  "path": "/tmp/claude-0/liver/regen2/V9_1.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C01",
+   "B01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "right arm, straight",
+  "lib": 11
+ },
+ "8ff8de4c97a46220ae0402928aa7c5f1f7a46b00cdcbd5340cbaf8790535ba4d": {
+  "asset": "V9_2",
+  "path": "/tmp/claude-0/liver/regen2/V9_2.png",
+  "verdict": "FAIL",
+  "codes": [
+   "C01",
+   "B01",
+   "E01"
+  ],
+  "by": "combat-anatomy-specialist",
+  "t": "2026-11-24 07:56 UTC",
+  "note": "right arm straight; opponent mouth",
+  "lib": 11
  }
 }

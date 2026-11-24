@@ -1,6 +1,6 @@
 {
- "version": 11,
- "updated": "2026-11-24 07:51 UTC",
+ "version": 13,
+ "updated": "2026-11-24 07:56 UTC",
  "classes": {
   "VFC-A01": {
    "category": "A",
@@ -8507,7 +8507,19 @@
     "dhash": "008401610b24169016901690169816944eb298b272c96a397b997d08ed28d968"
    },
    "corrected": null,
-   "test_eligible": true
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24 07:56 UTC",
+     "by": "combat-anatomy-specialist",
+     "note": "eyes do not drop; brow lines on the face"
+    },
+    {
+     "t": "2026-11-24 07:56 UTC",
+     "by": "combat-anatomy-specialist",
+     "note": "eyes level; brow lines"
+    }
+   ]
   },
   "VFI-0268": {
    "origin": "auto",
@@ -8907,7 +8919,19 @@
     "dhash": "0000030104c00b2023204f0db7127691633963397331e718c8eccb2cd334d2b4"
    },
    "corrected": null,
-   "test_eligible": true
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24 07:56 UTC",
+     "by": "combat-anatomy-specialist",
+     "note": "eyes level, no upward gaze"
+    },
+    {
+     "t": "2026-11-24 07:56 UTC",
+     "by": "combat-anatomy-specialist",
+     "note": "eyes level"
+    }
+   ]
   },
   "VFI-0284": {
    "origin": "auto",
@@ -11680,6 +11704,1171 @@
     "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V68.png",
     "inferred": false,
     "dhash": "0860036428e22dd118c9baf178617061725972b8717470fc68e46eccc6c6d6c6"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0400": {
+   "origin": "auto",
+   "class": "VFC-C01",
+   "also": [],
+   "title": "straight-ish rear arm; two shot not close up; guards dropped; opponent towers",
+   "project": "Liver long form v4 candidates",
+   "shot": "V12",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "straight-ish rear arm; two shot not close up; guards dropped; opponent towers",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0400/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V12_1.png",
+    "inferred": false,
+    "dhash": "803280b2083206b2197158f959d4b994b19c65cc6542614260c272526352e351"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0401": {
+   "origin": "auto",
+   "class": "VFC-I01",
+   "also": [],
+   "title": "straight-ish rear arm; two shot not close up; guards dropped; opponent towers",
+   "project": "Liver long form v4 candidates",
+   "shot": "V12",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "straight-ish rear arm; two shot not close up; guards dropped; opponent towers",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0401/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V12_1.png",
+    "inferred": false,
+    "dhash": "803280b2083206b2197158f959d4b994b19c65cc6542614260c272526352e351"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0402": {
+   "origin": "auto",
+   "class": "VFC-B05",
+   "also": [],
+   "title": "straight-ish rear arm; two shot not close up; guards dropped; opponent towers",
+   "project": "Liver long form v4 candidates",
+   "shot": "V12",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "straight-ish rear arm; two shot not close up; guards dropped; opponent towers",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0402/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V12_1.png",
+    "inferred": false,
+    "dhash": "803280b2083206b2197158f959d4b994b19c65cc6542614260c272526352e351"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0403": {
+   "origin": "auto",
+   "class": "VFC-E05",
+   "also": [],
+   "title": "straight-ish rear arm; two shot not close up; guards dropped; opponent towers",
+   "project": "Liver long form v4 candidates",
+   "shot": "V12",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "straight-ish rear arm; two shot not close up; guards dropped; opponent towers",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0403/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V12_1.png",
+    "inferred": false,
+    "dhash": "803280b2083206b2197158f959d4b994b19c65cc6542614260c272526352e351"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0404": {
+   "origin": "auto",
+   "class": "VFC-E01",
+   "also": [],
+   "title": "eyes do not drop; brow lines on the face",
+   "project": "Liver long form v4 candidates",
+   "shot": "V18",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "eyes do not drop; brow lines on the face",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0404/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V18_1.png",
+    "inferred": false,
+    "dhash": "008401200b20169116901690169836944eb298b372c96a397b99fd08ed28d968"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24 07:56 UTC",
+     "by": "combat-anatomy-specialist",
+     "note": "eyes level; brow lines"
+    }
+   ]
+  },
+  "VFI-0405": {
+   "origin": "auto",
+   "class": "VFC-B01",
+   "also": [],
+   "title": "arm about 160 degrees; opponent cut by left edge; guard dropped",
+   "project": "Liver long form v4 candidates",
+   "shot": "V2",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "arm about 160 degrees; opponent cut by left edge; guard dropped",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0405/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V2_1.png",
+    "inferred": false,
+    "dhash": "592059585924996479246da27029f360e360cd24dc34b9b0b119b15874d87c9c"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0406": {
+   "origin": "auto",
+   "class": "VFC-G01",
+   "also": [],
+   "title": "arm about 160 degrees; opponent cut by left edge; guard dropped",
+   "project": "Liver long form v4 candidates",
+   "shot": "V2",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "arm about 160 degrees; opponent cut by left edge; guard dropped",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0406/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V2_1.png",
+    "inferred": false,
+    "dhash": "592059585924996479246da27029f360e360cd24dc34b9b0b119b15874d87c9c"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0407": {
+   "origin": "auto",
+   "class": "VFC-B05",
+   "also": [],
+   "title": "arm about 160 degrees; opponent cut by left edge; guard dropped",
+   "project": "Liver long form v4 candidates",
+   "shot": "V2",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "arm about 160 degrees; opponent cut by left edge; guard dropped",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0407/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V2_1.png",
+    "inferred": false,
+    "dhash": "592059585924996479246da27029f360e360cd24dc34b9b0b119b15874d87c9c"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0408": {
+   "origin": "auto",
+   "class": "VFC-I01",
+   "also": [],
+   "title": "no glove on the ribs; arms tangled",
+   "project": "Liver long form v4 candidates",
+   "shot": "V2",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "no glove on the ribs; arms tangled",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0408/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V2_2.png",
+    "inferred": false,
+    "dhash": "00800b0014a08c98ac642c642c645e621af3bea1bca1b661b4a1b4b1b8c9b9d9"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0409": {
+   "origin": "auto",
+   "class": "VFC-A06",
+   "also": [],
+   "title": "no glove on the ribs; arms tangled",
+   "project": "Liver long form v4 candidates",
+   "shot": "V2",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "no glove on the ribs; arms tangled",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0409/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V2_2.png",
+    "inferred": false,
+    "dhash": "00800b0014a08c98ac642c642c645e621af3bea1bca1b661b4a1b4b1b8c9b9d9"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0410": {
+   "origin": "auto",
+   "class": "VFC-C04",
+   "also": [],
+   "title": "no glove on the ribs; arms tangled",
+   "project": "Liver long form v4 candidates",
+   "shot": "V2",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "no glove on the ribs; arms tangled",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0410/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V2_2.png",
+    "inferred": false,
+    "dhash": "00800b0014a08c98ac642c642c645e621af3bea1bca1b661b4a1b4b1b8c9b9d9"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0411": {
+   "origin": "auto",
+   "class": "VFC-A05",
+   "also": [],
+   "title": "boxing gloves; opponent right arm missing; head cut by top edge",
+   "project": "Liver long form v4 candidates",
+   "shot": "V35",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "boxing gloves; opponent right arm missing; head cut by top edge",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0411/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V35_1.png",
+    "inferred": false,
+    "dhash": "32daf358c16c147496781218199892d8173806384f3e0f3a073806794cf94d08"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0412": {
+   "origin": "auto",
+   "class": "VFC-A02",
+   "also": [],
+   "title": "boxing gloves; opponent right arm missing; head cut by top edge",
+   "project": "Liver long form v4 candidates",
+   "shot": "V35",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "boxing gloves; opponent right arm missing; head cut by top edge",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0412/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V35_1.png",
+    "inferred": false,
+    "dhash": "32daf358c16c147496781218199892d8173806384f3e0f3a073806794cf94d08"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0413": {
+   "origin": "auto",
+   "class": "VFC-G01",
+   "also": [],
+   "title": "boxing gloves; opponent right arm missing; head cut by top edge",
+   "project": "Liver long form v4 candidates",
+   "shot": "V35",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "boxing gloves; opponent right arm missing; head cut by top edge",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0413/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V35_1.png",
+    "inferred": false,
+    "dhash": "32daf358c16c147496781218199892d8173806384f3e0f3a073806794cf94d08"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0417": {
+   "origin": "auto",
+   "class": "VFC-B06",
+   "also": [],
+   "title": "straight rear arm, not a hook",
+   "project": "Liver long form v4 candidates",
+   "shot": "V38",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "straight rear arm, not a hook",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0417/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V38_1.png",
+    "inferred": false,
+    "dhash": "0d00ad404cd05cc45cc459c4586459641962b962b4d2b4d2a4d924d9649d669d"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "clinch, merged bodies; white belt"
+    }
+   ]
+  },
+  "VFI-0418": {
+   "origin": "auto",
+   "class": "VFC-C01",
+   "also": [],
+   "title": "straight rear arm, not a hook",
+   "project": "Liver long form v4 candidates",
+   "shot": "V38",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "straight rear arm, not a hook",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0418/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V38_1.png",
+    "inferred": false,
+    "dhash": "0d00ad404cd05cc45cc459c4586459641962b962b4d2b4d2a4d924d9649d669d"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0419": {
+   "origin": "auto",
+   "class": "VFC-A06",
+   "also": [],
+   "title": "clinch, merged bodies; white belt",
+   "project": "Liver long form v4 candidates",
+   "shot": "V38",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "clinch, merged bodies; white belt",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0419/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V38_2.png",
+    "inferred": false,
+    "dhash": "820184800b400b20162016901690178816882e902e90169016902d212b142b10"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0421": {
+   "origin": "auto",
+   "class": "VFC-E02",
+   "also": [],
+   "title": "clinch, merged bodies; white belt",
+   "project": "Liver long form v4 candidates",
+   "shot": "V38",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "clinch, merged bodies; white belt",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0421/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V38_2.png",
+    "inferred": false,
+    "dhash": "820184800b400b20162016901690178816882e902e90169016902d212b142b10"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0422": {
+   "origin": "auto",
+   "class": "VFC-F01",
+   "also": [],
+   "title": "glove at the beltline; open arm; tangled",
+   "project": "Liver long form v4 candidates",
+   "shot": "V53",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "glove at the beltline; open arm; tangled",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0422/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V53_1.png",
+    "inferred": false,
+    "dhash": "17202f202d102c882dc86dc92cc82c882ec82cc92cc82c882c092c682c642e20"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0423": {
+   "origin": "auto",
+   "class": "VFC-A06",
+   "also": [],
+   "title": "glove at the beltline; open arm; tangled",
+   "project": "Liver long form v4 candidates",
+   "shot": "V53",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "glove at the beltline; open arm; tangled",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0423/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V53_1.png",
+    "inferred": false,
+    "dhash": "17202f202d102c882dc86dc92cc82c882ec82cc92cc82c882c092c682c642e20"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0424": {
+   "origin": "auto",
+   "class": "VFC-B01",
+   "also": [],
+   "title": "glove at the beltline; open arm; tangled",
+   "project": "Liver long form v4 candidates",
+   "shot": "V53",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "glove at the beltline; open arm; tangled",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0424/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V53_1.png",
+    "inferred": false,
+    "dhash": "17202f202d102c882dc86dc92cc82c882ec82cc92cc82c882c092c682c642e20"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0425": {
+   "origin": "auto",
+   "class": "VFC-G01",
+   "also": [],
+   "title": "glove at the beltline; open arm; tangled",
+   "project": "Liver long form v4 candidates",
+   "shot": "V53",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "glove at the beltline; open arm; tangled",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0425/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V53_1.png",
+    "inferred": false,
+    "dhash": "17202f202d102c882dc86dc92cc82c882ec82cc92cc82c882c092c682c642e20"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0430": {
+   "origin": "auto",
+   "class": "VFC-F01",
+   "also": [],
+   "title": "glove at the waistband; arm about 150 degrees; owner unclear",
+   "project": "Liver long form v4 candidates",
+   "shot": "V86",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "glove at the waistband; arm about 150 degrees; owner unclear",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0430/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V86_1.png",
+    "inferred": false,
+    "dhash": "0280966916102f102d482dc82ec8ac89ae8aaec9ae482c882d082c682e65ad18"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0431": {
+   "origin": "auto",
+   "class": "VFC-A06",
+   "also": [],
+   "title": "glove at the waistband; arm about 150 degrees; owner unclear",
+   "project": "Liver long form v4 candidates",
+   "shot": "V86",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "glove at the waistband; arm about 150 degrees; owner unclear",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0431/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V86_1.png",
+    "inferred": false,
+    "dhash": "0280966916102f102d482dc82ec8ac89ae8aaec9ae482c882d082c682e65ad18"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0432": {
+   "origin": "auto",
+   "class": "VFC-B01",
+   "also": [],
+   "title": "glove at the waistband; arm about 150 degrees; owner unclear",
+   "project": "Liver long form v4 candidates",
+   "shot": "V86",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "glove at the waistband; arm about 150 degrees; owner unclear",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0432/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V86_1.png",
+    "inferred": false,
+    "dhash": "0280966916102f102d482dc82ec8ac89ae8aaec9ae482c882d082c682e65ad18"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0436": {
+   "origin": "auto",
+   "class": "VFC-G01",
+   "also": [],
+   "title": "same",
+   "project": "Liver long form v4 candidates",
+   "shot": "V86",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "same",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0436/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V86_2.png",
+    "inferred": false,
+    "dhash": "162007202d10af092dc82dc82ec82c88aec8acc82c482c882d0aac6c2e642d18"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0437": {
+   "origin": "auto",
+   "class": "VFC-I01",
+   "also": [],
+   "title": "no pivot; rear arm untraced",
+   "project": "Liver long form v4 candidates",
+   "shot": "V91",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "no pivot; rear arm untraced",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0437/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V91_1.png",
+    "inferred": false,
+    "dhash": "000400280810543509725961b161b971b962b162b15b69d96d89946926690682"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24 07:56 UTC",
+     "by": "combat-anatomy-specialist",
+     "note": "no pivot; rear arm hidden"
+    }
+   ]
+  },
+  "VFI-0438": {
+   "origin": "auto",
+   "class": "VFC-A02",
+   "also": [],
+   "title": "no pivot; rear arm untraced",
+   "project": "Liver long form v4 candidates",
+   "shot": "V91",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "no pivot; rear arm untraced",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0438/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V91_1.png",
+    "inferred": false,
+    "dhash": "000400280810543509725961b161b971b962b162b15b69d96d89946926690682"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24 07:56 UTC",
+     "by": "combat-anatomy-specialist",
+     "note": "no pivot; rear arm hidden"
+    }
+   ]
+  },
+  "VFI-0439": {
+   "origin": "auto",
+   "class": "VFC-B09",
+   "also": [],
+   "title": "opponent's gloves raised overhead like a celebration",
+   "project": "Liver long form v4 candidates",
+   "shot": "V96",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "opponent's gloves raised overhead like a celebration",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0439/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V96_1.png",
+    "inferred": false,
+    "dhash": "0100022025104b10a3c8634863906190739071907191e190c350a148a5485248"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24 07:56 UTC",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0440": {
+   "origin": "auto",
+   "class": "VFC-I01",
+   "also": [],
+   "title": "opponent's gloves raised overhead like a celebration",
+   "project": "Liver long form v4 candidates",
+   "shot": "V96",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "opponent's gloves raised overhead like a celebration",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0440/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen/V96_1.png",
+    "inferred": false,
+    "dhash": "0100022025104b10a3c8634863906190739071907191e190c350a148a5485248"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24 07:56 UTC",
+     "by": "combat-anatomy-specialist",
+     "note": "same"
+    }
+   ]
+  },
+  "VFI-0441": {
+   "origin": "auto",
+   "class": "VFC-C01",
+   "also": [],
+   "title": "right arm punches, straight; right leg leads",
+   "project": "Liver long form v4 candidates",
+   "shot": "V15",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "right arm punches, straight; right leg leads",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0441/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen2/V15_1.png",
+    "inferred": false,
+    "dhash": "02000980166016922c916cc88cc96e482c482c642ec45ba45ba45294b352b312"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "right arm, open, glove at the waist"
+    }
+   ]
+  },
+  "VFI-0442": {
+   "origin": "auto",
+   "class": "VFC-B01",
+   "also": [],
+   "title": "right arm punches, straight; right leg leads",
+   "project": "Liver long form v4 candidates",
+   "shot": "V15",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "right arm punches, straight; right leg leads",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0442/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen2/V15_1.png",
+    "inferred": false,
+    "dhash": "02000980166016922c916cc88cc96e482c482c642ec45ba45ba45294b352b312"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "right arm, open, glove at the waist"
+    }
+   ]
+  },
+  "VFI-0443": {
+   "origin": "auto",
+   "class": "VFC-C06",
+   "also": [],
+   "title": "right arm punches, straight; right leg leads",
+   "project": "Liver long form v4 candidates",
+   "shot": "V15",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "right arm punches, straight; right leg leads",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0443/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen2/V15_1.png",
+    "inferred": false,
+    "dhash": "02000980166016922c916cc88cc96e482c482c642ec45ba45ba45294b352b312"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0446": {
+   "origin": "auto",
+   "class": "VFC-C01",
+   "also": [],
+   "title": "right arm, nearly straight",
+   "project": "Liver long form v4 candidates",
+   "shot": "V3",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "right arm, nearly straight",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0446/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen2/V3_1.png",
+    "inferred": false,
+    "dhash": "04000b0014a004902cd05cc85ec82cc92cc92cc92cc82aa45ab5529252923312"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0447": {
+   "origin": "auto",
+   "class": "VFC-B01",
+   "also": [],
+   "title": "right arm, nearly straight",
+   "project": "Liver long form v4 candidates",
+   "shot": "V3",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "right arm, nearly straight",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0447/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen2/V3_1.png",
+    "inferred": false,
+    "dhash": "04000b0014a004902cd05cc85ec82cc92cc92cc92cc82aa45ab5529252923312"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0448": {
+   "origin": "auto",
+   "class": "VFC-B06",
+   "also": [],
+   "title": "straight jab at head height; skin lighter gray",
+   "project": "Liver long form v4 candidates",
+   "shot": "V3",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "straight jab at head height; skin lighter gray",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0448/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen2/V3_2.png",
+    "inferred": false,
+    "dhash": "0040043002482d482cc45c8459e459a45964d96458e454d436d4b6d2a69aa692"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0449": {
+   "origin": "auto",
+   "class": "VFC-I01",
+   "also": [],
+   "title": "straight jab at head height; skin lighter gray",
+   "project": "Liver long form v4 candidates",
+   "shot": "V3",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "straight jab at head height; skin lighter gray",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0449/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen2/V3_2.png",
+    "inferred": false,
+    "dhash": "0040043002482d482cc45c8459e459a45964d96458e454d436d4b6d2a69aa692"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0450": {
+   "origin": "auto",
+   "class": "VFC-E03",
+   "also": [],
+   "title": "straight jab at head height; skin lighter gray",
+   "project": "Liver long form v4 candidates",
+   "shot": "V3",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "straight jab at head height; skin lighter gray",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0450/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen2/V3_2.png",
+    "inferred": false,
+    "dhash": "0040043002482d482cc45c8459e459a45964d96458e454d436d4b6d2a69aa692"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0451": {
+   "origin": "auto",
+   "class": "VFC-C01",
+   "also": [],
+   "title": "right arm, straight",
+   "project": "Liver long form v4 candidates",
+   "shot": "V9",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "right arm, straight",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0451/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen2/V9_1.png",
+    "inferred": false,
+    "dhash": "0b00148014a01cd058595ac85ec82cc80cc85cc85ac45aa452b41292b69ab71a"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "right arm straight; opponent mouth"
+    }
+   ]
+  },
+  "VFI-0452": {
+   "origin": "auto",
+   "class": "VFC-B01",
+   "also": [],
+   "title": "right arm, straight",
+   "project": "Liver long form v4 candidates",
+   "shot": "V9",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "right arm, straight",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0452/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen2/V9_1.png",
+    "inferred": false,
+    "dhash": "0b00148014a01cd058595ac85ec82cc80cc85cc85ac45aa452b41292b69ab71a"
+   },
+   "corrected": null,
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-24",
+     "by": "combat-anatomy-specialist",
+     "note": "right arm straight; opponent mouth"
+    }
+   ]
+  },
+  "VFI-0455": {
+   "origin": "auto",
+   "class": "VFC-E01",
+   "also": [],
+   "title": "right arm straight; opponent mouth",
+   "project": "Liver long form v4 candidates",
+   "shot": "V9",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-24 07:56 UTC",
+   "detected_by": "combat-anatomy-specialist",
+   "approved_by": [],
+   "explanation": "right arm straight; opponent mouth",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-24",
+   "original": {
+    "path": "evidence/VFI-0455/original.jpg",
+    "provenance": "/tmp/claude-0/liver/regen2/V9_2.png",
+    "inferred": false,
+    "dhash": "13412d204dd058d8b8c4b4c4b84459645964b8e4b4c2b492a49a64896e8d6ead"
    },
    "corrected": null,
    "test_eligible": true
