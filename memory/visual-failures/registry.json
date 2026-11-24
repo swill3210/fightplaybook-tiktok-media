@@ -1,6 +1,6 @@
 {
- "version": 7,
- "updated": "2026-11-24 07:39 UTC",
+ "version": 8,
+ "updated": "2026-11-24 07:43 UTC",
  "classes": {
   "VFC-A01": {
    "category": "A",
@@ -4217,8 +4217,9 @@
    "source": "CLAUDE-EXPORT/FINAL-CUT/qa_report.md (Claude revision 2 audit)",
    "detected_by": "Claude combat accuracy audit after Sean's 2026-11-24 review",
    "approved_by": [
+    "Claude v1 QC",
     "Grok v4 hook QA (0 defects)",
-    "Claude v1 QC"
+    "combat-anatomy-specialist (certification 2026-11-24)"
    ],
    "explanation": "Spec: right hand up from below into ribs. Defect: lands at chest or chin height. Fix used: rig shovel + redraw.",
    "severity": "critical",
@@ -11136,6 +11137,20 @@
    "unanswered": [],
    "unsure": [],
    "class_hits": 10
+  },
+  {
+   "worker": "combat-anatomy-specialist",
+   "worker_hash": "f3109594cd2542eb",
+   "date": "2026-11-24 07:43 UTC",
+   "library_version": 7,
+   "n": 16,
+   "result": "FAIL",
+   "approved_known_defects": [
+    "VFI-0118"
+   ],
+   "unanswered": [],
+   "unsure": [],
+   "class_hits": 8
   }
  ]
 }
