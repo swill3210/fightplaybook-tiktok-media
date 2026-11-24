@@ -21,6 +21,9 @@ Outfit split (Sean, Nov 23): long form hero wears the black shirt with red side 
 
 Read `production/audit/GROK_AUDIT.md` once to know which mistakes the old pipeline made.
 
+## 0.4 Mandatory rules update (Sean, 2026-11-24)
+Before any long form work read the vault file `Knowledge Base/12 Mandatory Rules Update 2026-11-24.md`: anatomy validation of every still and frame, combat accuracy checked against the library before illustrating (never trust a generated image because it looks good), engagement mix (keywords, numbers, countdowns, arrows, diagrams, side by side, correct vs incorrect, highlighted paths, annotated freeze frames, progress), pacing (still ~1.5 s, graphic every 3 to 5 s, 10+ angles per minute), identity preservation, and the 5 pass QC with timestamped defects. Any known defect fails the video.
+
 ## 0.5 Knowledge base (Obsidian vault "The Fight Playbook Brain", added Nov 23, 2026 at Sean's request)
 
 * The vault is Sean's existing Obsidian vault in a private GitHub repo, cloned at `$FP_VAULT` (default `/home/user/the-fight-playbook-brain`). Setup and safety: `production/kb/README.md`.
