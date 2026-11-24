@@ -246,8 +246,8 @@ const ArrowHead: React.FC<{ path: string }> = ({ path }) => {
   return <g transform={`translate(${x2} ${y2}) rotate(${ang})`}><path d="M18 0 L-34 -34 L-22 0 L-34 34 Z" fill={C.AMBER} stroke={C.DARK} strokeWidth={6} strokeLinejoin="round" /></g>;
 };
 const Freeze: React.FC<{ i: number }> = ({ i }) => {
-  const fl = 1 - C.cl(i / 4);
+  const fl = i < 8 ? 0 : 1 - C.cl((i - 8) / 4); // after the whip pan lands, never during it
   return <>
-    <div style={{ position: 'absolute', inset: 0, background: '#fff', opacity: 0.7 * fl }} />
+    <div style={{ position: 'absolute', inset: 0, background: '#fff', opacity: 0.3 * fl }} />
   </>;
 };
