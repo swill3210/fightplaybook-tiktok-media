@@ -28,7 +28,7 @@ Verbatim sources outrank this summary: skill `fight-playbook-rules` (R1 to R49, 
 ## 4. Look, framing, text
 * One flat solid background per video, never the same colour two videos in a row: pale blue #D8EEFE, warm sand #ECD6B0, sage #C4D6C4, slate gray #BEC6D0, deep teal #30767C, cream #F5ECD6 (Sean's named colour wins; never pink, coral, lime). Thin ground line or contact shadow only (C6).
 * Strike effect: ONLY thin black speed lines drawn in code (R11). No bursts, flashes, sparks, glows, swirls. Image prompts say "draw no effects".
-* Strikes land only on chin, jaw or body (ribs, liver, stomach); never neck, throat, shoulder, chest centre. Contact Law: every landed punch has a contact shot with the glove ON the target and the target compressing; uppercuts from below.
+* Strikes land only on chin, jaw or body (ribs, liver, stomach); never neck, throat, shoulder, chest centre. Contact Law: every landed punch has a contact shot with the glove ON the target ~~and the target compressing~~ (superseded 2026-11-25 by Sean's ruling: the prompts turned "compressing" into "buried" and "dent", which produced every F03 glove under the shirt; now the whole glove stays visible on top of the clothing and the clothing keeps its natural structure); uppercuts from below.
 * Framing: top fifth clear for the headline; nothing touches the top, left or right edges; bodies leave only through the bottom or a corner; close up hands attach to a visible wrist, forearm and torso. Orthodox liver work: hero on screen RIGHT facing left (C14).
 * Text: Bebas Neue, white with dark outline, top centre, max 3 words per line, must add information (never echo the narration or caption), each treatment max about 3 uses per video, never over a head or face. Long form has no bottom caption bar; Shorts keep a caption bar synced to the spoken word.
 
@@ -37,6 +37,14 @@ Verbatim sources outrank this summary: skill `fight-playbook-rules` (R1 to R49, 
 * Straights: shoulder, elbow, glove in one line, elbow at least 160 degrees. Hooks: LEFT hook = left arm, about 90 degree L (fail outside 70 to 110), elbow level with the glove, curved path, rotation, non punching glove at the chin, return to guard; body hooks bend the knees. Uppercuts and shovels: elbow at the own hip, forearm 70 to 85 degrees. A retracting arm returns along its path. Guard elbows on the ribs.
 * Orthodox liver shot = LEFT hook to the opponent's RIGHT side; name the arm by owner and image side.
 * Every claim needs two or more sources; cut unsourced overclaims (blindness, knockout guarantees, timing).
+
+## 5b. Mandatory visual corrections (Sean 2026-11-25, after the liver v3 review)
+* Every character: exactly two arms, two hands, two legs, two feet, each attached at the right place; natural shoulder, elbow, wrist, hip and knee alignment.
+* Gloves and limbs never penetrate another character's body. Clothing keeps its natural structure: no spiraling, melting, excessive stretching or vortex deformation.
+* Clear separation between overlapping characters and their limbs. Intentional framing: close ups must not hide the body mechanics.
+* Text, diagrams and graphics never cover an important demonstration (overlays pick an empty slot per shot from the character occupancy grid; see long-form workflow).
+* Keep the approved character designs, 2D style, palette and animated graphics. No exaggerated claims (for example, a single punch guaranteed to incapacitate).
+* QC covers the whole video, including stills approved earlier; find whether a defect comes from generation, crop, animation, compositing or render and fix that cause instead of regenerating with the same method.
 
 ## 6. Pacing and engagement (long form, Sean 2026-11-23/24)
 * New still or meaningful composition about every 1.5 s; animated text or graphic every 3 to 5 s; at least 10 distinct angles per minute; never the same angle twice in a row; never more than two wide eye level side shots in a row; no static holds (eased camera move on every shot).

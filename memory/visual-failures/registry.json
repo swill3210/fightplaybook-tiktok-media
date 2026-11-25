@@ -1,6 +1,6 @@
 {
- "version": 15,
- "updated": "2026-11-24 08:38 UTC",
+ "version": 18,
+ "updated": "2026-11-25 03:52 UTC",
  "classes": {
   "VFC-A01": {
    "category": "A",
@@ -273,22 +273,22 @@
    "severity": "critical",
    "name": "Strike does not connect or a miss reads as a hit",
    "description": "The glove stops short, passes behind, or a slip reads as a hit; the jab does not clear a dipped head.",
-   "prevention_rule": "Contact Law: every landed punch touches the target and compresses it; every miss shows a clear gap.",
+   "prevention_rule": "Contact Law (amended Sean 2026-11-25): every landed punch touches the target surface with the whole glove visible ON TOP of the clothing; the body reacts through posture, never through cloth deformation; every miss shows a clear gap. Never prompt buried, sinks, dents or compressing.",
    "auto_checks": []
   },
   "VFC-F03": {
    "category": "F",
    "severity": "critical",
    "name": "Glove or limb buried inside the opponent or their clothing",
-   "description": "The glove disappears under the opponent's shirt or into the body instead of compressing the surface; fabric drawn wrapping over the glove.",
-   "prevention_rule": "At contact the whole glove stays visible on top of the shirt; the shirt and body dent inward around it. A glove hidden under fabric fails.",
+   "description": "The glove disappears under the opponent's shirt or into the body; fabric wraps over, spirals, melts, stretches or bunches around the glove; the shirt is hiked up over the forearm.",
+   "prevention_rule": "At contact the whole glove stays visible on top of the shirt and the shirt keeps its natural structure (Sean 2026-11-25). Any glove partly under fabric, any shirt hem lifted by the glove, any cloth swirl or vortex fails. Zoom to the contact on every strike still.",
    "auto_checks": []
   },
   "VFC-F04": {
    "category": "F",
    "severity": "critical",
    "name": "Forbidden impact effect",
-   "description": "Bursts, flashes, white frames, sparks, shockwaves, glows or spiral swirls on a strike.",
+   "description": "Bursts, flashes, white frames, sparks, shockwaves, glows or spiral swirls on a strike, including ripples or spirals drawn into the art itself.",
    "prevention_rule": "Speed lines drawn in code are the only strike effect (R11); image prompts say draw no effects.",
    "auto_checks": [
     "flash_frames"
@@ -5279,6 +5279,11 @@
      "t": "2026-11-24 07:29 UTC",
      "by": "combat-anatomy-specialist",
      "note": "glove under the tank top (Sean 1:26); opponent's only arm flung out the right edge, other arm missing"
+    },
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "shovel glove inside the tank top"
     }
    ]
   },
@@ -5337,6 +5342,11 @@
      "t": "2026-11-24 07:29 UTC",
      "by": "combat-anatomy-specialist",
      "note": "beat is a right shovel into the heavy bag but shows the opponent; glove under the lifted shirt hem"
+    },
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "crop of V72: glove swallowed by the shirt"
     }
    ]
   },
@@ -5457,6 +5467,21 @@
      "t": "2026-11-24 07:29 UTC",
      "by": "combat-anatomy-specialist",
      "note": "swirl lines on the shirt; eye on the back of the head (Sean 1:48)"
+    },
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "vortex spiral in the shirt around the glove; heads cropped"
+    },
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "vortex spiral in the shirt around the glove; heads cropped"
+    },
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "vortex spiral in the shirt around the glove; heads cropped"
     }
    ]
   },
@@ -9106,7 +9131,14 @@
     "dhash": "32daf358c96c94749638121819989198167806184f2e0f3a064806d94c394d58"
    },
    "corrected": null,
-   "test_eligible": true
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "money moment: glove swallowed by a ring of cloth folds (swirl)"
+    }
+   ]
   },
   "VFI-0291": {
    "origin": "auto",
@@ -9131,7 +9163,14 @@
     "dhash": "32daf358c96c94749638121819989198167806184f2e0f3a064806d94c394d58"
    },
    "corrected": null,
-   "test_eligible": true
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "money moment: glove swallowed by a ring of cloth folds (swirl)"
+    }
+   ]
   },
   "VFI-0292": {
    "origin": "auto",
@@ -9556,7 +9595,14 @@
     "dhash": "b0a4c91ab659b199b8599c59b73cb3cc71ece366d326c12ed92bd079c669c669"
    },
    "corrected": null,
-   "test_eligible": true
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "chest close up with a glove at the frame edge and no visible owner"
+    }
+   ]
   },
   "VFI-0309": {
    "origin": "auto",
@@ -10281,7 +10327,14 @@
     "dhash": "80414934004905c805a42b24576296f12d115c915c99da815c865e8559a499a5"
    },
    "corrected": null,
-   "test_eligible": true
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "shovel glove inside the tank top"
+    }
+   ]
   },
   "VFI-0339": {
    "origin": "auto",
@@ -10406,7 +10459,14 @@
     "dhash": "024401444c080c80da48592859281f205d2259205b205690b6d8b668a66034e0"
    },
    "corrected": null,
-   "test_eligible": true
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "shovel glove under the shirt hem"
+    }
+   ]
   },
   "VFI-0344": {
    "origin": "auto",
@@ -10756,7 +10816,19 @@
     "dhash": "8340cb44472496209620169016901690169017900d902c902ac82aa40aa49a64"
    },
    "corrected": null,
-   "test_eligible": true
+   "test_eligible": true,
+   "occurrences": [
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "shovel glove tucked under the lifted shirt hem; skin shows under the shirt"
+    },
+    {
+     "t": "2026-11-25 03:50 UTC",
+     "by": "claude-full-sweep",
+     "note": "shovel glove under the lifted shirt hem, abs visible under the shirt"
+    }
+   ]
   },
   "VFI-0360": {
    "origin": "auto",
@@ -13856,6 +13928,756 @@
    },
    "corrected": null,
    "test_eligible": true
+  },
+  "VFI-0492": {
+   "origin": "auto",
+   "class": "VFC-G01",
+   "also": [],
+   "title": "0:00 V2 crop of V86: heads out of frame, hook arm reads straight, headline over the punch,",
+   "project": "Liver long form v3",
+   "shot": "S0000",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "0:00 V2 crop of V86: heads out of frame, hook arm reads straight, headline over the punch, ONE PUNCH FOLDS ANYONE overclaim (Sean 2026-11-25)",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0492/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/f084b33b-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f900000121000003e92de50fa641a62b9303100100020000007e017231"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0493": {
+   "origin": "auto",
+   "class": "VFC-G02",
+   "also": [],
+   "title": "0:00 V2 crop of V86: heads out of frame, hook arm reads straight, headline over the punch,",
+   "project": "Liver long form v3",
+   "shot": "S0000",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "0:00 V2 crop of V86: heads out of frame, hook arm reads straight, headline over the punch, ONE PUNCH FOLDS ANYONE overclaim (Sean 2026-11-25)",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0493/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/f084b33b-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f900000121000003e92de50fa641a62b9303100100020000007e017231"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0494": {
+   "origin": "auto",
+   "class": "VFC-B01",
+   "also": [],
+   "title": "0:00 V2 crop of V86: heads out of frame, hook arm reads straight, headline over the punch,",
+   "project": "Liver long form v3",
+   "shot": "S0000",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "0:00 V2 crop of V86: heads out of frame, hook arm reads straight, headline over the punch, ONE PUNCH FOLDS ANYONE overclaim (Sean 2026-11-25)",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0494/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/f084b33b-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f900000121000003e92de50fa641a62b9303100100020000007e017231"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0495": {
+   "origin": "auto",
+   "class": "VFC-I02",
+   "also": [],
+   "title": "0:00 V2 crop of V86: heads out of frame, hook arm reads straight, headline over the punch,",
+   "project": "Liver long form v3",
+   "shot": "S0000",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "0:00 V2 crop of V86: heads out of frame, hook arm reads straight, headline over the punch, ONE PUNCH FOLDS ANYONE overclaim (Sean 2026-11-25)",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0495/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/f084b33b-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f900000121000003e92de50fa641a62b9303100100020000007e017231"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0496": {
+   "origin": "auto",
+   "class": "VFC-A06",
+   "also": [],
+   "title": "1:09 V57: shorter fighter's rear arm and glove ownership unclear at the opponent's hip; SL",
+   "project": "Liver long form v3",
+   "shot": "S0109",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "1:09 V57: shorter fighter's rear arm and glove ownership unclear at the opponent's hip; SLIP WAIT PUNCH chips over the legs (Sean 2026-11-25)",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0496/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/dae9c6c0-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f900000220000006221a9a1ec52cc85aa412b4000012a1000029132b13"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0497": {
+   "origin": "auto",
+   "class": "VFC-G02",
+   "also": [],
+   "title": "1:09 V57: shorter fighter's rear arm and glove ownership unclear at the opponent's hip; SL",
+   "project": "Liver long form v3",
+   "shot": "S0109",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "1:09 V57: shorter fighter's rear arm and glove ownership unclear at the opponent's hip; SLIP WAIT PUNCH chips over the legs (Sean 2026-11-25)",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0497/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/dae9c6c0-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f900000220000006221a9a1ec52cc85aa412b4000012a1000029132b13"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0498": {
+   "origin": "auto",
+   "class": "VFC-F03",
+   "also": [],
+   "title": "1:25 V71: shovel glove inside the tank top, shirt hiked over the forearm, opponent posture",
+   "project": "Liver long form v3",
+   "shot": "S0125",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "1:25 V71: shovel glove inside the tank top, shirt hiked over the forearm, opponent posture unnatural (Sean 2026-11-25)",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0498/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/3fb87cda-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f9000000200000498eb8633f73399271d16a4800042001000028932893"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0499": {
+   "origin": "auto",
+   "class": "VFC-F03",
+   "also": [],
+   "title": "1:36 V79 (crop of V72): glove swallowed by the shirt; amber arrow over the forearm (Sean 2",
+   "project": "Liver long form v3",
+   "shot": "S0136",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "1:36 V79 (crop of V72): glove swallowed by the shirt; amber arrow over the forearm (Sean 2026-11-25)",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0499/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/78824a4a-image.png",
+    "inferred": false,
+    "dhash": "0000000000000280000046c636e1f450d334f127c66200004120000000000000"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0500": {
+   "origin": "auto",
+   "class": "VFC-G02",
+   "also": [],
+   "title": "1:36 V79 (crop of V72): glove swallowed by the shirt; amber arrow over the forearm (Sean 2",
+   "project": "Liver long form v3",
+   "shot": "S0136",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "1:36 V79 (crop of V72): glove swallowed by the shirt; amber arrow over the forearm (Sean 2026-11-25)",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0500/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/78824a4a-image.png",
+    "inferred": false,
+    "dhash": "0000000000000280000046c636e1f450d334f127c66200004120000000000000"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0501": {
+   "origin": "auto",
+   "class": "VFC-F03",
+   "also": [],
+   "title": "1:48 V89: vortex spiral in the shirt around the glove; opponent head and gloves cropped (S",
+   "project": "Liver long form v3",
+   "shot": "S0148",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "1:48 V89: vortex spiral in the shirt around the glove; opponent head and gloves cropped (Sean 2026-11-25)",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0501/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/d3cfd33b-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f9000062280000639ce39cd330c324ed2496e400000001000028732873"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0502": {
+   "origin": "auto",
+   "class": "VFC-F04",
+   "also": [],
+   "title": "1:48 V89: vortex spiral in the shirt around the glove; opponent head and gloves cropped (S",
+   "project": "Liver long form v3",
+   "shot": "S0148",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "1:48 V89: vortex spiral in the shirt around the glove; opponent head and gloves cropped (Sean 2026-11-25)",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0502/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/d3cfd33b-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f9000062280000639ce39cd330c324ed2496e400000001000028732873"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0503": {
+   "origin": "auto",
+   "class": "VFC-G01",
+   "also": [],
+   "title": "1:48 V89: vortex spiral in the shirt around the glove; opponent head and gloves cropped (S",
+   "project": "Liver long form v3",
+   "shot": "S0148",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "1:48 V89: vortex spiral in the shirt around the glove; opponent head and gloves cropped (Sean 2026-11-25)",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0503/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/d3cfd33b-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f9000062280000639ce39cd330c324ed2496e400000001000028732873"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0504": {
+   "origin": "auto",
+   "class": "VFC-F03",
+   "also": [],
+   "title": "1:56 V95: glove embedded in the torso, cloth compressed, heads cropped, LIVER OPEN card ov",
+   "project": "Liver long form v3",
+   "shot": "S0156",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "1:56 V95: glove embedded in the torso, cloth compressed, heads cropped, LIVER OPEN card over the demo (Sean 2026-11-25)",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0504/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/9d9dbe12-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f9000060201000a9927f38525e5e538c08630e00010000000028332833"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0505": {
+   "origin": "auto",
+   "class": "VFC-G01",
+   "also": [],
+   "title": "1:56 V95: glove embedded in the torso, cloth compressed, heads cropped, LIVER OPEN card ov",
+   "project": "Liver long form v3",
+   "shot": "S0156",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "1:56 V95: glove embedded in the torso, cloth compressed, heads cropped, LIVER OPEN card over the demo (Sean 2026-11-25)",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0505/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/9d9dbe12-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f9000060201000a9927f38525e5e538c08630e00010000000028332833"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0506": {
+   "origin": "auto",
+   "class": "VFC-G02",
+   "also": [],
+   "title": "1:56 V95: glove embedded in the torso, cloth compressed, heads cropped, LIVER OPEN card ov",
+   "project": "Liver long form v3",
+   "shot": "S0156",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "1:56 V95: glove embedded in the torso, cloth compressed, heads cropped, LIVER OPEN card over the demo (Sean 2026-11-25)",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0506/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/9d9dbe12-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f9000060201000a9927f38525e5e538c08630e00010000000028332833"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0507": {
+   "origin": "auto",
+   "class": "VFC-G01",
+   "also": [],
+   "title": "2:09 V102 recap: card images cropped around the glove (heads cut); SCREENSHOT THIS shown w",
+   "project": "Liver long form v3",
+   "shot": "S0209",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "2:09 V102 recap: card images cropped around the glove (heads cut); SCREENSHOT THIS shown while the third card is empty (Sean 2026-11-25)",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0507/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/177676da-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f900004020000041609e90630a628b6b2c904400000001000028132833"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0508": {
+   "origin": "auto",
+   "class": "VFC-H01",
+   "also": [],
+   "title": "2:09 V102 recap: card images cropped around the glove (heads cut); SCREENSHOT THIS shown w",
+   "project": "Liver long form v3",
+   "shot": "S0209",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "Sean",
+   "approved_by": [],
+   "explanation": "2:09 V102 recap: card images cropped around the glove (heads cut); SCREENSHOT THIS shown while the third card is empty (Sean 2026-11-25)",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0508/original.jpg",
+    "provenance": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/177676da-image.png",
+    "inferred": false,
+    "dhash": "1a2b62f900004020000041609e90630a628b6b2c904400000001000028132833"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0509": {
+   "origin": "auto",
+   "class": "VFC-G01",
+   "also": [],
+   "title": "contact crop of V86 cuts both heads; headline sits over the punch",
+   "project": "Liver long form v3",
+   "shot": "V2",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "contact crop of V86 cuts both heads; headline sits over the punch",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0509/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V2.png",
+    "inferred": false,
+    "dhash": "018b0399039c05a605a505bd0b5d0b6505a605a605a605970ba50b690b120b92"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0510": {
+   "origin": "auto",
+   "class": "VFC-G02",
+   "also": [],
+   "title": "contact crop of V86 cuts both heads; headline sits over the punch",
+   "project": "Liver long form v3",
+   "shot": "V2",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "contact crop of V86 cuts both heads; headline sits over the punch",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0510/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V2.png",
+    "inferred": false,
+    "dhash": "018b0399039c05a605a505bd0b5d0b6505a605a605a605970ba50b690b120b92"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0511": {
+   "origin": "auto",
+   "class": "VFC-F01",
+   "also": [],
+   "title": "hero's straight arm ends at the opponent's hip and belt; arm ownership unclear",
+   "project": "Liver long form v3",
+   "shot": "V12",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "hero's straight arm ends at the opponent's hip and belt; arm ownership unclear",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0511/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V12.png",
+    "inferred": false,
+    "dhash": "003200b208b206b2197158f959d4b994b19c65cc6542614260c272536352e351"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0512": {
+   "origin": "auto",
+   "class": "VFC-A06",
+   "also": [],
+   "title": "hero's straight arm ends at the opponent's hip and belt; arm ownership unclear",
+   "project": "Liver long form v3",
+   "shot": "V12",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "hero's straight arm ends at the opponent's hip and belt; arm ownership unclear",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0512/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V12.png",
+    "inferred": false,
+    "dhash": "003200b208b206b2197158f959d4b994b19c65cc6542614260c272536352e351"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0513": {
+   "origin": "auto",
+   "class": "VFC-F03",
+   "also": [],
+   "title": "glove sunk into the shirt; extreme crop hides the owner of the arm",
+   "project": "Liver long form v3",
+   "shot": "V25",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "glove sunk into the shirt; extreme crop hides the owner of the arm",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0513/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V25_r1.png",
+    "inferred": false,
+    "dhash": "000000640290169206722e642f04ae186c106d102d102f102d100c108b902190"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0514": {
+   "origin": "auto",
+   "class": "VFC-G03",
+   "also": [],
+   "title": "glove sunk into the shirt; extreme crop hides the owner of the arm",
+   "project": "Liver long form v3",
+   "shot": "V25",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "glove sunk into the shirt; extreme crop hides the owner of the arm",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0514/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V25_r1.png",
+    "inferred": false,
+    "dhash": "000000640290169206722e642f04ae186c106d102d102f102d100c108b902190"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0515": {
+   "origin": "auto",
+   "class": "VFC-F03",
+   "also": [],
+   "title": "glove sunk into a cloth swirl on the ribs",
+   "project": "Liver long form v3",
+   "shot": "V54",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "glove sunk into a cloth swirl on the ribs",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0515/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V54_r8.png",
+    "inferred": false,
+    "dhash": "5b103bdcb466b66c626edb6ec92c997a89729b118332853203124a7946392710"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0516": {
+   "origin": "auto",
+   "class": "VFC-F04",
+   "also": [],
+   "title": "glove sunk into a cloth swirl on the ribs",
+   "project": "Liver long form v3",
+   "shot": "V54",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "glove sunk into a cloth swirl on the ribs",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0516/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V54_r8.png",
+    "inferred": false,
+    "dhash": "5b103bdcb466b66c626edb6ec92c997a89729b118332853203124a7946392710"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0517": {
+   "origin": "auto",
+   "class": "VFC-A06",
+   "also": [],
+   "title": "rear arm and glove at the opponent's hip with no clear owner",
+   "project": "Liver long form v3",
+   "shot": "V57",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "rear arm and glove at the opponent's hip with no clear owner",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0517/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V57.png",
+    "inferred": false,
+    "dhash": "06d018d859c45ac426e42c242ca40cc82cc85cc85cc85b24532436b4b6b2b7b2"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0518": {
+   "origin": "auto",
+   "class": "VFC-H06",
+   "also": [],
+   "title": "Dutch tilt floor line runs from the feet to both frame edges",
+   "project": "Liver long form v3",
+   "shot": "V69",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "Dutch tilt floor line runs from the feet to both frame edges",
+   "severity": "minor",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0518/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V69_r3.png",
+    "inferred": false,
+    "dhash": "41094880482009800d80468846c8364836ca36c54e372d12291b5b04532a3481"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0519": {
+   "origin": "auto",
+   "class": "VFC-F03",
+   "also": [],
+   "title": "shovel glove inside the shirt, shirt lifted over the forearm",
+   "project": "Liver long form v3",
+   "shot": "V70",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "shovel glove inside the shirt, shirt lifted over the forearm",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0519/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V70.png",
+    "inferred": false,
+    "dhash": "2e482d482cc82c84aca42fa41772167216720e722f222d022d921cb22c921df2"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0520": {
+   "origin": "auto",
+   "class": "VFC-F03",
+   "also": [],
+   "title": "glove embedded in the torso with compressed cloth; heads cropped",
+   "project": "Liver long form v3",
+   "shot": "V95",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "glove embedded in the torso with compressed cloth; heads cropped",
+   "severity": "critical",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0520/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V95_r8.png",
+    "inferred": false,
+    "dhash": "36b4b5b03680f730c758b65a921ab23ab256b6563e5246538e728c29af201324"
+   },
+   "corrected": null,
+   "test_eligible": true
+  },
+  "VFI-0521": {
+   "origin": "auto",
+   "class": "VFC-G01",
+   "also": [],
+   "title": "glove embedded in the torso with compressed cloth; heads cropped",
+   "project": "Liver long form v3",
+   "shot": "V95",
+   "time": "",
+   "version": "",
+   "source": "vfl verdict 2026-11-25 03:50 UTC",
+   "detected_by": "claude-full-sweep",
+   "approved_by": [],
+   "explanation": "glove embedded in the torso with compressed cloth; heads cropped",
+   "severity": "major",
+   "status": "open",
+   "date": "2026-11-25",
+   "original": {
+    "path": "evidence/VFI-0521/original.jpg",
+    "provenance": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V95_r8.png",
+    "inferred": false,
+    "dhash": "36b4b5b03680f730c758b65a921ab23ab256b6563e5246538e728c29af201324"
+   },
+   "corrected": null,
+   "test_eligible": true
   }
  },
  "workers": {},
@@ -13911,6 +14733,18 @@
    "unanswered": [],
    "unsure": [],
    "class_hits": 8
+  },
+  {
+   "worker": "combat-anatomy-specialist",
+   "worker_hash": "590238f7a4c61c87",
+   "date": "2026-11-25 03:52 UTC",
+   "library_version": 17,
+   "n": 16,
+   "result": "PASS",
+   "approved_known_defects": [],
+   "unanswered": [],
+   "unsure": [],
+   "class_hits": 10
   }
  ]
 }

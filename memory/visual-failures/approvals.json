@@ -1,15 +1,16 @@
 {
  "7fe1a8934dc295141ba868c0157f5f69dab0448aa14b5bceaf36166ce8a55b6a": {
   "asset": "V2",
-  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V2.png",
+  "path": "/home/user/the-fight-playbook-claude-handoff/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V2.png",
   "verdict": "FAIL",
   "codes": [
-   "B01"
+   "G01",
+   "G02"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "hook arm nearly straight (about 160 degrees), glove on the far flank edge",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "contact crop of V86 cuts both heads; headline sits over the punch",
+  "lib": 16
  },
  "f47e6a3aa069a6d9b3a0cb16b10c228e6117a82617d054a22bec9c93125ece97": {
   "asset": "V1",
@@ -134,12 +135,13 @@
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V12.png",
   "verdict": "FAIL",
   "codes": [
-   "E02"
+   "F01",
+   "A06"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "opponent gloves have red wrist trim",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "hero's straight arm ends at the opponent's hip and belt; arm ownership unclear",
+  "lib": 16
  },
  "86b0fa11d2838670fa03077a92e6a8c702d0942c511d2180afecbb2aa168f7ac": {
   "asset": "V13",
@@ -277,28 +279,28 @@
  },
  "1d58c8a13d92ff26473169208d2e16b2c5280a724aeeed3ad58b435d99959f44": {
   "asset": "V24",
-  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V24.png",
+  "path": "/home/user/the-fight-playbook-claude-handoff/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V24.png",
   "verdict": "FAIL",
   "codes": [
-   "B03"
+   "F03"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "shovel elbow out at chest height off the hip; glove lands at lower chest",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "shovel glove tucked under the lifted shirt hem; skin shows under the shirt",
+  "lib": 16
  },
  "3966bc807df536d6b06034c8a6b9767a812b250fce0d2395d66f13ad6431c26c": {
   "asset": "V25",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V25_r1.png",
   "verdict": "FAIL",
   "codes": [
-   "H06",
-   "A02"
+   "F03",
+   "G03"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "horizontal cut line slices the opponent's arm and shoulder; opponent has no head",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "glove sunk into the shirt; extreme crop hides the owner of the arm",
+  "lib": 16
  },
  "8917b4b4feb9fd3b41b279e70effab302b72040db73c67c1b53aa513a97d3771": {
   "asset": "V26",
@@ -415,13 +417,13 @@
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V35_r12.png",
   "verdict": "FAIL",
   "codes": [
-   "F04",
-   "F03"
+   "F03",
+   "F04"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "red swirl and ripple rings around the glove; glove sinks into the shirt",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "money moment: glove swallowed by a ring of cloth folds (swirl)",
+  "lib": 16
  },
  "fe8da06a2a9f0adf83de850a59c5239fd1be0bb3b38f43d4efed88f93386ebe4": {
   "asset": "V36",
@@ -595,13 +597,12 @@
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V50_r1.png",
   "verdict": "FAIL",
   "codes": [
-   "A05",
    "G03"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "lead glove fingers; medium two shot instead of the ribs close up",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "chest close up with a glove at the frame edge and no visible owner",
+  "lib": 16
  },
  "1dc0fe390821ebfd7417ba3b8e4c411092bf4d569ad1b034dce048c9eca77d60": {
   "asset": "V51",
@@ -646,12 +647,13 @@
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V54_r8.png",
   "verdict": "FAIL",
   "codes": [
-   "A02"
+   "F03",
+   "F04"
   ],
-  "by": "Sean",
-  "t": "2026-11-24 07:39 UTC",
-  "note": "opponent (red shirt) has no right arm; caught by Sean, passed by the certified inspector",
-  "lib": 6
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "glove sunk into a cloth swirl on the ribs",
+  "lib": 16
  },
  "f12599b2c24037a318264c90a9489fe615d34280ec81e7e996b0cccc5ecfa9cf": {
   "asset": "V55",
@@ -681,16 +683,15 @@
  },
  "95460e2d96a4161a85776f92bf837651c2336be387dbb5b5cd80f5f56b9e1ad7": {
   "asset": "V57",
-  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V57.png",
+  "path": "/home/user/the-fight-playbook-claude-handoff/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V57.png",
   "verdict": "FAIL",
   "codes": [
-   "A04",
-   "B01"
+   "A06"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "left forearm folded back so the glove points at the hero's own body",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "rear arm and glove at the opponent's hip with no clear owner",
+  "lib": 16
  },
  "f536eecec229129cd3d7004def22166b71e281c016524d075df8c1b540b4d787": {
   "asset": "V58",
@@ -829,41 +830,36 @@
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V69_r3.png",
   "verdict": "FAIL",
   "codes": [
-   "I01",
-   "B06"
+   "H06"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:49 UTC",
-  "note": "right glove still at mid chest, elbow back, not driving up from below, level not dropped",
-  "lib": 9
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "Dutch tilt floor line runs from the feet to both frame edges",
+  "lib": 16
  },
  "7b57389dbda50f0c69fd9c50d034e998a5cc1ed04e77ed048bf9382aaaad938b": {
   "asset": "V70",
-  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V70.png",
+  "path": "/home/user/the-fight-playbook-claude-handoff/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V70.png",
   "verdict": "FAIL",
   "codes": [
-   "C01",
-   "G01",
-   "H06"
+   "F03"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "shovel thrown with the LEFT arm; opponent head cut by the top edge; white halo",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "shovel glove inside the shirt, shirt lifted over the forearm",
+  "lib": 16
  },
  "9ce70a63c09dc3b12c5bce5b5b297fc327d05fadd756ac8e9764a2506a31c4e1": {
   "asset": "V71",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V71_r3.png",
   "verdict": "FAIL",
   "codes": [
-   "F03",
-   "B09",
-   "A02"
+   "F03"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "glove under the tank top (Sean 1:26); opponent's only arm flung out the right edge, other arm missing",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "shovel glove inside the tank top",
+  "lib": 16
  },
  "f231c12893446df8165d59d5ca27c1d999391bd343efb9e40508b84cbdf7dc16": {
   "asset": "V72",
@@ -872,10 +868,10 @@
   "codes": [
    "F03"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "glove under the lifted shirt (same drawing as V79, Sean 1:35); inspector passed it, overridden on Sean's documented finding",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "shovel glove inside the tank top",
+  "lib": 16
  },
  "26d8d9156d07ca5be3207b6b01de2e90e65e6fecc5d9566e1e3a9385d4c49e93": {
   "asset": "V73",
@@ -921,13 +917,12 @@
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V76_r3.png",
   "verdict": "FAIL",
   "codes": [
-   "F03",
-   "B03"
+   "F03"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "shirt hem folds over the glove; elbow forward of the body, not at the hip",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "shovel glove under the shirt hem",
+  "lib": 16
  },
  "1647847a489c1c913f750c49ca5a0f1d5abf0ce62b1ec190aa27ee5613ad9d8e": {
   "asset": "V77",
@@ -953,16 +948,15 @@
  },
  "0ef514b1d2128f302ad1ec05c4ad2f97d4992483203b2c6d3851a85aa9bbbaa1": {
   "asset": "V79",
-  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V79.png",
+  "path": "/home/user/the-fight-playbook-claude-handoff/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V79.png",
   "verdict": "FAIL",
   "codes": [
-   "I01",
    "F03"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "beat is a right shovel into the heavy bag but shows the opponent; glove under the lifted shirt hem",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "crop of V72: glove swallowed by the shirt",
+  "lib": 16
  },
  "d4f05b3a2395b4befeb6e76182d29ca7946c6aa682fb4ecce3eea46db645ecf8": {
   "asset": "V80",
@@ -1063,29 +1057,29 @@
  },
  "97a6207983c717cbda878c1efb58a7b65c05b8ca3d21bc50380b653105a8b266": {
   "asset": "V88",
-  "path": "/home/user/claude-export/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V88.png",
+  "path": "/home/user/the-fight-playbook-claude-handoff/CLAUDE-EXPORT/FINAL-CUT/fixed-stills/V88.png",
   "verdict": "FAIL",
   "codes": [
-   "F03",
-   "A05"
+   "F03"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "shovel glove under the opponent's lifted shirt hem; guard glove bare-looking fingers",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "shovel glove under the lifted shirt hem, abs visible under the shirt",
+  "lib": 16
  },
  "b886c17a973cf26229a669d39667ae1c1183a66dfc312c2e377df67f8f1fd445": {
   "asset": "V89",
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V89_r5.png",
   "verdict": "FAIL",
   "codes": [
+   "F03",
    "F04",
-   "C05"
+   "G01"
   ],
-  "by": "combat-anatomy-specialist",
-  "t": "2026-11-24 07:29 UTC",
-  "note": "swirl lines on the shirt; eye on the back of the head (Sean 1:48)",
-  "lib": 4
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "vortex spiral in the shirt around the glove; heads cropped",
+  "lib": 16
  },
  "e11cfa4d3b9dbfdb6ddf9969b7114f6d130f1572fbdfee997860b5e5c46dc1b6": {
   "asset": "V90",
@@ -1154,13 +1148,13 @@
   "path": "/home/user/the-fight-playbook-claude-handoff/VIDEO-PROJECTS/target-the-liver-in-boxing/edit/stills/V95_r8.png",
   "verdict": "FAIL",
   "codes": [
-   "A07",
-   "E05"
+   "F03",
+   "G01"
   ],
-  "by": "Sean",
-  "t": "2026-11-24 07:39 UTC",
-  "note": "opponent's right arm shrunk and the opponent noticeably too large; caught by Sean, passed by the certified inspector",
-  "lib": 6
+  "by": "claude-full-sweep",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "glove embedded in the torso with compressed cloth; heads cropped",
+  "lib": 16
  },
  "3c96cabf0d131df58e4bdc6a09671f4bffbe32b7f170ce94dba3c705b26253eb": {
   "asset": "V96",
@@ -1983,5 +1977,99 @@
   "t": "2026-11-24 07:58 UTC",
   "note": "straight arm to the chest",
   "lib": 13
+ },
+ "fb774ed7f95fce4b9e92312cc5371b5604c186389f7692a23f71c35618ace33b": {
+  "asset": "S0000",
+  "path": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/f084b33b-image.png",
+  "verdict": "FAIL",
+  "codes": [
+   "G01",
+   "G02",
+   "B01",
+   "I02"
+  ],
+  "by": "Sean",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "0:00 V2 crop of V86: heads out of frame, hook arm reads straight, headline over the punch, ONE PUNCH FOLDS ANYONE overclaim (Sean 2026-11-25)",
+  "lib": 15
+ },
+ "ac1405279b26c032d4d4bec3177c817c85141eaa7e6c3e6f993cecdf2f9cd89b": {
+  "asset": "S0109",
+  "path": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/dae9c6c0-image.png",
+  "verdict": "FAIL",
+  "codes": [
+   "A06",
+   "G02"
+  ],
+  "by": "Sean",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "1:09 V57: shorter fighter's rear arm and glove ownership unclear at the opponent's hip; SLIP WAIT PUNCH chips over the legs (Sean 2026-11-25)",
+  "lib": 15
+ },
+ "ea4b563665f4734d9a7be0ee0637bf7e90fad1b0c19f5886a1b24d2bd634039b": {
+  "asset": "S0125",
+  "path": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/3fb87cda-image.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F03"
+  ],
+  "by": "Sean",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "1:25 V71: shovel glove inside the tank top, shirt hiked over the forearm, opponent posture unnatural (Sean 2026-11-25)",
+  "lib": 15
+ },
+ "67f566593ead9384a3907873d84872e40b2be73e66cce0e6b7b72a57cd837bc6": {
+  "asset": "S0136",
+  "path": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/78824a4a-image.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F03",
+   "G02"
+  ],
+  "by": "Sean",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "1:36 V79 (crop of V72): glove swallowed by the shirt; amber arrow over the forearm (Sean 2026-11-25)",
+  "lib": 15
+ },
+ "56bbcf147307548d31f79f10598ed93ed8c4bdae5e03a185c7c41aeeab7de9bc": {
+  "asset": "S0148",
+  "path": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/d3cfd33b-image.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F03",
+   "F04",
+   "G01"
+  ],
+  "by": "Sean",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "1:48 V89: vortex spiral in the shirt around the glove; opponent head and gloves cropped (Sean 2026-11-25)",
+  "lib": 15
+ },
+ "f5ad2b3b62cd68c6623430e4c9e1080969db5f85e64a3aab2a115dfe4604d281": {
+  "asset": "S0156",
+  "path": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/9d9dbe12-image.png",
+  "verdict": "FAIL",
+  "codes": [
+   "F03",
+   "G01",
+   "G02"
+  ],
+  "by": "Sean",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "1:56 V95: glove embedded in the torso, cloth compressed, heads cropped, LIVER OPEN card over the demo (Sean 2026-11-25)",
+  "lib": 15
+ },
+ "31723886f14c6e9006eeb79296e164801389ca742771e1df2d2c8605348a6bf2": {
+  "asset": "S0209",
+  "path": "/root/.claude/uploads/b7322d14-f91f-5e46-88f0-624dcdb33bf3/177676da-image.png",
+  "verdict": "FAIL",
+  "codes": [
+   "G01",
+   "H01"
+  ],
+  "by": "Sean",
+  "t": "2026-11-25 03:50 UTC",
+  "note": "2:09 V102 recap: card images cropped around the glove (heads cut); SCREENSHOT THIS shown while the third card is empty (Sean 2026-11-25)",
+  "lib": 15
  }
 }

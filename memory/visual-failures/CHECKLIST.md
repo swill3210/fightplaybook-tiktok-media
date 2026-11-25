@@ -38,8 +38,8 @@ Borderline = FAIL. Uncertain = UNSURE (escalated). Reply one line per asset: `ID
 - E06 Style break: Compare with approved 2D stills; reject any 3D shading or glow on the characters.
 **F Impact physics and contact**
 - F01 !Strike lands on a forbidden target: Strikes land only on chin, jaw or body (ribs, liver, stomach), with the neck visible and clear.
-- F02 !Strike does not connect or a miss reads as a hit: Contact Law: every landed punch touches the target and compresses it; every miss shows a clear gap.
-- F03 !Glove or limb buried inside the opponent or their clothing: At contact the whole glove stays visible on top of the shirt; the shirt and body dent inward around it. A glove hidden under fabric fails.
+- F02 !Strike does not connect or a miss reads as a hit: Contact Law (amended Sean 2026-11-25): every landed punch touches the target surface with the whole glove visible ON TOP of the clothing; the body reacts through posture, never through cloth deformation; every miss shows a clear gap. Never prompt buried, sinks, dents or compressing.
+- F03 !Glove or limb buried inside the opponent or their clothing: At contact the whole glove stays visible on top of the shirt and the shirt keeps its natural structure (Sean 2026-11-25). Any glove partly under fabric, any shirt hem lifted by the glove, any cloth swirl or vortex fails. Zoom to the contact on every strike still.
 - F04 !Forbidden impact effect: Speed lines drawn in code are the only strike effect (R11); image prompts say draw no effects.
 **G Camera framing and cropping**
 - G01 Head or body cut by the frame edge: Nothing important touches the left, right or top edge; bodies leave only through the bottom or a corner.

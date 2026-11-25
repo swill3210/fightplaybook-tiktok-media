@@ -2,6 +2,7 @@
 // arrows and target rings drawn in image space, correct vs incorrect cards, beat timing bar, combo chips, chapter progress.
 import React from 'react';
 import { Img, staticFile } from 'remotion';
+import OCC from '../public/occ.json';
 
 type Ctx = { W: number; H: number; FPS: number; WHITE: string; DARK: string; RED: string; AMBER: string;
   wordTime: (re: RegExp, after?: number) => number | undefined; sections: any[]; shots: any[];
@@ -25,7 +26,7 @@ const Arrow: React.FC<{ dir: 'up' | 'down' | 'left' | 'right'; s?: number; col?:
 };
 
 // ---------- timed screen space events ----------
-type Ev = { t0: number; t1: number; at: 'bl' | 'tl' | 'bc' | 'left' | 'center' | 'full'; render: (k: number, t: number) => React.ReactNode };
+type Ev = { t0: number; t1: number; at: 'bl' | 'tl' | 'bc' | 'left' | 'center' | 'full'; render: (k: number, t: number) => React.ReactNode; size?: [number, number] };
 let EVENTS: Ev[] | null = null;
 const chip = (label: string, bg: string, fg: string, icon?: React.ReactNode) => (k: number) =>
   <div style={{ ...chipStyle(bg, fg), transform: `scale(${C.outBack(k / 8)})`, transformOrigin: 'left center' }}>{icon}{label}</div>;
@@ -48,7 +49,7 @@ function buildEvents(): Ev[] {
   const tPow = wt(/^power/, 6, 7.2), tDoor = wt(/^door\.$/, 8, 9.2);
   E.push({ t0: tPow - 0.1, t1: tDoor + 0.9, at: 'bl', render: chip('ANGLE BEATS POWER', RED, WHITE) });
   const tThree = wt(/^three/, 10, 10.7), tOnly = wt(/^only/, 12, 13.0);
-  E.push({ t0: tThree - 0.1, t1: Math.min(tOnly + 1.6, secStart('SELF TEST') - 0.15), at: 'bc', render: (k, t) => <Doors k={k} t={t} tOnly={tOnly} /> });
+  E.push({ t0: tThree - 0.1, t1: Math.min(tOnly + 1.6, secStart('SELF TEST') - 0.15), at: 'bc', render: (k, t) => <Doors k={k} t={t} tOnly={tOnly} />, size: [440, 290] });
   // PAYOFF AT SPEED: door number per strike
   ([['V21', 1], ['V23', 2], ['V24', 3]] as [string, number][]).forEach(([id, n]) => { const [a, b] = shotT(id);
     E.push({ t0: a, t1: b, at: 'bl', render: (k) => <div style={{ ...chipStyle(RED, WHITE, 64), transform: `scale(${C.outBack(k / 6)})` }}>DOOR {n}</div> }); });
@@ -77,7 +78,7 @@ function buildEvents(): Ev[] {
   E.push({ t0: tDrop - 0.1, t1: tBend - 0.1, at: 'bl', render: chip('LEVEL CHANGE', WHITE, DARK, <Arrow dir="down" col={AMBER} />) });
   E.push({ t0: tBend - 0.1, t1: tBend + 1.0, at: 'bl', render: (k, t) => <Wipe k={k} left={(tBend + 1.0 - t) * C.FPS} text="KNEES, NOT BACK" /> });
   const tShov = wt(/^shovel,/, s3 + 8, 88.6);
-  E.push({ t0: tShov - 0.1, t1: tShov + 2.3, at: 'center', render: (k) => <Compare k={k} title="SHOVEL VS HOOK" a={{ src: 'layers/V88_base.png', cx: 900, cy: 430, z: 1.05, ok: true, label: 'SHOVEL GOES UP', icon: 'up' }} b={{ src: 'layers/V86_base.png', cx: 760, cy: 430, z: 1.05, ok: null, label: 'HOOK GOES ACROSS', icon: 'left' }} /> });
+  E.push({ t0: tShov - 0.1, t1: tShov + 2.3, at: 'center', render: (k) => <Compare k={k} title="SHOVEL VS HOOK" a={{ src: 'layers/V66_base.png', cx: 1000, cy: 560, z: 0.52, ok: true, label: 'SHOVEL GOES UP', icon: 'up' }} b={{ src: 'layers/V86_base.png', cx: 760, cy: 430, z: 1.05, ok: null, label: 'HOOK GOES ACROSS', icon: 'left' }} /> });
   const tUnder = wt(/^under/, s3 + 10, 91.5); E.push({ t0: tUnder - 0.05, t1: tUnder + 0.7, at: 'full', render: (k) => <Giant k={k} word="BLIND SPOT" /> });
   const tTight = wt(/^tight\.$/, s3 + 15, 94.5); E.push({ t0: tTight - 0.2, t1: tTight + 1.6, at: 'bl', render: chip('ELBOW ON HIP', AMBER, DARK) });
   const tCan3 = wt(/^cannot/, s3 + 18, 96.7); E.push({ t0: tCan3 - 0.1, t1: secStart('COMBO AND RETEST') - 0.2, at: 'tl', render: chip('TOO CLOSE TO BLOCK', RED, WHITE, <Mark ok={false} />) });
@@ -92,6 +93,26 @@ function buildEvents(): Ev[] {
   return E;
 }
 
+// v4 (Sean 2026-11-25: graphics must never cover the demonstration): every corner overlay goes to the allowed slot with the
+// least character coverage over the shots it spans (occ.json from occ.py). Sizes are generous estimates of each overlay.
+const SIZE: Partial<Record<Ev['at'], [number, number]>> = { bl: [560, 100], tl: [480, 160], bc: [820, 190], left: [300, 420] };
+type Slot = { css: React.CSSProperties; x: number; y: number; right?: boolean };
+const SLOTS = (w: number, h: number): Record<string, Slot> => ({
+  tl: { css: { left: 60, top: 150 }, x: 60, y: 150 }, tr: { css: { right: 60, top: 150 }, x: C.W - 60 - w, y: 150 },
+  bl: { css: { left: 60, bottom: 140 }, x: 60, y: C.H - 140 - h }, br: { css: { right: 60, bottom: 260 }, x: C.W - 60 - w, y: C.H - 260 - h },
+  bc: { css: { left: 0, right: 0, bottom: 140, display: 'flex', justifyContent: 'center' }, x: (C.W - w) / 2, y: C.H - 140 - h } });
+const PREF: Record<string, string[]> = { bl: ['bl', 'br', 'tl', 'tr', 'bc'], tl: ['tl', 'tr', 'bl', 'br'], bc: ['bc', 'bl', 'br', 'tl', 'tr'], left: ['tl', 'tr', 'bl', 'br'] };
+const cover = (id: string, x: number, y: number, w: number, h: number) => { const g = (OCC as any)[id]; if (!g) return 0; let s2 = 0, n = 0;
+  for (let r = Math.max(0, Math.floor(y / 40)); r < Math.min(27, Math.ceil((y + h) / 40)); r++) for (let c = Math.max(0, Math.floor(x / 40)); c < Math.min(48, Math.ceil((x + w) / 40)); c++) { s2 += +g[r][c]; n++; }
+  return n ? s2 / (9 * n) : 0; };
+// the slot is chosen per shot: an overlay may change corner on a cut, never sit on a character
+const SLOT_CACHE = new Map<string, React.CSSProperties>();
+const pickSlot = (e: Ev, n0: number, f: number): React.CSSProperties => {
+  if (!SIZE[e.at]) return POS[e.at]; const sh = C.shots.find((x) => f >= x.from && f < x.to); const key = n0 + '|' + (sh ? sh.id : ''); const hit = SLOT_CACHE.get(key); if (hit) return hit;
+  const [w, h] = e.size ?? SIZE[e.at]!; const sl = SLOTS(w, h); const span = sh ? [sh] : [];
+  let best = PREF[e.at][0], bs = 1e9;
+  PREF[e.at].forEach((k, n) => { const v = span.reduce((a, x) => Math.max(a, cover(x.id, sl[k].x, sl[k].y, w, h)), 0) + 0.01 * n; if (v < bs) { bs = v; best = k; } });
+  const css = sl[best].css; SLOT_CACHE.set(key, css); return css; };
 const POS: Record<Ev['at'], React.CSSProperties> = {
   bl: { left: 60, bottom: 140 }, tl: { left: 60, top: 150 }, bc: { left: 0, right: 0, bottom: 140, display: 'flex', justifyContent: 'center' },
   left: { left: 60, top: 170 }, center: { inset: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', backdropFilter: 'blur(12px)', background: 'rgba(196,214,196,0.25)' },
@@ -101,7 +122,7 @@ export const Overlays: React.FC<{ f: number }> = ({ f }) => {
   if (!EVENTS) EVENTS = buildEvents();
   const t = f / C.FPS;
   return <>{EVENTS.map((e, n) => { if (t < e.t0 || t >= e.t1) return null; const k = Math.round((t - e.t0) * C.FPS); const out = C.cl((e.t1 - t) * C.FPS / 6);
-    return <div key={n} style={{ position: 'absolute', ...POS[e.at], opacity: out }}>{e.render(k, t)}</div>; })}</>;
+    return <div key={n} style={{ position: 'absolute', ...pickSlot(e, n, f), opacity: out }}>{e.render(k, t)}</div>; })}</>;
 };
 
 // ---------- pieces ----------
@@ -138,10 +159,10 @@ const BodyMap: React.FC<{ k: number; t: number; tHead: number; tChin: number; tL
 const Doors: React.FC<{ k: number; t: number; tOnly: number }> = ({ k, t, tOnly }) => {
   const { DARK, WHITE, RED } = C; const dim = C.cl(((t - tOnly) * C.FPS) / 10);
   return (
-    <div style={{ display: 'flex', alignItems: 'flex-end', gap: 26 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 14 }}><div style={{ display: 'flex', alignItems: 'flex-end', gap: 26 }}>
       {[1, 2, 3].map((n) => { const u = C.outBack((k - (n - 1) * 5) / 8); const off = n > 1 ? dim : 0;
         return <div key={n} style={{ width: 120, height: 170, borderRadius: '60px 60px 10px 10px', background: off ? '#8b938b' : RED, border: `6px solid ${DARK}`, boxShadow: `0 8px 0 ${DARK}`, transform: `scale(${Math.max(0, u)})`, transformOrigin: 'bottom center', opacity: 1 - 0.45 * off, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Bebas', fontSize: 96, color: WHITE, WebkitTextStroke: `4px ${DARK}`, paintOrder: 'stroke fill' }}>{n}</div>; })}
-      {dim > 0 ? <div style={{ ...chipStyle(WHITE, DARK), marginLeft: 10, marginBottom: 40, transform: `scale(${C.outBack(((t - tOnly) * C.FPS) / 8)})` }}>2 DOORS WASTED</div> : null}
+      </div>{dim > 0 ? <div style={{ ...chipStyle(WHITE, DARK), transformOrigin: 'left center', transform: `scale(${C.outBack(((t - tOnly) * C.FPS) / 8)})` }}>2 DOORS WASTED</div> : null}
     </div>
   );
 };
@@ -217,11 +238,11 @@ export const ANN: Record<string, Ann> = {
   V15: { ring: [800, 470, 95], label: ['LIVER', 960, 330] },
   V34: { arrow: 'M1720 250 Q1420 120 1010 400', ring: [940, 450, 120], label: ['TO THE RIBS', 1250, 120] },
   V53: { ring: [690, 460, 90], label: ['DIG THE KNUCKLES', 900, 320], freeze: true },
-  V70: { arrow: 'M975 1000 L975 520', label: ['UP FROM BELOW', 1060, 620], freeze: true },
-  V79: { arrow: 'M963 1060 L963 790' },
+  V70: { arrow: 'M960 570 Q1010 780 1228 462', ring: [1248, 435, 56], label: ['UP FROM BELOW', 1510, 520], freeze: true },
+  V79: { ring: [440, 655, 105] },
   V84: { ring: [810, 460, 95], label: ['DOOR 1', 960, 330] },
   V86: { ring: [700, 460, 95], label: ['DOOR 2', 860, 330] },
-  V88: { arrow: 'M905 760 L905 420', ring: [900, 360, 80], label: ['DOOR 3', 1040, 300] },
+  V88: { arrow: 'M1210 650 Q1060 640 905 495', ring: [885, 480, 60] },
 };
 export const Annotate: React.FC<{ id: string; i: number; dur: number }> = ({ id, i, dur }) => {
   const a = ANN[id]; if (!a) return null; const { DARK, WHITE, AMBER } = C;

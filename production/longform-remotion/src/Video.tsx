@@ -7,6 +7,7 @@ import TL from '../public/timeline.json';
 import CUT from '../public/cutinfo.json';
 
 const W = 1920, H = 1080, FPS = 30;
+const AUDIO = false;
 const SAGE = '#C4D6C4', WHITE = '#ffffff', DARK = '#141a2e', RED = '#d6282a', NAVY = '#1d2a4a', AMBER = '#ffb000';
 type Shot = typeof TL.shots[number];
 const shots = TL.shots as Shot[];
@@ -64,7 +65,7 @@ function camera(s: Shot, i: number) {
 }
 initGraphics({ W, H, FPS, WHITE, DARK, RED, AMBER, wordTime, sections, shots, cl, outExpo, outBack, ioCubic });
 // stills redrawn on the liver side (hero on the right): whip pan when the screen side changes
-const FLIP = new Set(['V3', 'V9', 'V15', 'V20', 'V21', 'V23', 'V24', 'V33', 'V34', 'V53', 'V70', 'V84', 'V86', 'V88', 'V94']);
+const FLIP = new Set<string>((TL as any).hero_right); // v4: data driven (fix_v4.py) so replaced shots whip correctly
 const PARALLAX = (a: string) => /wide|side|three quarter|overhead|behind|over the shoulder|worms eye/.test(a);
 
 // ---------- one shot (stills and motion) ----------
@@ -73,7 +74,7 @@ const ShotView: React.FC<{ s: Shot; i: number }> = ({ s, i }) => {
   const hw = W / (2 * c.z), hh = H / (2 * c.z);
   const cx = Math.min(Math.max(c.cx - c.sh[0] / c.z, hw), W - hw), cy = Math.min(Math.max(c.cy - c.sh[1] / c.z, hh), H - hh);
   const L = s.layers as any; const phase = L.a && i < (s.phase_frames || 0);
-  const info = (CUT as any)[s.id];
+  const info = (CUT as any)[L.base ? L.base.split('/').pop().split('_')[0] : s.id]; // replaced shots use their own cutout
   const par = !phase && info && PARALLAX(s.angle) && !s.glove;
   const pz = par ? 1 + 0.022 * ioSine(i / Math.max(s.dur - 1, 1)) : 1; // characters grow slightly faster than the plate, about the feet
   const g = s.glove as any; const j = i - (s.phase_frames || 0);
@@ -212,7 +213,7 @@ const Board: React.FC<{ s: Shot; i: number }> = ({ s, i }) => {
   const tThree = wordTime(/^three/, t0 - 0.3) ?? t0; const tHigh = wordTime(/^high\.$/, tThree) ?? tThree; const tLow = wordTime(/^low\.$/, tHigh) ?? tHigh; const tLiv = wordTime(/^liver\.$/, tLow) ?? tLow;
   const mantra: [string, number][] = [['HIGH.', Math.round(tHigh * FPS)], ['LOW.', Math.round(tLow * FPS)], ['LIVER.', Math.round(tLiv * FPS)]];
   const doors = [['DOOR ONE', 'JAB HIGH', 'HOOK LOW', at(/^one/)], ['DOOR TWO', 'SLIP THE JAB', 'DIG THE LIVER', at(/^two/)], ['DOOR THREE', 'SHOVEL UPPERCUT', 'UP CLOSE', at(/^three/)]] as [string, string, string, number][];
-  const chip = outExpo((i - 16) / 12);
+  const chip = outExpo((f - (doors[2][3] + 16)) / 12);
   return (
     <AbsoluteFill style={{ background: SAGE, transform: `scale(${1 + 0.05 * ioSine(i / Math.max(s.dur - 1, 1))})` }}>
       <div style={{ position: 'absolute', top: 30, width: W, textAlign: 'center' }}>
@@ -222,13 +223,13 @@ const Board: React.FC<{ s: Shot; i: number }> = ({ s, i }) => {
         <span style={{ fontFamily: 'Bebas', fontSize: 64, background: RED, color: WHITE, padding: '8px 28px', borderRadius: 18, border: `5px solid ${WHITE}` }}>SCREENSHOT THIS</span>
       </div>
       <div style={{ position: 'absolute', top: 400, left: (W - 3 * 520 - 2 * 60) / 2, display: 'flex', gap: 60 }}>
-        {doors.map(([a, b, c2, f0], k) => { const u = outExpo((f - f0) / 14); const crop = [['V84', 810, 460], ['V57', 938, 480], ['V88', 900, 380]][k] as [string, number, number]; const next = k < 2 ? doors[k + 1][3] : Math.round(tHigh * FPS); const live = f >= f0 && f < next;
+        {doors.map(([a, b, c2, f0], k) => { const u = outExpo((f - f0) / 14); const bd = (TL as any).board[k]; const [bx0, by0, bx1, by1] = bd.box; const cw = 440, ch = 280; const bz = Math.min(cw / (bx1 - bx0 + 60), ch / (by1 - by0 + 40)); const bcx = (bx0 + bx1) / 2, bcy = (by0 + by1) / 2; const next = k < 2 ? doors[k + 1][3] : Math.round(tHigh * FPS); const live = f >= f0 && f < next;
           return <div key={k} style={{ position: 'relative', width: 520, height: 610 }}>
             <div style={{ position: 'absolute', inset: 0, border: `6px dashed ${NAVY}`, borderRadius: 30, opacity: 0.35 * (1 - cl(u * 2)) }} />
             <div style={{ position: 'absolute', inset: 0, background: WHITE, border: `8px solid ${live ? RED : NAVY}`, borderRadius: 30, boxShadow: '10px 12px 0 #000', opacity: cl(u * 1.3), transform: `translateY(${-80 * (1 - u)}px) scale(${live ? 1.04 : 1})`, textAlign: 'center', paddingTop: 22 }}>
               <div style={{ fontFamily: 'Bebas', fontSize: 84, color: RED, lineHeight: 1 }}>{a}</div>
-              <div style={{ width: 440, height: 220, margin: '14px auto 16px', borderRadius: 16, overflow: 'hidden', position: 'relative', border: `5px solid ${NAVY}`, background: SAGE }}>
-                <Img src={staticFile(`layers/${crop[0]}_base.png`)} style={{ position: 'absolute', width: 1920 * 0.55, height: 1080 * 0.55, left: 220 - crop[1] * 0.55, top: 110 - crop[2] * 0.55 }} />
+              <div style={{ width: 440, height: 280, margin: '10px auto 10px', borderRadius: 16, overflow: 'hidden', position: 'relative', border: `5px solid ${NAVY}`, background: SAGE }}>
+                <Img src={staticFile(bd.src)} style={{ position: 'absolute', width: 1920 * bz, height: 1080 * bz, left: cw / 2 - bcx * bz, top: ch / 2 - bcy * bz }} />
               </div>
               <div style={{ fontFamily: 'Bebas', fontSize: b.length > 13 ? 64 : 72, color: NAVY, lineHeight: 1.25 }}>{b}<br />{c2}</div>
             </div>
@@ -288,9 +289,10 @@ export const LiverVideo: React.FC = () => {
       <Headline s={s} i={i} />
       <DoorUI f={f} /><FreezeBrackets id={s.id} i={i} /><Gauge f={f} /><Dose f={f} /><SelfTest f={f} /><FullSpeed f={f} /><CTA f={f} /><Subscribe s={s} i={i} />
       <Overlays f={f} /><Progress f={f} />
-      <Audio src={staticFile('lofi_bed.mp3')} volume={music} loop />
+      {/* audio comes from the approved v3 master mix (muxed after render): narration files are not in the export */}
+      {AUDIO ? <><Audio src={staticFile('lofi_bed.mp3')} volume={music} loop />
       {sections.filter((x) => x.vo).map((x, n) => <Sequence key={n} from={Math.round(x.vo_at * FPS)}><Audio src={staticFile(x.vo)} volume={1} /></Sequence>)}
-      {(TL.sfx as any[]).map((e, n) => <Sequence key={'s' + n} from={e.frame} durationInFrames={20}><Audio src={staticFile(e.type === 'whoosh' ? 'whoosh.mp3' : 'thud.mp3')} volume={e.type === 'whoosh' ? 0.16 : 0.22} /></Sequence>)}
+      {(TL.sfx as any[]).map((e, n) => <Sequence key={'s' + n} from={e.frame} durationInFrames={20}><Audio src={staticFile(e.type === 'whoosh' ? 'whoosh.mp3' : 'thud.mp3')} volume={e.type === 'whoosh' ? 0.16 : 0.22} /></Sequence>)}</> : null}
     </AbsoluteFill>
   );
 };
